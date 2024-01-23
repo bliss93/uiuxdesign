@@ -313,6 +313,7 @@ margin: 0 28px 0 0;
     color: rgba(255, 255, 255, 0.6);
 }
 
+/* li중에 마지막 li의 after 가상요소를 선택 */
 .footer .f_nav li:last-child::after {
     display: none;
 }
