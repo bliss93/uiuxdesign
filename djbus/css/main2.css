@@ -49,6 +49,10 @@ a {
     color: inherit;
 }
 
+address, em {
+    font-style: normal;
+}
+
 .header {
     height: 100px;
 }
@@ -163,3 +167,153 @@ display: block;
 .biz .edu .btn_wrap a{
     margin: 0 0 0 10px;
 }
+
+.bbs {
+    /* 배경이 콘텐츠 높이보다 짧음. 배경 이미지만큼 높이 못줌 visual하고 다름 */
+    background: url(../images/bbs_bg.png)center top no-repeat;
+    color: #fff;
+    padding: 0 0 100px 0;
+}
+
+.bbs .notice {
+    display: flex;
+    justify-content: space-between;
+    /*하위 요소 두개를 좌우로 나란히 배치 flex
+    하위 요소를 균등하게 영역에 좌우에 딱맞게 배치 space-between*/
+}
+
+.bbs .notice .tit {
+    margin: 180px 0 0 0;
+}
+
+.bbs .notice .tit h2{
+font-size: 45px;
+font-weight: 900;
+}
+
+.bbs .notice .tit p {
+    font-size: 25px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 26px 0 26px 0;
+}
+.bbs .notice .tit a {
+    color: #ccc;
+    border: 1px solid #ccc;
+    padding: 9px 31px 9px 31px;
+    display: inline-block;
+}
+
+.bbs .notice ul {
+    margin: 160px 0 0 0;
+    width: 622px;
+}
+
+.bbs .notice ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+
+}
+
+.bbs .notice ul li:last-child {
+    border-bottom: 0;
+}
+
+.bbs .notice ul li a {
+    display: flex;
+    justify-content: space-between;
+    line-height: 60px;
+    font-size: 20px;
+}
+
+.bbs .notice ul li a strong {
+    font-weight: inherit;
+}
+
+.bbs .notice ul li a span {
+    color: rgba(255, 255, 255, 0.8)
+}
+
+.bbs .video {
+    margin: 180px 0 0 0;
+}
+
+.bbs .video h2 {
+    font-size: 45px;
+    font-weight: 900;
+    margin: 0 0 18px 0;
+    
+}
+
+.bbs .video ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bbs .video ul li {
+    width: 408px;
+}
+
+.bbs .video ul li a strong{
+    color: #1d1d1d;
+    font-weight: inherit;
+    font-size: 17px;
+    margin: 20px 0 0 0;
+    display: block;
+}
+
+.bbs .video ul li a img {
+border: 5px solid #161347;
+box-shadow: 3px -3px 5px rgba(0,0,0,0.2);
+}
+
+.footer {
+    background-color: #3d3d3d;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 100px 0 0 0;
+    padding: 40px 0 58px 0;
+}
+
+.footer .f_nav {
+    display: flex;
+}
+
+.footer .f_nav li {
+    margin: 0 30px 0 0;
+    position: relative;
+    /* border-left: 1px solid rgba(255, 255, 255, 0.4);
+    메뉴사이의 선은 border로 처리가 안됨. 
+    높이조절이 불가 위아래 위치 조정이 안됨 */
+    position: relative;
+}
+
+.footer .f_nav li::after {
+    position: absolute;
+    right: -17px;
+    top: 4px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.4);
+    content: ""; /*after를 보이게 하는 값*/
+}
+
+.footer .f_nav li.privacy {
+font-weight: 900;    
+}
+
+.footer .f_info {
+display: flex;
+margin: 32px 0 32px 0;
+}
+
+.footer .f_info span,
+.footer .f_info  address {
+margin: 0 28px 0 0;
+}
+
+.footer .copyright {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer .f_nav li:last-child::after {
+    display: none;
+}
+
