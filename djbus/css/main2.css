@@ -1,0 +1,165 @@
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 900;
+    font-display: swap;
+    src: local('Pretendard Black'), url(../fonts/Pretendard-Black.woff2) format('woff2'), url(../fonts/Pretendard-Black.woff) format('woff');
+}
+
+
+body {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 15px;
+    color: #1d1d1d;
+    font-weight: 400;
+    line-height: 1.4; /*auto*/
+    word-break: keep-all;
+    letter-spacing: -0.05em; /*자간*/
+}
+
+.wrapper {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+#wrap {
+    min-width: 1280px;
+}
+/* pc형에서 wrapper 사이즈보다 브라우저 넓이가 작을 때 가로 스크롤바가 생성되는데 오른쪽에 background가 짤리는 현상이 생김
+가로스크롤바가 생성되었을 때도 홈페이지를 정상적으로 서비스하기 위해서 최소넓이를 입력 */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header {
+    height: 100px;
+}
+
+.header .logo {
+    float:left;
+    margin: 19px 0 0 0;
+
+}
+
+.header .gnb {
+    float:right;
+}
+
+.header .gnb ul {
+    display: flex;
+}
+
+
+.header .gnb ul li a {
+color: #1d1d1d;
+font-size: 22px;
+padding: 36px 20px 36px 20px;
+display: block;
+/* a태그는 inline태그라서 padding이 적용되지 않음. block태그로 변경하여 값이 적용되도록 함. */
+}
+
+.visual {
+    height: 700px;
+    background:url(../images/visual_bg.png)center center no-repeat;
+    color:#fff;
+    text-align: left;
+    padding: 145px 0 0 0;
+}
+
+.visual strong {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 0;
+    display: block;
+}
+
+
+.visual h2 {
+    font-size: 45px;
+    font-weight: 900;
+    letter-spacing: 0;
+    display: block;
+}
+
+.biz {
+    margin: 142px 0 142px 0;
+}
+
+.biz .art,
+.biz .edu {
+    display: flex;
+}
+
+.biz .edu {
+    justify-content: flex-end;
+    margin: 56px 0 0 0;
+}
+
+.biz .art .inner { 
+    margin: 85px 0 0 62px;
+    
+}
+
+.biz .edu .inner {
+    margin: 85px 62px 0 0 ;
+    width: 398px;
+    text-align: right;
+}
+
+.biz .art h2,
+.biz .edu h2 {
+    font-size: 45px;
+    font-weight: 900;
+    color: #1d1d1d;
+}
+
+.biz .art .sub_tit,
+.biz .edu .sub_tit {
+    font-size: 25px;
+    color: #1d1d1d;
+    margin: 16px 0 16px 0;
+}
+
+.biz .art .btn_wrap,
+.biz .edu .btn_wrap {
+    display: flex;
+    margin: 10px 0 0 0;
+}
+
+.biz .edu .btn_wrap {
+    justify-content: end;
+}
+
+.biz .art .btn_wrap a,
+.biz .edu .btn_wrap a {
+        border: 1px solid #ccc;
+        padding: 10px 19px 10px 19px;
+        display: block
+}
+
+.biz .art .btn_wrap a{
+    margin: 0 10px 0 0;
+}
+
+
+.biz .edu .btn_wrap a{
+    margin: 0 0 0 10px;
+}
