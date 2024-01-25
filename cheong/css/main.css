@@ -1,0 +1,133 @@
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 700;
+    font-display: swap;
+    src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.woff2) format('woff2'), url(../fonts/Pretendard-Bold.woff) format('woff');
+}
+
+
+html, body {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 15px;
+    color: #1d1d1d;
+    font-weight: 400;
+    line-height: 1.4px; /*auto*/
+    word-break: keep-all;
+  }
+
+  .wrapper {
+    width: 1280px;
+    margin: 0 auto;
+  }
+  
+  #wrap {
+    min-width: 1280px;
+  }
+  /* wrapper사이즈보다 브라우저 넓이가 작을 때 짤리는 현상 가로스크롤바가 생겨도 정상작동위해 */
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+ul, ol, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+address, em {
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.header {
+    /* body를 기준으로 정렬 position값을 주면(예외 relative) block요소라도 콘텐츠가 존재하는 만큼만 넓이 값이 있음 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100px ;
+    /* header가 absolute면 width:100%는 필수 */
+    
+}
+
+.header .logo {
+    float: left;
+    margin-top: 30px;
+    width: 298px;
+    height: 48px;
+}
+
+.header .gnb {
+    float: right;
+}
+
+.header .gnb ul {
+    display: flex;
+}
+
+.header .gnb ul li a {
+    font-size: 22px;
+    color: #fff;
+    padding: 45px 32px 0 0;
+    display: block;
+}
+
+
+.visual {
+    background: url(../images/visual_bg.png) center center no-repeat;
+    height: 950px;
+    border-radius: 0 0 200px 0;
+}
+
+.visual h2 {
+    padding: 357px 0 0 445px;
+    
+}
+
+.visual .photo {
+    width: 110px;
+    height: 110PX;
+    background-color:#004290;
+    color: #fff;
+    display: block;
+    border-radius: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* 동그라미는 넓이와 높이를 주고 border-radius:100%으로 줌 */
+    text-align: center;
+}
+
+.visual .photo span {
+display: block;
+}
+
+.visual .photo i {
+    margin: 23px 0 0 0;
+}
+
+.culture h2 {
+    margin: 180px 0 0 0;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+
+.culture h3 {
+    font-size: 20px;
+}
