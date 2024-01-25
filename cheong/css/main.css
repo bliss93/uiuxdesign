@@ -18,7 +18,7 @@ html, body {
     font-size: 15px;
     color: #1d1d1d;
     font-weight: 400;
-    line-height: 1.4px; /*auto*/
+    line-height: 1.4; /*auto*/
     word-break: keep-all;
   }
 
@@ -67,11 +67,14 @@ h1, h2, h3, h4, h5, h6, strong {
     
 }
 
+.header img {
+    width: 298px;
+    height: 48px;
+}
+
 .header .logo {
     float: left;
     margin-top: 30px;
-    width: 298px;
-    height: 48px;
 }
 
 .header .gnb {
@@ -118,7 +121,8 @@ display: block;
 }
 
 .visual .photo i {
-    margin: 23px 0 0 0;
+    padding: 14px 0 0 0;
+    display: block;
 }
 
 .culture h2 {
