@@ -61,6 +61,7 @@ h1, h2, h3, h4, h5, h6, strong {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 100; /*position을 준 요소가 깔려서 안보일 때 사용 z-index가 더 높은 요소가 더 위에 있어야 함 그래서 높은 숫자 100을 미리 줌*/
     width:100%;
     height: 100px ;
     /* header가 absolute면 width:100%는 필수 */
@@ -97,6 +98,7 @@ h1, h2, h3, h4, h5, h6, strong {
     background: url(../images/visual_bg.png) center center no-repeat;
     height: 950px;
     border-radius: 0 0 200px 0;
+    position: relative;
 }
 
 .visual h2 {
@@ -105,8 +107,8 @@ h1, h2, h3, h4, h5, h6, strong {
 }
 
 .visual .photo {
-    width: 110px;
-    height: 110PX;
+    width: 230px;
+    height: 230px;
     background-color:#004290;
     color: #fff;
     display: block;
@@ -114,24 +116,118 @@ h1, h2, h3, h4, h5, h6, strong {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     /* 동그라미는 넓이와 높이를 주고 border-radius:100%으로 줌 */
     text-align: center;
+    position: absolute;
+    bottom: -116px;
+    left: calc(50% + 520px);
 }
 
 .visual .photo span {
 display: block;
+font-size: 30px;
 }
 
 .visual .photo i {
-    padding: 14px 0 0 0;
+    padding: 40px 0 16px 0;
     display: block;
 }
 
+.culture {
+    margin-top: 180px;
+}
+
+.culture .inner {
+    position: relative;
+}
+
 .culture h2 {
-    margin: 180px 0 0 0;
     font-size: 50px;
     font-weight: 700;
+    margin: 0 0 15px 0;
 }
 
 
-.culture h3 {
+.culture .sub_tit {
     font-size: 20px;
+    margin: 0 0 47px 0;
 }
+
+.culture ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.culture ul li {
+    width: 408px;
+}
+
+.culture ul li a h3 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 24px 0 17px 0;
+}
+
+.culture ul li a p{
+    font-size: inherit;
+}
+
+
+.culture .more {
+    border: 1px solid rgba(102, 102, 102, 0.6);
+    border-radius: 10px;
+    position: absolute;
+    top:82px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    /* 글자와 아이콘 사이즈가 다른 요소가 좌우로 들어갈 때 서로 위아래 가운데 정렬하려면 */
+    padding: 8px 16px 8px 33px;
+}
+
+.culture .more span {
+    margin: 0 21px 0 0;
+}
+
+.tour {
+    margin-top: 196px;
+}
+
+.tour h2 {
+    color: #1D1D1D;
+    font-size: 50px;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+}
+
+.tour ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*.tour ul li:nth-child(1) {}라고 하면 안됨*/
+
+.tour ul li {
+    width: 190px;
+    height: 317px;
+}
+
+.tour ul li.tour01 {
+    background: url(../images/tour_01.png) center center no-repeat;
+}
+
+.tour ul li.tour02 {
+    background: url(../images/tour_02.png) center center no-repeat;
+}
+
+.tour ul li.tour03 {
+    background: url(../images/tour_03.png) center center no-repeat;
+}
+
+.tour ul li.tour04 {
+    background: url(../images/tour_04.png) center center no-repeat;
+}
+
+/* li.active li태그들 중에서 active클래스를 준 li를 선택하는 선택자 */
+.tour ul li.active {
+    width: 626px;
+}
+
