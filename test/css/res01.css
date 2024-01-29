@@ -337,6 +337,9 @@ button {
     .news ul li a strong {
         font-size: 15px;
         margin: 5px 0;
+        line-height: 1.2;
+        height: 2.4em; /*행간 *주고싶은 줄수 단위em */
+        overflow: hidden; /*제한한 높이보다 콘텐츠가 길면 숨기기*/
     }
 
     .news ul li a span {
