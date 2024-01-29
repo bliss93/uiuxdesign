@@ -397,7 +397,7 @@ active 클래스를 준 li를 선택하는 선택자 */
         그래서 before after 선택자를 이용해서 선을 그어줌. */
     position: relative; /* after 가상선택자 정렬의 기준 */
 }
-. .f_nav li::after {
+.f_nav li::after {
     position: absolute; /* 자유롭게 선을 긋기 위해서 absolute - li를 기준으로 정렬 */
     right: -19px;
     top: 4px;
