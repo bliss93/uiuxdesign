@@ -27,3 +27,11 @@ h1, h2, h3, h4, h5, h6, strong {
     font-size: inherit;
     font-weight: inherit;
 }
+
+/*button태그는 기본스타일 많음*/
+button {
+    background-color: transparent;
+    border: 0;
+    color: inherit;
+    font-family: inherit;
+}

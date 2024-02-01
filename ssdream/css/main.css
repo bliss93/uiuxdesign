@@ -1,11 +1,12 @@
 @charset "utf-8";
 @import url(default.css);
+/* 본고딕은 CDN방식으로 사용할 때 폰트를 정의하는 font-face가 입력된 css를 import 불러다가 사용하는 방식을 많이 씀 / 이방식은 간단하지만 문제가 google이 서비스를 중단하면 사용 못함 / 그래서 font파일을 저장해서 사용하는 방식을 씀*/
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
 
 html, body {
     font-family:'Noto Sans KR', sans-serif; /* 서체 */
     font-size: 15px; /* 크기 */
-    color: #3d3d3d; /* 글자색상 */
+    color: #1d1d1d; /* 글자색상 */
     font-weight: 400; /* 글자의 두께 */
     line-height: 1.4; /* auto */
     word-break: keep-all; /* 단어를 묶어서 줄바꿈 */
@@ -22,3 +23,58 @@ html, body {
        가로스크롤바가 생성되었을때도 홈페이지를 정상적으로 
        서비스 하기 위해서 최소 넓이를 입력 */
 }
+
+/* 640px 이하일 때 스타일 */
+@media screen and (max-width:640px){
+    html, body {
+        font-size: 13px; /* 크기 */
+    }
+    .wrapper { /* 모바일에서는 홈페이지의 넓이를 제한하면 안됨_디바이스의 넓이에 맞춰서 꽉차게 나와야 하기 때문 / 그 안쪽으로 좌우 여백이 20px씩 들어가게 함. */
+        width: auto; /* 홈페이지 넓이 */
+        margin: 0 20px;  /* 가운데 정렬 */
+    }
+    #wrap { /* id="wrap"에 적용되는 스타일 */
+        min-width:auto;
+        /* 홈페이지의 최소넓이 제한하지 않음 */
+    }
+}/* media */
+
+.visual {
+    /*cover는 영역에 이미지가 꽉차게(빈곳 없이)나타나는 명령 - 이미지 일부가 짤릴 수 있음- 배경에 이미지
+    contain은 영역에 이미지가 꽉차게(빈곳이 있음) - 이미지가 안짤림 - 배경에 로고가 들어간 경우 */
+    background: url(../images/visual_bg.png) no-repeat center center / cover;
+    color: #fff;
+    height: 100vh;/*브라우저 높이와 동일한 높이*/
+    min-height: 400px;
+    /*내부에 콘텐츠가 짤리지 않을 정도의 최소 높이 값을 줘야 함*/
+}
+
+/*visual의 높이가 브라우저의 높이에 따라서 바뀜 h2태그가 위에서부터의 여백이 그때그때 달라짐-->고정값으로 줄수가 없음*/
+.visual h2 {
+    font-size: 50px;
+    font-weight: 700;
+    padding-top: calc(50vh - 75px);
+}
+
+.visual p {
+    margin-top: 20px;
+}
+
+@media screen and (max-width:640px){
+    .visual {
+        height: 403px;
+        min-height: auto; /*높이값을 줬다가 취소하는 것은 auto*/
+    }
+    
+    /*visual의 높이가 브라우저의 높이에 따라서 바뀜 h2태그가 위에서부터의 여백이 그때그때 달라짐-->고정값으로 줄수가 없음*/
+    .visual h2 {
+        font-size: 30px;
+        font-weight: 700;
+        padding-top: 268px;
+    }
+    
+    .visual p {
+        display: none;
+    }
+}/* media */
+
