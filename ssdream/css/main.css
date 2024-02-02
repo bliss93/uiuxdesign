@@ -85,7 +85,7 @@ html, body {
 
 .header {
     /* body를 기준으로 정렬 */
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     z-index: 100; /* header를 맨 위에 배치하기 위해 - 다른요소에 가려서 안보일까봐 */
@@ -164,12 +164,35 @@ html, body {
 .header .lang::before {
     width: 12px;
     height: 12px;
-    background: url(../images/login_w.svg) no-repeat center center;
+    background: url(../images/lang_w.svg) no-repeat center center;
     position: absolute;
     left: 0;
     top: 4px;
     content: "";
 }
+
+/* header가 스크롤이 되면 jquery에서 header에 fixed라는 클래스를 추가할 예정. 그때의 스타일 
+띄어쓰기 없이 딱붙여서 쓰기 header와 fixed동시에.header.fixed {}*/
+
+
+.header.fixed {
+    color: #3d3d3d;
+    border-bottom: 0;
+    background-color: #fff;
+}
+
+.header.fixed .logo a {
+    background: url(../images/logo.svg) no-repeat center center / contain; 
+}
+
+.header.fixed .login::before {
+    background: url(../images/login.svg) no-repeat center center;
+}
+
+.header.fixed .lang::before {
+    background: url(../images/lang.svg) no-repeat center center;
+}
+
 
 @media screen and (max-width:640px){
     .header {
@@ -214,4 +237,73 @@ html, body {
         line-height: 0;
         margin-top: 13px;
     }
+
+    .header.fixed .gnb .gnb_open {
+        background: url(../images/gnb_open.svg) no-repeat center center;
+    }
 }/* media */
+
+.service {
+    background-color: #f4f4f4;
+    padding-top: 100px;
+}
+
+.service h2 {
+    display: none;
+}
+
+.service ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.service ul li {
+    width: 200px;
+    /* li가 6개라서 100/6 =16.66 나눈 값 */
+}
+
+.service ul li a {
+    letter-spacing: -0.05em;
+    padding: 15px 0 15px 95px;
+    display: block;
+    border: 1px solid #999;
+    position: relative;
+}
+
+.service ul li a::before {
+    position: absolute;
+    left: 10px;
+    top: 4px;
+    content: "";
+    width: 74px;
+    height: 54px;
+}
+
+.service ul li.service01 a::before {
+background: url(../images/service01.svg) no-repeat center center;
+}
+
+.service ul li.service02 a::before {
+    background: url(../images/service02.svg) no-repeat center center;
+}
+
+.service ul li.service03 a::before {
+    background: url(../images/service03.svg) no-repeat center center;
+}
+
+.service ul li.service04 a::before {
+    background: url(../images/service04.svg) no-repeat center center;
+}
+
+.service ul li.service05 a::before {
+    background: url(../images/service05.svg) no-repeat center center;
+}
+
+.service ul li.service06 a::before {
+    background: url(../images/service06.svg) no-repeat center center;
+}
+
+    
+.footer {
+    height: 500px;
+}
