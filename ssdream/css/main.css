@@ -245,7 +245,7 @@ html, body {
 
 .service {
     background-color: #f4f4f4;
-    padding-top: 100px;
+    padding: 100px 0;
 }
 
 .service h2 {
@@ -279,6 +279,7 @@ html, body {
     height: 54px;
 }
 
+
 .service ul li.service01 a::before {
 background: url(../images/service01.svg) no-repeat center center;
 }
@@ -307,3 +308,61 @@ background: url(../images/service01.svg) no-repeat center center;
 .footer {
     height: 500px;
 }
+
+@media screen and (max-width:640px){
+    .service {
+        padding: 30px 0 80px 0;
+    }
+    
+    .service ul {
+        flex-wrap: wrap; /*줄바꿈 허용*/
+    }
+    
+    /* 한 줄에 3개이고 사이사이 여백 16px / 넓이는 % - 여백px / 한줄3개33.33% - 여백 px 총 여백 32px/3*/
+    .service ul li {
+        width:33.33%;
+    }
+    
+    .service ul li a {
+        padding: 46px 0 0 0;
+        text-align: center;
+        border: 0; 
+        margin-top:13px;
+    }
+    
+        
+    .service ul li a span {
+        display: none;
+    }
+
+    .service ul li a::before {
+        top:-2px;
+        left: calc(50% - 37px);
+        width: 62px;
+        height: 45px;
+    }
+    
+    .service ul li.service01 a::before {
+        background-size: 47px auto;
+    }
+    
+    .service ul li.service02 a::before {
+        background-size: 47px auto;
+    }
+    
+    .service ul li.service03 a::before {
+        background-size: 47px auto;
+    }
+    
+    .service ul li.service04 a::before {
+        background-size: 47px auto;
+    }
+    
+    .service ul li.service05 a::before {
+        background-size: 47px auto;
+    }
+    
+    .service ul li.service06 a::before {
+        background-size: 47px auto;
+    }
+} /*media*/
