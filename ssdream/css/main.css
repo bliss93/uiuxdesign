@@ -44,24 +44,29 @@ html, body {
     contain은 영역에 이미지가 꽉차게(빈곳이 있음) - 이미지가 안짤림 - 배경에 로고가 들어간 경우 */
     background: url(../images/visual_bg.png) no-repeat center center / cover;
     color: #fff;
+}
+
+.visual .inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 100vh;/*브라우저 높이와 동일한 높이*/
-    min-height: 400px;
-    /*내부에 콘텐츠가 짤리지 않을 정도의 최소 높이 값을 줘야 함*/
+    min-height: 600px;
 }
 
 /*visual의 높이가 브라우저의 높이에 따라서 바뀜 h2태그가 위에서부터의 여백이 그때그때 달라짐-->고정값으로 줄수가 없음*/
 .visual h2 {
     font-size: 50px;
     font-weight: 700;
-    padding-top: calc(50vh - 75px);
+    margin-top: 85px;
 }
-
 .visual p {
     margin-top: 20px;
 }
 
 @media screen and (max-width:640px){
-    .visual {
+   
+    .visual .inner {
         height: 403px;
         min-height: auto; /*높이값을 줬다가 취소하는 것은 auto*/
     }
@@ -69,8 +74,8 @@ html, body {
     /*visual의 높이가 브라우저의 높이에 따라서 바뀜 h2태그가 위에서부터의 여백이 그때그때 달라짐-->고정값으로 줄수가 없음*/
     .visual h2 {
         font-size: 30px;
-        font-weight: 700;
-        padding-top: 268px;
+        margin-top:0;
+        padding-top: 250px;
     }
     
     .visual p {
@@ -78,3 +83,135 @@ html, body {
     }
 }/* media */
 
+.header {
+    /* body를 기준으로 정렬 */
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100; /* header를 맨 위에 배치하기 위해 - 다른요소에 가려서 안보일까봐 */
+    width: 100%;
+    height: 100px;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+.header .logo {
+    float: left;
+    margin-top: 15px;
+}
+
+.header .logo a {
+    width: 180px;
+    height: 60px;
+    display: block;
+    /*배경의 로고크기는 pc/mobile에서 사이즈가 다름 background-size를 width와 높이 값으로 수정가능
+    하지만 a태그에 준 넓이와 높이값에 맞게 background-size 자동으로 조절되었으면 함
+    contain - 이미지를 자르지 않고 영역에 딱 맞게 조절 / background-size: 100% auto_가로, 세로*/
+    background: url(../images/logo_w.svg) no-repeat center center / contain; 
+    /* a태그에 써준 글자를 안보이게 하는 방법 */
+    font-size: 0;
+    line-height: 0;
+}
+
+.header .inner {
+    float: right;
+    display: flex;
+    align-items: center;
+    /* display: flex는 좌우로 배치된 요소의 높이를 제일 긴 사이즈와 동일하게 모든 높이를 맞춤. 이를 원래 요소별 높이로 주고 싶으면 align-items를 줘야 함 */
+}
+
+.header .gnb .gnb_open {
+    display: none;
+    /* display: none은 공간을 차지하지 않음 */
+}
+
+
+.header .gnb ul {
+    display: flex;
+}
+
+.header .gnb ul li a {
+    font-size: 22px;
+    font-weight: 700;
+    padding: 34px 26px;
+    display: block;
+}
+
+.header .login {
+    margin: 0 40px 0 115px;
+    position: relative;
+    padding-left: 18px;
+}
+
+.header .login::before {
+    width: 12px;
+    height: 12px;
+    background: url(../images/login_w.svg) no-repeat center center;
+    position: absolute;
+    left: 0;
+    top: 4px;
+    content: "";
+
+}
+
+.header .lang {
+    margin: 0 30px 0 0;
+    position: relative;
+    padding-left: 18px;
+}
+
+.header .lang::before {
+    width: 12px;
+    height: 12px;
+    background: url(../images/login_w.svg) no-repeat center center;
+    position: absolute;
+    left: 0;
+    top: 4px;
+    content: "";
+}
+
+@media screen and (max-width:640px){
+    .header {
+        height: 50px;
+    }
+    
+    
+    .header .logo {
+        margin-top: 10px;
+    }
+    
+    .header .logo a {
+        width: 75px;
+        height: 25px;
+    }
+    
+    
+    .header .gnb .gnb_open {
+        display: block;
+        /* display: none으로 숨긴 요소는 display에 none을 제외하고 무엇을 주든지 나타남*/
+    }
+    
+    
+    .header .gnb ul {
+        display: none
+    }
+    
+    .header .login {
+       display: none;
+    }
+    
+    .header .lang {
+        display: none;
+    }
+    
+    .header .gnb .gnb_open {
+        display: block;
+        width: 22px;
+        height: 18px;
+        background: url(../images/gnb_open_w.svg) no-repeat center center;
+        font-size: 0;
+        line-height: 0;
+        margin-top: 13px;
+    }
+}/* media */
