@@ -101,8 +101,7 @@ h1, h2, h3, h4, h5, h6, strong {
 .tech {
     margin: 90px 0 0 0;
     background-color: #f4f4f4;
-    height: 762px;
-}
+    }
 
 .tech h2 {
     font-size: 45px;
@@ -120,7 +119,11 @@ h1, h2, h3, h4, h5, h6, strong {
 .tech ul li{
     margin-bottom: 80px;
     color: #fff;
+}
+
+.tech ul li a {
     height: 514px;
+    display: block;
 }
 
 
