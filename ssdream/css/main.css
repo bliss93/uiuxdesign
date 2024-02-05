@@ -749,7 +749,7 @@ background: url(../images/service01.svg) no-repeat center center;
 @media screen and (max-width:640px){
     .webzine {
         padding: 46px 0 100px 0;
-        background-position: center top -20px ;
+        background-position: center top;
         background-size: cover;
     }
     
@@ -814,7 +814,147 @@ background: url(../images/service01.svg) no-repeat center center;
     .webzine .more a::after {
         top: 5px;
     }
-
-
-    
 } /*media*/
+
+.footer {
+    background-color: rgba(255, 252, 0, 0.1);
+    padding-bottom: 165px;
+}
+
+.footer .f_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 26px;
+    border-bottom: 1px solid #3d3d3d;
+    padding-bottom: 26px;
+}
+
+
+.footer .f_top .f_logo strong {
+    width: 180px;
+    height: 60px;
+    display: block;
+    /*배경의 로고크기는 pc/mobile에서 사이즈가 다름 background-size를 width와 높이 값으로 수정가능
+    하지만 a태그에 준 넓이와 높이값에 맞게 background-size 자동으로 조절되었으면 함
+    contain - 이미지를 자르지 않고 영역에 딱 맞게 조절 / background-size: 100% auto_가로, 세로*/
+    background: url(../images/logo_b.svg) no-repeat center center / contain; 
+    /* a태그에 써준 글자를 안보이게 하는 방법 */
+    font-size: 0;
+    line-height: 0;
+}
+
+
+.footer .f_top .f_logo span {
+    display: block;
+}
+
+.footer .f_top .f_nav ul {
+    display: flex;
+    font-size: 22px;
+    color: #3d3d3d;
+}
+
+.footer .f_top .f_nav ul li {
+    margin: 0 33px 0 0; /*모바일에서는 꼭 오른쪽에 여백이 들어가야 함*/
+    position: relative;
+}
+
+.footer .f_top .f_nav ul li:last-child {
+    margin-right: 0; /*pc버전에서는 마지막li의 오른쪽 여백 삭제*/
+}
+
+.footer .f_top .f_nav ul li::after {
+    position: absolute;
+    right: -16px;
+    top: 16px;
+    width: 2px;
+    height: 2px;
+    border-radius: 100%;
+    background-color: #3d3d3d;
+    content: "";/*before,aftter를 보이게 하는 값*/
+}
+
+.footer .f_top .f_nav ul li:last-child:after {
+    display: none;
+}
+
+.footer .f_top .f_nav .privacy {
+    font-weight: 700;
+}
+
+.footer .f_btm {
+    margin-top: 33px;
+    font-size: 17px;
+}
+
+.footer .f_btm .f_info span {
+    margin-right: 54px;
+}
+
+.footer .f_btm .f_info strong {
+    font-weight: 700;
+}
+
+.footer .f_btm .copyright {
+    margin-top: 48px;
+    color: #5d5d5d;
+    font-weight: 700;
+}
+
+@media screen and (max-width:640px){
+    .footer {
+        background-color: rgba(255, 252, 0, 0.1);
+        padding-bottom: 165px;
+    }
+    
+    .footer .f_top {
+        display: block;
+        align-items: flex-start;
+        margin-bottom: 26px;
+        border-top: 1px solid #3d3d3d;
+        border-bottom: none;
+        padding-bottom: 26px;
+    }
+    
+
+    .footer .f_top .f_logo strong {
+        margin-top: 24px;
+        width: 105px;
+        height: 35px;
+    }
+    
+    
+    .footer .f_top .f_nav ul {
+        flex-wrap: wrap;
+        font-size: 13px;
+        margin-top: 32px;
+    }
+    
+    .footer .f_top .f_nav ul li {
+        margin: 0 25px 0 0; /*모바일에서는 꼭 오른쪽에 여백이 들어가야 함*/
+    }
+    
+    .footer .f_top .f_nav ul li::after {
+        top: 9px;
+        right: -14px;
+   }
+    
+    .footer .f_top .f_nav ul li:last-child:after {
+        display: none;
+    }
+  
+    .footer .f_btm {
+        margin-top: 17px;
+        font-size: 13px;
+    }
+    
+    .footer .f_btm .f_info span {
+        margin-right: 29px;
+    }
+    
+    
+    .footer .f_btm .copyright {
+        margin-top: 21px;
+    }
+}
