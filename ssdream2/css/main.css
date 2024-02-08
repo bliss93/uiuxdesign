@@ -1,0 +1,882 @@
+@charset "utf-8";
+@import url(default.css);
+/* 본고딕은 CDN방식으로 사용할 때 폰트를 정의하는 font-face가 입력된 css를 import 불러다가 사용하는 방식을 많이 씀 / 이방식은 간단하지만 문제가 google이 서비스를 중단하면 사용 못함 / 그래서 font파일을 저장해서 사용하는 방식을 씀*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+html, body {
+    font-family:'Noto Sans KR', sans-serif; /* 서체 */
+    font-size: 15px; /* 크기 */
+    color: #1d1d1d; /* 글자색상 */
+    font-weight: 400; /* 글자의 두께 */
+    line-height: 1.4; /* auto */
+    word-break: keep-all; /* 단어를 묶어서 줄바꿈 */
+}
+.wrapper { /* 홈페이지의 넓이를 제한하고 가운데 정렬 */
+    width: 1280px; /* 홈페이지 넓이 */
+    margin: 0 auto;  /* 가운데 정렬 */
+}
+#wrap { /* id="wrap"에 적용되는 스타일 */
+    min-width: 1280px;
+    /* PC형에서 wrapper사이즈보다 브라우저 넓이가 작을때
+       가로스크롤바가 생성되는데 오른쪽에 background가 
+       짤리는 현상이 생김.  
+       가로스크롤바가 생성되었을때도 홈페이지를 정상적으로 
+       서비스 하기 위해서 최소 넓이를 입력 */
+}
+
+/* 640px 이하일 때 스타일 */
+@media screen and (max-width:640px){
+    html, body {
+        font-size: 13px; /* 크기 */
+    }
+    .wrapper { /* 모바일에서는 홈페이지의 넓이를 제한하면 안됨_디바이스의 넓이에 맞춰서 꽉차게 나와야 하기 때문 / 그 안쪽으로 좌우 여백이 20px씩 들어가게 함. */
+        width: auto; /* 홈페이지 넓이 */
+        margin: 0 20px;  /* 가운데 정렬 */
+    }
+    #wrap { /* id="wrap"에 적용되는 스타일 */
+        min-width:auto;
+        /* 홈페이지의 최소넓이 제한하지 않음 */
+    }
+}/* media */
+
+.visual {
+    /*cover는 영역에 이미지가 꽉차게(빈곳 없이)나타나는 명령 - 이미지 일부가 짤릴 수 있음- 배경에 이미지
+    contain은 영역에 이미지가 꽉차게(빈곳이 있음) - 이미지가 안짤림 - 배경에 로고가 들어간 경우 */
+    background: url(../images/visual_bg.png) no-repeat center center / cover;
+    color: #fff;
+}
+
+.visual .inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;/*브라우저 높이와 동일한 높이*/
+    min-height: 600px;
+}
+
+/*visual의 높이가 브라우저의 높이에 따라서 바뀜 h2태그가 위에서부터의 여백이 그때그때 달라짐-->고정값으로 줄수가 없음*/
+.visual h2 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-top: 85px;
+}
+.visual p {
+    margin-top: 20px;
+}
+
+@media screen and (max-width:640px){
+   
+    .visual .inner {
+        height: 403px;
+        min-height: auto; /*높이값을 줬다가 취소하는 것은 auto*/
+    }
+    
+    /*visual의 높이가 브라우저의 높이에 따라서 바뀜 h2태그가 위에서부터의 여백이 그때그때 달라짐-->고정값으로 줄수가 없음*/
+    .visual h2 {
+        font-size: 30px;
+        margin-top:0;
+        padding-top: 250px;
+    }
+    
+    .visual p {
+        display: none;
+    }
+}/* media */
+
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100px;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header .logo{
+    float: left;
+    margin-top: 20px;
+}
+
+.header .logo a {
+    display: block;
+    width: 180px;
+    height: 58px;
+    background: url(../images/logo.svg) no-repeat center center / contain;
+    line-height: 0;
+    font-size: 0;
+}
+
+.header .gnb{
+    float: left;
+    margin: 0 0 0 320px;
+}
+
+.header .gnb .gnb_open,
+.header .gnb .gnb_close {
+    display: none;
+}
+
+.header .gnb ul.depth1 {
+    display: flex;
+}
+
+.header .gnb ul.depth1 > li {
+    width: 140px;
+    text-align: center;
+}
+
+.header .gnb ul.depth1 > li > a {
+    display: block;
+    line-height:100px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.header .gnb ul.depth2 {
+    margin-top: 16px;
+}
+
+.header .tnb{
+    float: right;
+    display: flex;
+    margin: 36px 0 0 0;
+}
+
+.header .tnb .login,
+.header .tnb .lang {
+    width:30px;
+    height: 30px;
+    display: block; /*사이즈가 적용되도록*/
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    font-size: 0;
+    line-height: 0;
+}
+
+.header .tnb .login {
+    margin-right: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.99992 6.43606C6.24367 6.43606 5.59627 6.16679 5.05773 5.62825C4.51919 5.0897 4.24992 4.44231 4.24992 3.68606C4.24992 2.92979 4.51919 2.28239 5.05773 1.74385C5.59627 1.20531 6.24367 0.936035 6.99992 0.936035C7.75617 0.936035 8.40356 1.20531 8.94211 1.74385C9.48065 2.28239 9.74992 2.92979 9.74992 3.68606C9.74992 4.44231 9.48065 5.0897 8.94211 5.62825C8.40356 6.16679 7.75617 6.43606 6.99992 6.43606ZM0.583252 12.1123V11.5553C0.583252 11.1769 0.693428 10.8228 0.913779 10.4932C1.13413 10.1635 1.43058 9.90763 1.80313 9.72547C2.66808 9.31062 3.53362 8.99948 4.39975 8.79205C5.26589 8.58463 6.13261 8.48091 6.99992 8.48091C7.86722 8.48091 8.73394 8.58463 9.60009 8.79205C10.4662 8.99948 11.3318 9.31062 12.1967 9.72547C12.5693 9.90763 12.8657 10.1635 13.0861 10.4932C13.3064 10.8228 13.4166 11.1769 13.4166 11.5553V12.1123C13.4166 12.3815 13.3252 12.6074 13.1425 12.7901C12.9597 12.9729 12.7338 13.0643 12.4647 13.0643H1.53516C1.26605 13.0643 1.04011 12.9729 0.857358 12.7901C0.674621 12.6074 0.583252 12.3815 0.583252 12.1123ZM1.49992 12.1476H12.4999V11.5553C12.4999 11.352 12.4344 11.161 12.3034 10.9824C12.1723 10.8037 11.991 10.6527 11.7595 10.5293C11.005 10.1638 10.2271 9.88383 9.42579 9.68933C8.62445 9.49483 7.81583 9.39758 6.99992 9.39758C6.18401 9.39758 5.37539 9.49483 4.57405 9.68933C3.7727 9.88383 2.99479 10.1638 2.24031 10.5293C2.00879 10.6527 1.82751 10.8037 1.69647 10.9824C1.56544 11.161 1.49992 11.352 1.49992 11.5553V12.1476ZM6.99992 5.51939C7.50409 5.51939 7.93568 5.33988 8.29471 4.98085C8.65374 4.62182 8.83325 4.19023 8.83325 3.68606C8.83325 3.18189 8.65374 2.7503 8.29471 2.39127C7.93568 2.03224 7.50409 1.85273 6.99992 1.85273C6.49575 1.85273 6.06415 2.03224 5.70513 2.39127C5.3461 2.7503 5.16658 3.18189 5.16658 3.68606C5.16658 4.19023 5.3461 4.62182 5.70513 4.98085C6.06415 5.33988 6.49575 5.51939 6.99992 5.51939Z' fill='%23fff'/%3E%3C/svg%3E%0A");
+}
+.header .tnb .lang {
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 12C5.17436 12 4.39658 11.8421 3.66667 11.5263C2.93676 11.2105 2.30107 10.7818 1.75962 10.2404C1.21816 9.69893 0.789528 9.06324 0.473717 8.33333C0.157906 7.60342 0 6.82564 0 6C0 5.17179 0.157906 4.39337 0.473717 3.66475C0.789528 2.93612 1.21816 2.30107 1.75962 1.75962C2.30107 1.21816 2.93676 0.789527 3.66667 0.473716C4.39658 0.157905 5.17436 0 6 0C6.82821 0 7.60663 0.157905 8.33525 0.473716C9.06388 0.789527 9.69893 1.21816 10.2404 1.75962C10.7818 2.30107 11.2105 2.93612 11.5263 3.66475C11.8421 4.39337 12 5.17179 12 6C12 6.82564 11.8421 7.60342 11.5263 8.33333C11.2105 9.06324 10.7818 9.69893 10.2404 10.2404C9.69893 10.7818 9.06388 11.2105 8.33525 11.5263C7.60663 11.8421 6.82821 12 6 12ZM6 11.3385C6.39146 10.8359 6.71411 10.3423 6.96795 9.8577C7.2218 9.37308 7.42821 8.83077 7.58718 8.23077H4.41282C4.58888 8.86496 4.79957 9.42436 5.04487 9.90898C5.29017 10.3936 5.60854 10.8701 6 11.3385ZM5.15128 11.2385C4.84017 10.8718 4.55619 10.4186 4.29935 9.87885C4.04252 9.33911 3.85128 8.78975 3.72563 8.23077H1.16923C1.55129 9.05983 2.09296 9.73975 2.79423 10.2705C3.49551 10.8013 4.28119 11.1239 5.15128 11.2385ZM6.84872 11.2385C7.71881 11.1239 8.50449 10.8013 9.20577 10.2705C9.90705 9.73975 10.4487 9.05983 10.8308 8.23077H8.27437C8.10599 8.79829 7.89338 9.35192 7.63655 9.89167C7.37971 10.4314 7.11709 10.8803 6.84872 11.2385ZM0.897433 7.5641H3.58718C3.53675 7.2906 3.50107 7.02415 3.48013 6.76475C3.45919 6.50534 3.44872 6.25042 3.44872 6C3.44872 5.74958 3.45919 5.49466 3.48013 5.23525C3.50107 4.97585 3.53675 4.7094 3.58718 4.4359H0.897433C0.824789 4.66667 0.768167 4.91816 0.727567 5.19038C0.686967 5.46261 0.666667 5.73248 0.666667 6C0.666667 6.26752 0.686967 6.53739 0.727567 6.80962C0.768167 7.08184 0.824789 7.33333 0.897433 7.5641ZM4.25385 7.5641H7.74615C7.79658 7.2906 7.83227 7.02842 7.8532 6.77757C7.87415 6.52671 7.88462 6.26752 7.88462 6C7.88462 5.73248 7.87415 5.47329 7.8532 5.22243C7.83227 4.97158 7.79658 4.7094 7.74615 4.4359H4.25385C4.20342 4.7094 4.16773 4.97158 4.1468 5.22243C4.12586 5.47329 4.11538 5.73248 4.11538 6C4.11538 6.26752 4.12586 6.52671 4.1468 6.77757C4.16773 7.02842 4.20342 7.2906 4.25385 7.5641ZM8.41282 7.5641H11.1026C11.1752 7.33333 11.2318 7.08184 11.2724 6.80962C11.313 6.53739 11.3333 6.26752 11.3333 6C11.3333 5.73248 11.313 5.46261 11.2724 5.19038C11.2318 4.91816 11.1752 4.66667 11.1026 4.4359H8.41282C8.46325 4.7094 8.49894 4.97585 8.51988 5.23525C8.54082 5.49466 8.55128 5.74958 8.55128 6C8.55128 6.25042 8.54082 6.50534 8.51988 6.76475C8.49894 7.02415 8.46325 7.2906 8.41282 7.5641ZM8.27437 3.76923H10.8308C10.4402 2.92308 9.90491 2.24316 9.225 1.72948C8.54509 1.21582 7.75299 0.888894 6.84872 0.748716C7.15983 1.15812 7.43953 1.62628 7.68782 2.1532C7.93612 2.68012 8.13163 3.2188 8.27437 3.76923ZM4.41282 3.76923H7.58718C7.41112 3.14359 7.19402 2.57778 6.9359 2.0718C6.67778 1.56581 6.36581 1.09572 6 0.661534C5.63419 1.09572 5.32222 1.56581 5.0641 2.0718C4.80598 2.57778 4.58888 3.14359 4.41282 3.76923ZM1.16923 3.76923H3.72563C3.86837 3.2188 4.06388 2.68012 4.31218 2.1532C4.56047 1.62628 4.84017 1.15812 5.15128 0.748716C4.23846 0.888894 3.44423 1.21796 2.76858 1.7359C2.09295 2.25384 1.55983 2.93162 1.16923 3.76923Z' fill='%23fff'/%3E%3C/svg%3E%0A");
+}
+
+
+.service {
+    background-color: #f4f4f4;
+    padding: 100px 0;
+}
+
+.service h2 {
+    display: none;
+}
+
+.service ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.service ul li {
+    width: 200px;
+    /* li가 6개라서 100/6 =16.66 나눈 값 */
+}
+
+.service ul li a {
+    letter-spacing: -0.05em;
+    padding: 15px 0 15px 95px;
+    display: block;
+    border: 1px solid #999;
+    position: relative;
+}
+
+.service ul li a::before {
+    position: absolute;
+    left: 10px;
+    top: 4px;
+    content: "";
+    width: 74px;
+    height: 54px;
+}
+
+
+.service ul li.service01 a::before {
+background: url(../images/service01.svg) no-repeat center center;
+}
+
+.service ul li.service02 a::before {
+    background: url(../images/service02.svg) no-repeat center center;
+}
+
+.service ul li.service03 a::before {
+    background: url(../images/service03.svg) no-repeat center center;
+}
+
+.service ul li.service04 a::before {
+    background: url(../images/service04.svg) no-repeat center center;
+}
+
+.service ul li.service05 a::before {
+    background: url(../images/service05.svg) no-repeat center center;
+}
+
+.service ul li.service06 a::before {
+    background: url(../images/service06.svg) no-repeat center center;
+}
+
+    
+.footer {
+    height: 500px;
+}
+
+@media screen and (max-width:640px){
+    .service {
+        padding: 30px 0 80px 0;
+    }
+    
+    .service ul {
+        flex-wrap: wrap; /*줄바꿈 허용*/
+    }
+    
+    /* 한 줄에 3개이고 사이사이 여백 16px / 넓이는 % - 여백px / 한줄3개33.33% - 여백 px 총 여백 32px/3*/
+    .service ul li {
+        width:33.33%;
+    }
+    
+    .service ul li a {
+        padding: 46px 0 0 0;
+        text-align: center;
+        border: 0; 
+        margin-top:13px;
+    }
+    
+        
+    .service ul li a span {
+        display: none;
+    }
+
+    .service ul li a::before {
+        top:-2px;
+        left: calc(50% - 37px);
+        width: 62px;
+        height: 45px;
+    }
+    
+    .service ul li.service01 a::before {
+        background-size: 47px auto;
+    }
+    
+    .service ul li.service02 a::before {
+        background-size: 47px auto;
+    }
+    
+    .service ul li.service03 a::before {
+        background-size: 47px auto;
+    }
+    
+    .service ul li.service04 a::before {
+        background-size: 47px auto;
+    }
+    
+    .service ul li.service05 a::before {
+        background-size: 47px auto;
+    }
+    
+    .service ul li.service06 a::before {
+        background-size: 47px auto;
+    }
+} /*media*/
+
+.biz {
+    margin-top: 125px;
+}
+
+.biz h2 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 38px; 
+}
+
+.biz ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* a에 사이즈를 주면 li는 a사이즈와 동일 */
+.biz ul li a {
+    width: 299px;
+    height: 256px;
+    display: block;
+    color: #fff;
+    border-radius: 20px;
+    padding: 28px 23px 0 18px;
+    /* 높이를 준 경우는 위 오른쪽 왼쪽 여백만 줌 하단의 여백은 안줘도 됨
+    어차피 높이를 고정으로 줘서 여백이 발생함 오히려 하단 여백을 주면 글자가 늘어날 경우 높이가 바뀔 가능성이 있음 */
+    position: relative; 
+    /* more정렬의 기준 */
+}
+
+.biz ul li a::after {
+    position: absolute;
+    content: ""; 
+    /* before/after 선택자가 보이게 하는 값 */
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 100% auto;
+    /*after 선택자에 준 넓이에 딱 맞게 배경이미지 사이즈 조정(높이는 비율에 맞게 조정)*/
+}
+
+.biz ul li.biz01 a::after {
+    width: 170px;
+    height: 98px;
+    right: -26px;
+    bottom: 0;
+    background-image: url(../images/biz01.svg);
+}
+
+.biz ul li.biz02 a::after {
+    width: 126px;
+    height: 145px;
+    right: -11px;
+    bottom: -34px;
+    background-image: url(../images/biz02.svg);
+}
+
+
+.biz ul li.biz03 a::after {
+    width: 169px;
+    height: 137px;
+    right: -28px;
+    bottom: -18px;
+    background-image: url(../images/biz03.svg);
+}
+
+.biz ul li.biz04 a::after {
+    width: 154px;
+    height: 154px;
+    right: -32px;
+    bottom: -38px;
+    background-image: url(../images/biz04.svg);
+}
+
+
+.biz ul li.biz01 a {
+    background-color: #001F60;
+}
+
+.biz ul li.biz02 a {
+    background-color: #D76D7B;
+}
+
+.biz ul li.biz03 a {
+    background-color: #5A3FB0;
+}
+
+.biz ul li.biz04 a {
+    background-color: #1CB193;
+}
+
+.biz ul li a h3 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    margin-bottom: 13px;
+}
+
+.biz ul li a h3 br {
+    display: none;
+}
+
+.biz ul li a p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.biz ul li a .more {
+    position: absolute;
+    left: 26px;
+    bottom: 28px;
+    color: rgba(255, 255, 255, 0.8);
+    padding-right: 21px;
+}
+
+.biz ul li a .more::after {
+    position: absolute; /*more를 기준으로 정렬*/
+    right: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    background: url(../images/more.svg)no-repeat center center;
+    content: "";
+}
+
+
+@media screen and (max-width:640px){
+    .biz {
+        margin: 42px 0 0 0;
+    }
+
+    .biz h2 {
+        font-size: 30px;
+        margin-bottom: 30px; 
+    }
+    
+    .biz ul {
+        display: block;
+    }
+    
+    /* a에 사이즈를 주면 li는 a사이즈와 동일 */
+    .biz ul li a {
+        width: auto;
+        height: 206px;
+        padding: 60px 23px 0 38px;
+        /* 높이를 준 경우는 위 오른쪽 왼쪽 여백만 줌 하단의 여백은 안줘도 됨
+        어차피 높이를 고정으로 줘서 여백이 발생함 오히려 하단 여백을 주면 글자가 늘어날 경우 높이가 바뀔 가능성이 있음 */
+        margin-bottom: 20px;
+    }
+    
+    .biz ul li a h3 {
+        margin-bottom: 20px;
+        font-size: 22px;
+    }
+
+    .biz ul li a h3 br {
+        display: block;
+    }
+    
+    .biz ul li a p {
+        display: none;
+    }
+    
+    .biz ul li a .more {
+        font-size: 15px;
+        left: 38px;
+        bottom: 42px;
+        padding-right: 21px;
+    }
+    
+    .biz ul li a .more::after {
+        right: 0;
+        top: 6px;
+        width: 12px;
+        height: 12px;
+    }
+
+}/*media*/
+
+.news {
+    margin-top: 125px;
+}
+
+.news h2 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 38px; 
+}
+
+.news ul li {
+    border: 1px solid #D9D9D9;
+    margin-bottom: 9px;
+}
+
+.news ul li a {
+    display: flex;
+    justify-content: space-between;
+    line-height: 60px;
+    padding: 0 60px;
+    font-size: 17px;
+    align-items: center;
+}
+
+.news ul li.notice1 a em {
+    color: #fff;
+    background-color: #1CB193;
+    line-height: 33px;
+    padding: 0 16px;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+
+.news ul li.notice2 a em {
+    border: 1px solid #1CB193;
+    line-height: 33px;
+    padding: 0 16px;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+
+.news ul li a strong {
+    width: 900px;
+    /* 글자가 들어갈 수 있는 최대 넓이 지정 날짜는 자리수가 딱 정해져 있음 왼쪽에 장학공지/일반공지도 자리수가 정해져 있음
+    하지만 제목은 입력한대로 길수도 있고 짧을 수도 있음 제목의 글자가 최대로 들어갈 수 있는 최대넓이를 제한 */
+    white-space: nowrap; /*줄바꿈금지*/
+    overflow: hidden; /*영역에서 넘치는 글자 숨김*/
+    text-overflow: ellipsis; /*글자가 반이 짤려서 나타날 수 있기 때문에 이현상을 막고 ...을 추가하는 방법*/
+} 
+
+.news .inner {
+    position: relative;
+}
+
+.news .more {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #5d5d5d;
+}
+
+.news .more a {
+    border: 1px solid #bdbdbd;
+    border-radius: 20px;
+    padding: 9px 31px 11px 13px;
+    display: block;
+    position: relative;
+}
+
+.news .more a::after {
+    position: absolute;
+    right: 7px;
+    top: 8px;
+    width: 24px;
+    height: 24px;
+    content: "";
+    background: url(../images/news_more.svg)no-repeat center center / contain;
+    /* pc와 모바일에서 아이콘 사이즈가 변경된다면 background-size를 미리 지정하는게 좋음 contain은 영역에 아이콘이 잘리지 않고 꽉차게 나오는 명령 */
+    color: #5d5d5d;
+}
+
+@media screen and (max-width:640px){
+    .news {
+        margin-top: 47px;
+    }
+    
+    .news h2 {
+        font-size: 30px;
+    }
+    
+    .news ul li {
+        border: 1px solid #BDBDBD;
+        margin-bottom: 11px;
+    }
+    
+    .news ul li a {
+        line-height: 28px;
+        padding: 0 26px;
+        font-size: 13px;
+    }
+    
+    .news ul li.notice1 a em, .news ul li.notice2 a em {
+        display: none;
+    }
+    
+    .news ul li a strong {
+        width:calc(100% - 112px);
+        /* 모바일에서는 제목의 넓이가 디바이스의 넓이가 디바이스의 넓이에 따라 바뀜
+        그래서 오른쪽 날짜와 여백을 100%에서 빼줌 날짜와 여백은 고정값이니깜 */
+    } 
+    
+    .news .more {
+        position: relative;
+        right: auto;
+        top: auto;
+        margin-top: 26px;
+        text-align: center;
+    }
+    
+    .news .more a {
+        padding: 11px 31px 11px 19px;
+        display: inline-block;
+    }
+    
+    .news .more a::after {
+        top: 8px;
+    }   
+}
+
+.webzine {
+    padding: 122px 0 165px 0;
+    /* background때문에 여백을 padding으로 줌 / padding은 내부여백이라 background가 padding 영역까지 배치가능 */
+    background: url(../images/webzin_bg.svg) no-repeat center top -360px / 3672px auto;
+}
+
+.webzine .inner {
+    display: flex;
+    justify-content: space-between;
+    position: relative; /* more정렬의 기준 */
+}
+
+.webzine .tit h2 {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.webzine .tit strong {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.webzine ul {
+    display: flex;
+}
+
+.webzine ul li {
+    width: 299px;
+    margin-left: 28px;
+}
+
+.webzine ul li a {
+    background-color: #fff;
+    display: block;
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.webzine ul li a strong {
+    padding: 21px 11px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.webzine .more {
+    position: absolute; /*inner를 기준으로 정렬*/
+    left: 0;
+    top: 135px;
+    color: #5d5d5d;
+}
+
+.webzine .more a {
+    border: 1px solid #bdbdbd;
+    border-radius: 20px;
+    padding: 9px 31px 11px 13px;
+    display: block;
+    position: relative;
+}
+
+.webzine .more a::after {
+    position: absolute;
+    right: 7px;
+    top: 8px;
+    width: 24px;
+    height: 24px;
+    content: "";
+    background: url(../images/news_more.svg)no-repeat center center / contain;
+    color: #5d5d5d;
+}
+
+@media screen and (max-width:640px){
+    .webzine {
+        padding: 46px 0 100px 0;
+        background-position: center top;
+        background-size: cover;
+    }
+    
+    .webzine .inner {
+        display: block;
+    }
+
+    .webzine .tit {
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 65px;
+    }
+    
+    .webzine .tit h2 {
+        font-size: 30px;
+        margin-right: 12px;
+    }
+    
+    .webzine .tit strong {
+        font-size: 13px;
+    }
+    
+    .webzine ul {
+        justify-content:space-between;
+    }
+    
+    .webzine ul li {
+        /* 100%나누기 li수 =50% 여백/2 */
+        width: calc(50% - 8px);
+        margin-left: 0;
+    }
+
+    .webzine ul li:last-child {
+        display: none;
+    }
+
+    .webzine ul li a img {
+        width: 100%; /* 감싸는 요소의 넓이에 맞게 사이즈가 조절. 이미지는 넓이만 주면 대부분 높이는 비율에 맞게 들어감 */
+    }
+    
+    .webzine ul li a strong {
+        padding: 8px 20px;
+    }
+    
+    
+    .webzine .more {
+        position: relative; /*inner를 기준으로 정렬*/
+        left: auto;
+        top: auto;
+        text-align: center;
+        color: #5d5d5d;
+        margin-top: 29px;
+    }
+    
+    .webzine .more a {
+        border: 1px solid #bdbdbd;
+        border-radius: 20px;
+        padding: 9px 31px 11px 13px;
+        display: inline-block;
+    }
+    
+    .webzine .more a::after {
+        top: 5px;
+    }
+} /*media*/
+
+.footer {
+    background-color: rgba(255, 252, 0, 0.1);
+    padding-bottom: 165px;
+}
+
+.footer .f_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 26px;
+    border-bottom: 1px solid #3d3d3d;
+    padding-bottom: 26px;
+}
+
+
+.footer .f_top .f_logo strong {
+    width: 180px;
+    height: 60px;
+    display: block;
+    /*배경의 로고크기는 pc/mobile에서 사이즈가 다름 background-size를 width와 높이 값으로 수정가능
+    하지만 a태그에 준 넓이와 높이값에 맞게 background-size 자동으로 조절되었으면 함
+    contain - 이미지를 자르지 않고 영역에 딱 맞게 조절 / background-size: 100% auto_가로, 세로*/
+    background: url(../images/logo_b.svg) no-repeat center center / contain; 
+    /* a태그에 써준 글자를 안보이게 하는 방법 */
+    font-size: 0;
+    line-height: 0;
+}
+
+
+.footer .f_top .f_logo span {
+    display: block;
+}
+
+.footer .f_top .f_nav ul {
+    display: flex;
+    font-size: 22px;
+    color: #3d3d3d;
+}
+
+.footer .f_top .f_nav ul li {
+    margin: 0 33px 0 0; /*모바일에서는 꼭 오른쪽에 여백이 들어가야 함*/
+    position: relative;
+}
+
+.footer .f_top .f_nav ul li:last-child {
+    margin-right: 0; /*pc버전에서는 마지막li의 오른쪽 여백 삭제*/
+}
+
+.footer .f_top .f_nav ul li::after {
+    position: absolute;
+    right: -16px;
+    top: 16px;
+    width: 2px;
+    height: 2px;
+    border-radius: 100%;
+    background-color: #3d3d3d;
+    content: "";/*before,aftter를 보이게 하는 값*/
+}
+
+.footer .f_top .f_nav ul li:last-child:after {
+    display: none;
+}
+
+.footer .f_top .f_nav .privacy {
+    font-weight: 700;
+}
+
+.footer .f_btm {
+    margin-top: 33px;
+    font-size: 17px;
+}
+
+.footer .f_btm .f_info span {
+    margin-right: 54px;
+}
+
+.footer .f_btm .f_info strong {
+    font-weight: 700;
+}
+
+.footer .f_btm .copyright {
+    margin-top: 48px;
+    color: #5d5d5d;
+    font-weight: 700;
+}
+
+@media screen and (max-width:640px){
+    .footer {
+        background-color: rgba(255, 252, 0, 0.1);
+        padding-bottom: 165px;
+    }
+    
+    .footer .f_top {
+        display: block;
+        align-items: flex-start;
+        margin-bottom: 26px;
+        border-top: 1px solid #3d3d3d;
+        border-bottom: none;
+        padding-bottom: 26px;
+    }
+    
+
+    .footer .f_top .f_logo strong {
+        margin-top: 24px;
+        width: 105px;
+        height: 35px;
+    }
+    
+    
+    .footer .f_top .f_nav ul {
+        flex-wrap: wrap;
+        font-size: 13px;
+        margin-top: 32px;
+    }
+    
+    .footer .f_top .f_nav ul li {
+        margin: 0 25px 0 0; /*모바일에서는 꼭 오른쪽에 여백이 들어가야 함*/
+    }
+    
+    .footer .f_top .f_nav ul li::after {
+        top: 9px;
+        right: -14px;
+   }
+    
+    .footer .f_top .f_nav ul li:last-child:after {
+        display: none;
+    }
+  
+    .footer .f_btm {
+        margin-top: 17px;
+        font-size: 13px;
+    }
+    
+    .footer .f_btm .f_info span {
+        margin-right: 29px;
+    }
+    
+    
+    .footer .f_btm .copyright {
+        margin-top: 21px;
+    }
+}
