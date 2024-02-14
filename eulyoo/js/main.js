@@ -4,6 +4,8 @@ $(document).ready(function(){
 
     const swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
+    effect: "fade",
+
 	autoplay: {  /* 팝업 자동 실행 */
 		delay: 2500,
 		disableOnInteraction: true,
