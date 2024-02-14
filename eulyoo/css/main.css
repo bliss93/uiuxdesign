@@ -136,3 +136,39 @@ html, body {
 .visual .swiper .pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
     background-color: #fff;
 }
+
+@media screen and (max-width:640px){
+    .visual .swiper { 
+        height:373px;
+    }
+ 
+    .visual .swiper .prev,
+    .visual .swiper .next {
+        display: none;
+    }
+    
+    .visual .swiper .stop,
+    .visual .swiper .play {
+        left: calc(50% + 30px);
+        bottom: 13px;
+        width: 10px;
+        height: 10px;
+        background-size: 12px auto;
+    }
+    
+    .visual .swiper .pagination {
+        left: calc(50% - 30px);
+        bottom: 10px;
+    }
+
+    /* 일반 버튼 */
+    .visual .swiper .pagination .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+    }
+    /* 선택된버튼 */
+    .visual .swiper .pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+        background-color: #fff;
+    }
+    
+} /*media*/
