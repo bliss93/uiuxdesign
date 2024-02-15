@@ -49,6 +49,7 @@ html, body {
        짤리는 현상이 생김.  
        가로스크롤바가 생성되었을때도 홈페이지를 정상적으로 
        서비스 하기 위해서 최소 넓이를 입력 */
+       overflow: hidden;
 }
 
 /* 640px 이하일 때 스타일 */
@@ -434,4 +435,49 @@ html, body {
 
     .book {
         margin: 120px 0 0 0;
+    }
+
+    .book .inner{
+        /* display: flex; flex는 공간에 구겨서라도 넣으려고 하기 때문에 tit에 아무리 넓이를 줘도 공간이 확보가 안됨*/
+    }
+
+    .book .tit {
+        float: left;
+    }
+
+    
+    .book .tit h2 {
+        color: #1d1d1d;
+        font-size: 50px;
+        font-weight: 700;
+        margin: 0 0 7px 0;
+    }
+
+    .book .list {
+        margin: 0 0 0 327px;
+    }
+
+    .book .list ul {
+        display: flex;
+        justify-content: space-between;
+        width: 1280px;
+    }
+
+    .book .list ul li {
+        width: 299px;
+    }
+
+    .book .list ul li a {
+        display: block;
+    }
+
+    .book .list ul li a span {
+        display: block; /*width:100%*/
+        height: 422px;
+    }
+
+    .book .list ul li a span img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
