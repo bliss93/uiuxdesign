@@ -669,6 +669,10 @@ html, body {
     width: 408px;
 }
 
+.interview .list ul li:nth-child(2) {
+    margin: 57px 0 0 0;
+}
+
 .interview .list ul li a {
     display: block;
 }
