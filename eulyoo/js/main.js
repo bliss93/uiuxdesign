@@ -61,4 +61,9 @@ $(document).ready(function(){
 		scroll_chk() //함수의 실행_스크롤할 때마다
 	})
 
+	$('.interview .list ul li').on('mouseenter', function(){
+		$('.interview .list ul li').removeClass('active')
+		$(this).addClass('active')
+	})
+
 })
