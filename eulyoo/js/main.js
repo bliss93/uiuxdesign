@@ -1,5 +1,23 @@
 $(document).ready(function(){
 
+	let device_status
+	let window_w
+	function device_chk(){
+		window_w = $(window).width()
+		if(window_w > 640){
+			device_status = 'pc'
+		}else{
+			device_status = 'mobile'
+		}
+
+		console.log(device_status)
+	}
+
+	device_chk()
+	$(window).resize(function(){
+		device_chk()
+	})
+
     //visual 팝업을 작동시키는 라이브러리
 
     const swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
@@ -22,7 +40,7 @@ $(document).ready(function(){
 	navigation: {  /* 이전, 다음 버튼 */
 		nextEl: '.visual .next',  /* 다음 버튼의 클래스명 */
 		prevEl: '.visual .prev',  
-	},
+	}
 
 });
 
@@ -65,5 +83,35 @@ $(document).ready(function(){
 		$('.interview .list ul li').removeClass('active')
 		$(this).addClass('active')
 	})
+
+	$('.header .gnb').on('mouseenter focusin', function(){
+		$('.header').addClass('menu_over')
+	})
+
+	$('.header').on('mouseleave', function(){
+		$('.header').removeClass('menu_over')
+	})
+
+	$('.header .tnb .login').on('focusin', function(){
+		$('.header').removeClass('menu_over')
+	})
+
+	$('.header .tnb .login').on('focusin', function(){
+		$('.header').removeClass('menu_over')
+	})
+
+	$('.header .gnb .gnb_open').on('click', function(){
+        $('.header').addClass('menu_open')
+    })
+    $('.header .gnb .gnb_close').on('click', function(){
+        $('.header').removeClass('menu_open')
+    })
+
+    $('.header .gnb ul.depth1 > li > a').on('click', function(e){
+		if(device_status == 'mobile'){
+			e.preventDefault(); //href 링크를 없앰
+			$(this).parent().toggleClass('sub_open')
+		}
+    })
 
 })
