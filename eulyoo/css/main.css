@@ -1083,6 +1083,13 @@ css에서도 nth-child로 선택한다. */
     font-weight: 700;
 }
 
+/*인접선택자 
+.footer .footer_info span 다음에 오는 strong태그
+<strong><.strong>
+<span></span>
+<strong><.strong>---해당
+<span></span>
+*/
 .footer .footer_info span + strong {
     margin-top: 57px;
 }
@@ -1096,3 +1103,48 @@ css에서도 nth-child로 선택한다. */
     left: 0;
     bottom: 0;
 }
+
+.footer .copyright img {
+    width: 279px;
+}
+
+.footer .copyright span {
+    display: block;
+    margin: 5px 0 0 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer .footer_info span a {
+    margin: 0 10px 0 0;
+}
+@media screen and (max-width:640px){
+    .footer {
+        padding: 54px 0 60px 0;
+    }
+    .footer .inner {
+        display: block; /* txt, info 좌우로 배치 해제 */
+    }
+    .footer .footer_txt {
+        font-size: 20px;
+        margin-bottom: 49px;
+    }
+    .footer .footer_info strong {
+        font-size: 15px;
+    }
+    .footer .footer_info span + strong {
+        margin-top: 38px;
+    }
+    .footer .footer_info span {
+        margin: 5px 0 0 0;
+    }
+    .footer .copyright {
+        position: relative; /* absolute 해제 */
+        left: auto;
+        bottom: auto;
+        margin: 64px 0 0 0;
+    }
+    .footer .copyright img {
+        width: 184px;
+        margin-top: 40px;
+    }
+}/* media */
