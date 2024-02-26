@@ -374,6 +374,7 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
         height: calc(100vh - 100px); 
         overflow-y: auto; /*메뉴가 길어지면 스크롤*/
         display: block; /*flex 해제*/
+        padding: 10px 0;
     }
 
     .header .gnb ul.depth1 > li > a {
@@ -382,12 +383,17 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
         padding: 0 20px;
     }
 
+    .header .gnb ul.depth1 > li.sub_open > a {
+        font-weight: 700;
+    }
+
     .header .gnb ul.depth1 > li:has(.depth2) > a::after {
         display: none;
     }
     .header .gnb ul.depth1 > li:has(.depth2) > a span {
         position: relative;
     }
+
     .header .gnb ul.depth1 > li:has(.depth2) > a span::after {
         position: absolute;
         right: -18px;
@@ -399,11 +405,52 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
         background-size: contain;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10.404 5.864'%3E%3Cpath id='chevron_right_FILL0_wght300_GRAD0_opsz24' d='M350.409-688.564l-3.966-3.967a.706.706,0,0,1-.207-.508.688.688,0,0,1,.207-.518.7.7,0,0,1,.513-.212.7.7,0,0,1,.513.212l4.377,4.377a.808.808,0,0,1,.193.288.935.935,0,0,1,.056.328.937.937,0,0,1-.056.328.807.807,0,0,1-.193.288l-4.377,4.377a.706.706,0,0,1-.508.207.688.688,0,0,1-.518-.207.7.7,0,0,1-.212-.513.7.7,0,0,1,.212-.513Z' transform='translate(-683.365 -346.231) rotate(90)' fill='%231d1d1d'/%3E%3C/svg%3E%0A");
         content: "";
+        transition: 0.5s;
+    }
+
+    .header .gnb ul.depth1 > li.sub_open:has(.depth2) > a span::after{
+        transform: rotate(180deg);
+    }
+
+    .header .gnb ul.depth2 {
+        display: none;
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: translate(0, 0);
+        padding: 33px 20px 10px 20px;
+        background-color: #f4f4f4;
+    }
+
+    .header .gnb ul.depth2::before {
+        display: none;
+    }
+
+    .header .gnb .sub_open ul.depth2 {
+        display: none;
     }
 
     .header .tnb .paper {
         display: none;
     }
+
+    .header.menu_open .tnb .paper {
+        display: block;
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        z-index: 111;
+        border: 0;
+        padding: 0 20px 0 0;
+    }
+
+    .header.menu_open .tnb .paper::after {
+        width: 13px;
+        height: 13px;
+        top: 0;
+        left: 42px;
+    }
+
     .header .tnb {
         margin: 42px 60px 0 0;
     }
@@ -426,11 +473,22 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
         width: 85px;
         height: 27px;
     }
-    .header .gnb .gnb_open {
-        height: 60px;
+    .header .gnb .gnb_open,
+    .header .gnb .gnb_close {
+        height: 50px;
     }
+
+    .header .gnb ul.depth1 {
+        height: calc(100vh - 50px);
+        margin: 50px 0 0 0;
+    }
+
     .header .tnb {
         margin: 22px 60px 0 0;
+    }
+
+    .header.menu_open .tnb .paper {
+        top: 18px;
     }
 }
 

@@ -110,4 +110,34 @@ $(document).ready(function(){
         $(this).hide()
         $('.footer .family_site .site_open').show()
     })
-})
+
+    /*메뉴열기를 클릭하면 header에 menu_open추가
+      메뉴닫기를 클릭하면 header에 menu_close추가 */
+
+      $('.header .gnb .gnb_open').on('click', function(){
+        $('header').addClass('menu_open')
+        $("html, body").css({overflow : "hidden", height : $(window).height()}).bind("scroll touchmove mousewheel", function(e){e.preventDefault();e.stopPropagation();return false;},function(){passive:false});
+      })
+      $('.header .gnb .gnb_close').on('click', function(){
+        $('header').removeClass('menu_open')
+        $("html, body").css({overflow : "visible", height : "auto"}).unbind('scroll touchmove mousewheel');
+      })
+
+
+      $('.header .gnb ul.depth1 > li:has(.depth2) > a').on("click", function(e){
+        e.preventDefault();
+        if($(this).parent().hasClass('sub_open') == true){//sub_open이 있다면
+            console.log('sub_open있음')
+            $(this).parent().removeClass('sub_open')
+            $(this).parent().find('ul.depth2').slideUp()
+        }else{
+            console.log('sub_open없음')
+            $(this).parent().addClass('sub_open')
+            $(this).parent().find('ul.depth2').slideDown()
+        }
+        
+      })
+
+})//$(document).ready
+
+
