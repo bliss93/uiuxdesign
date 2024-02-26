@@ -99,4 +99,15 @@ $(document).ready(function(){
         $(this).hide()
         $('.adopt .ctrl_btn .stop').show()
     })
+
+    $(' .footer .family_site .site_open').on('click', function(){
+        $('.footer .family_site .site_list').slideDown()
+        $(this).hide()
+        $('.footer .family_site .site_close').show()
+    })
+    $(' .footer .family_site .site_close').on('click', function(){
+        $('.footer .family_site .site_list').slideUp()
+        $(this).hide()
+        $('.footer .family_site .site_open').show()
+    })
 })
