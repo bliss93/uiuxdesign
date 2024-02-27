@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$$(document).ready(function(){
     /* html문서가 로딩 된 다음에 실행해 */
 
     /* 
