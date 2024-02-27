@@ -189,26 +189,29 @@ button {
     배경이 내부 콘텐츠 만큼 늘어나는게 아니라.... 
     엄청 큼. 이 배경이미지를 모두 보이도록 하려고.. */
     height: 900px;
-    width:100%; 
-    margin:0 auto; 
-    text-align:center;
+    background: url(../images/visual_bg.png) center center no-repeat;
+    border-radius: 0 0 200px 0; /* 시계방향 - 왼쪽상단 */
+    /* 이미지를 모서리둥글게 디자인했다면 대부분
+    이미지를 네모 반듯하게 저장하고 
+    css에서 둥글게 처리하는 경우가 많음 */
     position: relative; /* photo absolute 정렬의 기준 */
 }
 
-.visual > img { 
-    max-width:100%;
-    border-radius: 0 0 200px 0; /* 시계방향 - 왼쪽상단 */
+.visual .inner {
+    display: flex;
+    flex-direction: column; /* 세로배치 */
+    justify-content: center; /* 세로에서 가운데 */
+    height: 100vh; /* 브라우저 높이와 동일한 높이 */
+    min-height: 600px;
 }
 
-.visual h2 img{
-    position: absolute;
-    left: calc(50% - 200px); 
-    top: 35%;
+.visual .inner h2 > img {
+    text-align: center; /* 이미지가 가운데 */
+    margin: -200px 0 0 400px;
 }
-
 .visual .photo {
-    width: 8rem;
-    height: 8rem;
+    width: 110px;
+    height: 110px;
     background-color: #1A78DA;
     color: #fff;
     display: block;
@@ -219,8 +222,8 @@ button {
     text-align: center;
     /* 내부에 있는 모든 요소 가운데 */
     position: absolute; /* visual 기준 */
-    bottom: calc(50% - 518px);
-    left: calc(50% + 650px);
+    bottom: -55px;
+    left: calc(50% + 584px);
     /* 사이즈가 크던 작던 가운데는 모두 동일한 위치 이기때문에
         가운데를 기준(50%)으로 오른쪽으로 584px만큼 이동 
        calc() 넓이나, 여백나 위치값 등을 계산할때 사용
@@ -238,71 +241,19 @@ button {
     line-height: 1.1;
 }
 
-@media screen and (max-width:768px){
-        
-    .visual {
-        /* 넓이와 높이는 제한이기때문에 신중하게...
-        배경이 내부 콘텐츠 만큼 늘어나는게 아니라.... 
-        엄청 큼. 이 배경이미지를 모두 보이도록 하려고.. */
+@media screen and (max-width:640px){
+    .visual .inner {
         height: 400px;
-        max-width:100%;
+        min-height: auto; /* 높이값을 줬다가 취소하는 것은 auto */
     }
-
-    .visual > img { 
-        border-radius: 0 0 80px 0; /* 시계방향 - 왼쪽상단 */
+    .visual h2 {
+        font-size: 30px;
+        margin-top: 0;
     }
-
-    .visual h2 img{
-        position: absolute;
-        left: calc(50% - 200px); 
-        top: 35%;
-    }
-
-    .visual .photo {
-        width: 8rem;
-        height: 8rem;
-        background-color: #1A78DA;
-        color: #fff;
-        display: block;
-        border-radius: 100%;
-        /* 동그라미는 넓이와 높이를 주고 
-        border-radius:100%로 줌. */
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        /* 내부에 있는 모든 요소 가운데 */
-        position: absolute; /* visual 기준 */
-        bottom: 65px;
-        left: calc(50% + 580px);
-        /* 사이즈가 크던 작던 가운데는 모두 동일한 위치 이기때문에
-            가운데를 기준(50%)으로 오른쪽으로 584px만큼 이동 
-        calc() 넓이나, 여백나 위치값 등을 계산할때 사용
-        %와 px처럼 단위가 다른 수는 계산할때 사용  */
-    }
-    .visual .photo i {
-        padding: 23px 0 5px 0;
-        display: block;
-    }
-    .visual .photo span {
-        display: block;
-        /* i태그와 span태그 모두 inline태그라
-        줄바꿈이 안됨. 이때 span태그에 block을
-        주면 넓이가 100%가 되서 줄이 바뀜 */
-        line-height: 1.1;
+    .visual p {
+        display: none; 
     }
 }
-
-@media screen and (max-width:360px){
-    .visual {
-        height: 400px;
-        max-width:100%;
-    }
-
-    .visual > img { 
-        border-radius: 0 0 80px 0; /* 시계방향 - 왼쪽상단 */
-    }
-}
-
-
 
 .culture {
     margin-top: 140px;
