@@ -4,3 +4,182 @@
     작성일 : 2024.02.28
     설  명 : 모든 콘텐츠 페이지별 디자인 스타일 저장
 */
+@import url(default.css);
+@import url(common.css);
+@import url(layout.css);
+
+/* ceo인사말 -  회사소개 */
+
+.cts_greeting {
+    margin: 130px 0 275px 0;
+}
+
+.cts_greeting > .wrapper {
+    display: flex;
+}
+
+.cts_greeting .inner p {
+    display: block;
+}
+
+.cts_greeting .tit {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 0 0 60px 0;
+}
+
+.cts_greeting p.tit {
+    margin: 40px 0 0 40px;
+}
+
+.cts_greeting .sign {
+    display: flex;
+    margin: 40px 0 0 40px;
+}
+
+.cts_greeting .sign img {
+    width: auto;
+    height: 50px;
+    margin: 0 0 0 20px;
+}
+
+.cts_greeting .txt p {
+    margin: 30px 0 0 100px;
+    font-size: 17px;
+    background-color: #F4F4F4;
+    padding: 40px;
+}
+
+
+@media screen and (max-width:1320px){
+
+    .cts_greeting {
+        margin: 100px 0 250px 0;
+    }
+    
+    .cts_greeting .tit {
+        font-size: 18px;
+        margin: 0 0 40px 0;
+    }
+    
+    .cts_greeting p.tit {
+        margin: 30px 0 0 30px;
+    }
+
+    .cts_greeting .ceo > img {
+        width: auto;
+        height: 400px;
+    }
+    
+    .cts_greeting .sign {
+        margin: 30px 0 0 30px;
+    }
+    
+    .cts_greeting .sign img {
+        width: auto;
+        height: 30px;
+        margin: 0 0 0 20px;
+    }
+    
+    .cts_greeting .txt p {
+        margin: 30px 0 0 50px;
+        font-size: 15px;
+        padding: 20px;
+    }
+    
+}
+@media screen and (max-width:1024px){
+        
+    .cts_greeting {
+        margin: 50px 0 250px 0;
+        position: relative;
+    }
+    
+    .cts_greeting .tit {
+        font-size: 18px;
+        margin: 0 0 40px 0;
+    }
+    
+    .cts_greeting p.tit {
+        margin: 30px 0 0 30px;
+    }
+
+    .cts_greeting .ceo {
+        display: flex;
+        position: absolute;
+        left: 50px;
+        right: auto;
+        top: auto;
+        bottom: -200px;
+    }
+
+    .cts_greeting .ceo > img {
+        width: auto;
+        height: 200px;
+        margin: 50px 0 0 50px;
+    }
+
+    .cts_greeting .ceo > p {
+        margin: 75px 0 0 50px;
+        font-size: 17px;
+    }
+    
+    .cts_greeting .sign {
+        margin: 75px 0 0 30px;
+        font-size: 15px;
+    }
+    
+    .cts_greeting .sign img {
+        width: auto;
+        height: 30px;
+        margin: 0 20px 0 20px;
+    }
+    
+    .cts_greeting .txt p {
+        margin: 30px 0 0 50px;
+        font-size: 15px;
+        padding: 20px;
+    }
+    
+    
+}
+@media screen and (max-width:768px){
+        
+    .cts_greeting {
+        margin: 130px 0 275px 0;
+    }
+
+    .cts_greeting > .wrapper {
+        display: flex;
+    }
+
+    .cts_greeting .inner p {
+        display: block;
+    }
+
+    .cts_greeting .tit {
+        font-size: 20px;
+        font-weight: 700;
+        color: #1d1d1d;
+        margin: 0 0 60px 0;
+    }
+
+    .cts_greeting p.tit {
+        margin: 40px 0 0 40px;
+    }
+
+    .cts_greeting .sign {
+        display: flex;
+        margin: 40px 0 0 40px;
+    }
+
+    .cts_greeting .txt p {
+        width: 273px;
+        margin: 30px 0 0 100px;
+        font-size: 17px;
+        background-color: #F4F4F4;
+        padding: 40px;
+    }
+
+}
