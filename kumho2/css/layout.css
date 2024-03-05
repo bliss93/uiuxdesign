@@ -53,6 +53,10 @@
     line-height: 35px;
     display: block;
 }
+.header .gnb ul.depth2 > li > a [target="_blank"] {
+    font-weight: 700;
+    text-decoration: underline;
+}
 .header .tnb {
     display: flex;
     align-items: flex-start;
