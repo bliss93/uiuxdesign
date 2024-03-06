@@ -90,65 +90,6 @@
     
 }
 @media screen and (max-width:1024px){
-        
-    .cts_greeting {
-        margin: 50px 0 250px 0;
-        position: relative;
-    }
-    
-    .cts_greeting .tit {
-        font-size: 18px;
-        margin: 0 0 40px 0;
-    }
-    
-    .cts_greeting p.tit {
-        margin: 30px 0 0 30px;
-    }
-
-    .cts_greeting .ceo {
-        display: flex;
-        position: absolute;
-        left: 50px;
-        right: auto;
-        top: auto;
-        bottom: -200px;
-    }
-
-    .cts_greeting .ceo > img {
-        width: auto;
-        height: 200px;
-        margin: 50px 0 0 50px;
-    }
-
-    .cts_greeting .ceo > p {
-        margin: 75px 0 0 50px;
-        font-size: 17px;
-    }
-    
-    .cts_greeting .sign {
-        margin: 75px 0 0 30px;
-        font-size: 15px;
-    }
-    
-    .cts_greeting .sign img {
-        width: auto;
-        height: 30px;
-        margin: 0 20px 0 20px;
-    }
-    
-    .cts_greeting .txt p {
-        margin: 30px 0 0 50px;
-        font-size: 15px;
-        padding: 20px;
-    }
-    
-    
-}
-@media screen and (max-width:768px){
-        
-    .cts_greeting {
-        margin: 130px 0 275px 0;
-    }
 
     .cts_greeting > .wrapper {
         display: flex;
@@ -159,27 +100,279 @@
     }
 
     .cts_greeting .tit {
-        font-size: 20px;
+        font-size: 15px;
         font-weight: 700;
         color: #1d1d1d;
         margin: 0 0 60px 0;
     }
 
-    .cts_greeting p.tit {
-        margin: 40px 0 0 40px;
+    .cts_greeting .ceo {
+        padding: 20px;
+        display: block;
     }
 
     .cts_greeting .sign {
         display: flex;
-        margin: 40px 0 0 40px;
+        margin: 40px 0 0 20px;
     }
 
     .cts_greeting .txt p {
-        width: 273px;
-        margin: 30px 0 0 100px;
-        font-size: 17px;
+        margin:0;
+        font-size: 13px;
         background-color: #F4F4F4;
-        padding: 40px;
+        padding: 0;
+    }
+
+    .cts_greeting .ceo > img {
+        width: auto;
+        height: 300px;
+    }
+
+    
+}
+@media screen and (max-width:768px){
+        
+    .cts_greeting {
+        position: relative;
+    }
+
+    .cts_greeting > .wrapper {
+        display: flex;
+    }
+
+    .cts_greeting .inner p {
+        display: block;
+    }
+
+    .cts_greeting .ceo > img {
+    display: block;
+    position: absolute;
+    left: 50px;
+    top: 700px;
+    width: 100%;
+    height: 50px;
+    }
+
+    .cts_greeting .tit {
+    position: absolute;
+    left:0px;
+    top: 700px;
+    width: 100%;
+    height: auto;
+    }
+
+    .cts_greeting .ceo {
+    position: absolute;
+    left: 160px;
+    top: 500px;
+    width: 100%;
+    height: auto;
+    }
+
+    .cts_greeting .sign {
+        display: flex;
+        margin: 40px 0 0 20px;
+    }
+
+    .cts_greeting .txt p {
+        margin:0;
+        font-size: 13px;
+        background-color: #F4F4F4;
+        padding: 0;
+    }
+
+}
+
+/*cts_history*/
+
+.cts_history .summary .wrapper {
+    width: 100%;
+}
+
+.cts_history .summary img {
+    margin-top: 92px;
+    max-width: 100%;
+    height: auto;
+}
+
+.cts_history .summary .summary_txt {
+    position: relative;
+    border-bottom: 1px solid #1d1d1d;
+    width: 100%;
+    height: 50px;
+    display: block;
+    background-color: #fff;
+    z-index: -10;
+}
+
+.cts_history .summary .summary_txt .inner {
+    width: 700px;
+}
+
+.cts_history .summary .summary_txt ul {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: calc( 50% - 350px);
+    top: 50px;
+    width: 700px;
+    line-height: 50px;
+    
+}
+
+.cts_history .summary .summary_txt ul li {
+    position: relative;
+}
+
+.cts_history .summary .summary_txt ul li::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #F51919;
+    border-radius: 100%;
+    position: absolute;
+    left: 15px;
+    top: 0;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    transition: all 0.3s;
+}
+
+.cts_history .year {
+    margin: 130px 0 130px 0;
+}
+
+.cts_history .year .year1990 {
+    margin-top: 100px;
+}
+
+.cts_history .year .year_cnt {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cts_history .year .year_cnt .year_txt {
+    display: flex;
+    align-items: block;
+}
+
+.cts_history .year .year2000 .year_cnt .year1_group .year_txt {
+    margin-bottom: 100px;
+}
+
+.cts_history .year .year2000 .year_cnt > .year2_group > .year_txt {
+    margin-bottom: 182px;
+}
+
+.cts_history .year .year1990 .year_cnt > .year1_group > .year_txt {
+    margin-bottom: 107px;
+}
+
+.cts_history .year .year1990 .year_cnt > .year2_group > .year_txt {
+    margin-bottom: 67px;
+}
+
+.cts_history .year .year_cnt .year_txt .year_tit {
+    margin: 0 30px 0 0;
+    position: relative;
+}
+
+.cts_history .year .year_cnt .year_txt > .year_tit h2 {
+    font-size: 40px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.cts_history .year .year_cnt .year_txt > .year_tit h3 {
+    font-size: 35px;
+    position: absolute;
+    left: 12px;
+    top: 22px;
+    color: #F51919;
+    font-weight: 700;
+}
+
+.cts_history .year .year_cnt .year_txt dl{
+    margin: 100px 0 0 70px;
+    width: 100%;
+
+}
+
+.cts_history .year .year_cnt .year_txt dl dt {
+    float: left;
+    margin: 0 10px 0 0;    
+    font-weight: 700;
+    position: relative;
+}
+
+.cts_history .year_cnt dl dd {
+    margin: 0 0 20px 30px;
+    /* 왼쪽에 dt가 들어갈 자리를 반드시  margin으로 여백 */  
+}
+
+
+.cts_history .photo ,img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+@media screen and (max-width:768px){
+    
+    .cts_history .summary .summary_txt ul {
+        left: calc( 50% - 150px);
+        width: 300px;
+        line-height: 30px;
+        
+    }
+    
+    .cts_history .year {
+        margin: 70px 0 70px 0;
+    }
+    
+    .cts_history .year .year1990 {
+        margin-top: 50px;
+    }
+    
+    .cts_history .year .year2000 .year_cnt .year1_group .year_txt {
+        margin-bottom: 50px;
+    }
+    
+    .cts_history .year .year2000 .year_cnt > .year2_group > .year_txt {
+        margin-bottom: 50px;
+    }
+    
+    .cts_history .year .year1990 .year_cnt > .year1_group > .year_txt {
+        margin-bottom: 50px;
+    }
+    
+    .cts_history .year .year1990 .year_cnt > .year2_group > .year_txt {
+        margin-bottom: 50px;
+    }
+    
+    
+    .cts_history .year .year_cnt .year_txt > .year_tit h2 {
+        font-size: 25px;
+    }
+    .cts_history .year .year_cnt .year_txt > .year_tit h3 {
+        font-size: 20px;
+        left: 12px;
+        top: 14px;
+    }
+    
+    .cts_history .year .year_cnt .year_txt dl{
+        margin: 70px 0 0 27px;
+    
+    }
+    
+    .cts_history .year_cnt dl dd {
+        margin: 0 0 20px 15px;
+        /* 왼쪽에 dt가 들어갈 자리를 반드시  margin으로 여백 */  
+    }
+
+    .cts_history .year2000 .year_cnt .year1_group dl dd:last-child {
+        margin: 0 0 20px 25px;
     }
 
 }
