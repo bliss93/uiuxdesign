@@ -330,3 +330,36 @@
 }
 @media screen and (max-width:768px){
 }
+
+.cts_ir03 {
+    margin: 95px 0 150px 0;
+}
+
+.cts_ir03 h2 {
+    color: #1d1d1d;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.cts_ir03 p {
+    margin: 10px 0 40px 0;
+}
+
+.cts_ir03 .table_wrap table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cts_ir03 .table_wrap table caption {
+    display: none;
+}
+
+.cts_ir03 .table_wrap table th,
+.cts_ir03 .table_wrap table td {
+    border: 1px solid #ccc;
+}
+
+.cts_ir03 .table_wrap table tbody th,
+.cts_ir03 .table_wrap table tbody td {
+    padding: 10px 20px;
+}
