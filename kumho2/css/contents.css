@@ -627,3 +627,21 @@
     
 }
 
+.cts_biz05 .login_group {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+.cts_biz05 .login_group input[type="submit"] {
+    width: 100%;
+    line-height: 80px;
+    background-color: #F51919;
+    border-radius: 20px;
+    border: 0;
+    font-size: 25px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer; /*오버시 마우스 포인터 손가락*/
+}
