@@ -27,6 +27,12 @@ h1, h2, h3, h4, h5, h6, strong {
     font-size: inherit;
     font-weight: inherit;
 }
+/* 기본서체가 적용되지 않는 요소 */
+input, button, select {
+    color: inherit; /* 브라우저가 주는 값 삭제 */
+    font-family: inherit; /* button은 서체도 바뀜 - 상속 */
+    font-size: inherit; /* button은 글자크기도 바뀜 - 상속 */
+}
 /* button태그는 기본스타일 많음 */
 button {
     background-color: transparent; /*배경투명*/
@@ -35,4 +41,21 @@ button {
     font-family: inherit; /* button은 서체도 바뀜 - 상속 */
     font-size: inherit; /* button은 글자크기도 바뀜 - 상속 */
     cursor: pointer; /* 마우스를 오버하면 손바닥 모양 */
+}
+
+table {
+    border-collapse: collapse;
+    border: 0;
+}
+
+table caption {
+    display: none;
+}
+
+fieldset {
+    border: 0;
+}
+
+legend {
+    display: none;
 }

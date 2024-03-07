@@ -8,7 +8,7 @@
     <script src="../js/jquery-3.7.1.min.js"></script>
     <script src="../js/common.js"></script>
     <script src="../js/contents.js"></script>
-    <title>건축사업 - 사업분야 - 금호건설</title>
+    <title>사업실적검색 - 사업분야 - 금호건설</title>
 </head>
 <body>
     <div class="skipnav">
@@ -60,11 +60,11 @@
                         <li class="on" data-menu="on">
                             <a href="biz01.html"><span>사업분야</span></a>
                             <ul class="depth2">
-                                <li class="on" data-menu="on"><a href="biz01.html"><span>건축사업</span></a></li>
+                                <li><a href="biz01.html"><span>건축사업</span></a></li>
                                 <li><a href="biz02.html"><span>토목사업</span></a></li>
                                 <li><a href="biz03.html"><span>주택사업</span></a></li>
                                 <li><a href="biz04.html"><span>플랜트/환경사업</span></a></li>
-                                <li><a href="biz05.html"><span>사업실적검색</span></a></li>
+                                <li class="on" data-menu="on"><a href="biz05.html"><span>사업실적검색</span></a></li>
                             </ul>
                         </li>
                         <li>
@@ -113,15 +113,31 @@
             <nav class="lnb"> <!--local navigation bar-->
                 <ul>
                     <!--현재 선택된 메뉴에 on클래스 추가-->
-                    <li class="on" data-menu="on"><a href="biz01.html"><span>건축사업</span></a></li>
+                    <li><a href="biz01.html"><span>건축사업</span></a></li>
                     <li><a href="biz02.html"><span>토목사업</span></a></li>
                     <li><a href="biz03.html"><span>주택사업</span></a></li>
                     <li><a href="biz04.html"><span>플랜트/환경사업</span></a></li>
-                    <li><a href="biz05.html"><span>사업실적검색</span></a></li>
+                    <li class="on" data-menu="on"><a href="biz05.html"><span>사업실적검색</span></a></li>
                 </ul>
             </nav>
             <div class="contents" id="contents">
                 <!-- 콘텐츠 내용 -->
+                <div class="cts_biz05">
+                    <div class="wrapper">
+                        <div class="search_group">
+                            <form> <!--모든 입력양식은 form태그 안에 들어와야함. 단 form태그를 삭제할 수도 있으니, div처럼 쓰지말고 이태그가 없다고 생각-->
+                                <fieldset> <!--회원정보와 부가정보 입력을 받으면 정보의 묶음-->
+                                    <legend>검색</legend><!--이 form태그의 역할-->
+                                    <div class="search">
+                                        <label for="keyword">검색어</label>
+                                        <input type="text" id="keyword" placeholder="검색어를 입력해 주세요.">
+                                        <input type="submit" value="확인">
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <footer class="footer">

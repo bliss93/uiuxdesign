@@ -535,3 +535,95 @@
     padding: 8px 9px;
 }
 }
+
+.cts_biz05 {
+    margin: 180px 0;
+}
+
+.cts_biz05 .search_group .search{
+    max-width: 844px;
+    width: 100%;
+    height: 89px;
+    border: 2px solid #F51919;
+    border-radius: 45px;
+    margin: 0 auto; /*넓이가 있는 block요소를 가운데 정렬 */
+    position: relative; /* before 정렬의 기준 */
+    padding: 0 0 0 106px;
+    display: flex;
+    align-items: center; /*위아래 가운데*/
+}
+
+.cts_biz05 .search_group .search::before {
+    position: absolute;
+    left: 35px;
+    top: 6px;
+    font-size: 50px;
+    font-weight: 700;
+    color: #F51919;
+    content: "K";
+}
+
+.cts_biz05 .search_group .search label{
+    display: none;
+}
+
+.cts_biz05 .search_group .search input[type="text"] {
+    font-size: 25px;
+    font-weight: 700;
+    color: #1d1d1d;
+    width: calc(100% - 106px);
+    border: 0;
+    outline: 0;
+}
+
+.cts_biz05 .search_group .search input[type="text"]::placeholder {
+    font-weight: 400;
+    color: #AAAAAA;
+}
+
+.cts_biz05 .search_group .search input[type="submit"] {
+    border: 0;
+    background-color: transparent;
+    font-size: 0;
+    line-height: 0;
+    width: 40px;
+    height: 40px;
+    background-position: center center;
+    background-repeat: repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72.031' height='72.031' viewBox='0 0 72.031 72.031'%3E%3Cpath id='search-line' d='M58.845,53.83,74.031,69.017l-5.015,5.015L53.83,58.845a31.922,31.922,0,1,1,5.015-5.015ZM51.731,51.2a24.815,24.815,0,1,0-.532.532Z' transform='translate(-2 -2)' fill='%23f51919'/%3E%3C/svg%3E%0A");    
+    margin-left: 30px;
+}
+
+.cts_biz05 .search_group .search:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1)
+}
+
+@media screen and (max-width:1024px) {
+    .cts_biz05 .search_group .search{
+        height: 60px;
+        padding: 0 0 0 70px;
+    }
+
+    
+    .cts_biz05 .search_group .search::before {
+        top: 23px;
+        left: 25px;
+        top: 5px;
+        font-size: 30px;
+    }
+
+        
+    .cts_biz05 .search_group .search input[type="text"] {
+        font-size: 20px;
+        width: calc(100% - 85px);
+    }
+
+    .cts_biz05 .search_group .search input[type="submit"] {
+        width: 25px;
+        height: 25px;
+        margin-left: 25px;
+    }
+    
+}
+
