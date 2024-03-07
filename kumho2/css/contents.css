@@ -633,6 +633,12 @@
     margin: 50ㅔㅌ auto;
 }
 
+.cts_biz05 .login_group h2 {
+    font-size: 35px;
+    font-weight: 700;
+    
+}
+
 
 .cts_biz05 .login_group input[type="submit"] {
     width: 100%;
