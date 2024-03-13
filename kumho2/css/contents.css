@@ -1375,9 +1375,7 @@
     content: ""; /* before after 가상선택자는 content 필수 */
 }
 
-.cts_location .list01 > li.sub::after {
-    display: none;
-}
+.cts_location .list01 > li.sub::after,
 .cts_location .list01 > li.bus::after {
     display: none;
 }
