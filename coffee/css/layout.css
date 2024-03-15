@@ -196,14 +196,6 @@ header .gnb .depth2 > li > a {
         display: none;
     }
 
-    header.fixed .tnb2 {
-        position: absolute;
-        left: 20px;
-        top: 50%;
-        z-index: 10;
-        transform: translate(0, -50%);
-    }
-
     header.fixed .logo {
         left: 20px;
         top: 20px;
@@ -242,8 +234,8 @@ header .gnb .depth2 > li > a {
     header.fixed .head_sub {
         height: auto;
     }
-    header.fixed .tnb1,
-    header.fixed .tnb2 {
+    header .tnb1,
+    header .tnb2 {
         display: none;
     }
     header .tnb2 {

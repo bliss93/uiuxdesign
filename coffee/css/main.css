@@ -10,6 +10,16 @@
 .container {
     margin-top: 150px; /*header의 높이만큼*/
 }
+@media screen and (max-width:1024px){
+    .container {
+        margin-top: 100px; /* header의 높이만큼 */
+    }
+}
+@media screen and (max-width:768px){
+    .container {
+        margin-top: 50px; /* header의 높이만큼 */
+    }
+}
 
 .visual .swiper { 
     
@@ -61,10 +71,226 @@
 
 
 .product {
-    height: 1000px;
-}
-.brand {
-    height: 1000px;
-    background-color: #e80a4d ;
+    margin: 125px 0 160px 0 ;
 }
 
+.product h2 {
+    font-family: 'Bright', serif;
+    font-size: 50px;
+    text-align: center;
+    margin: 0 0 70px 0;
+}
+
+.product .list ul {
+    align-items: flex-end; /*li의 높이가 다를 때 아래 정렬*/
+}
+/* 
+.product .list ul li {
+    width: 23%;
+}
+.product .list ul li.swiper-slide-active {
+    width: 31%
+}  */
+
+.product .list ul li a {
+    display: block;
+    position: relative; /*before 정렬의 기준*/
+    text-align: center;
+    padding: 0 0 55px 0;
+}
+
+.product .list ul li a::before {
+    position: absolute;
+    left: 5px;
+    bottom: 7px;
+    z-index: -1;
+    width: calc(100% - 12px);
+    height: 260px;
+    background-color: #fff;
+    border-radius: 40px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    content: "";
+    transition: 0.5s;
+}
+
+.product .list ul li a .photo {
+    display: block;
+    height: 280px;
+}
+.product .list ul li a .photo img {
+    max-width: 100%;
+    width: 250px;
+    transition: 0.5s;
+}
+.product .list ul li a .tit {
+    display: block;
+    font-size: 20px;
+}
+.product .list ul li a .name {
+    display: block;
+    font-family: 'Bright, serif';
+    color: #876f53;
+    margin: 5px 0 17px 0;
+    transition: 0.5s;
+}
+.product .list ul li a .info {
+    display: flex;
+    justify-content: center;
+}
+
+.product .list ul li a .info span + span {
+    /*<span></span> 해당없음
+    <span></span> 적용됨
+    <span></span> 적용됨*/
+    margin-left: 20px;
+    position: relative;
+}
+
+.product .list ul li a .info span + span::before{
+    position: absolute;
+    left: -10px;
+    top: 5px;
+    width: 1px;
+    height: 10px;
+    background-color: #cccccc;
+    content: "";
+}
+
+.product .list ul li.swiper-slide-active a {
+    color: #fff;
+}
+
+.product .list ul li.swiper-slide-active a::before {
+    height: 295px;
+    background: linear-gradient(180deg, #876f53, #b29574);;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+}
+.product .list ul li.swiper-slide-active a .photo img {
+    width: 280px
+}
+.product .list ul li.swiper-slide-active a .tit {
+    font-size: 25px;   
+    font-weight: 900;
+}
+.product .list ul li.swiper-slide-active a .name {
+    font-family: 'Bright', serif;
+    color: #fff;
+}
+.product .list ul li.swiper-slide-active a .info {
+
+}
+
+
+@media screen and (max-width:1024px){
+    .product {
+        margin: 100px 0 100px 0 ;
+    }
+    
+    .product h2 {
+        font-size: 38px;
+        margin: 0 0 50px 0;
+    }
+    
+    .product .list ul li a {
+        padding: 0 0 40px 0;
+    }
+        
+    .product .list ul li a .photo {
+        height: 250px;
+    }
+    .product .list ul li a .photo img {
+        width: 200px;
+    }
+    
+    .product .list ul li a .tit {
+        font-size: 18px;
+    }
+    .product .list ul li.swiper-slide-active a .photo img {
+        width: 240px
+    }
+    .product .list ul li.swiper-slide-active a .tit {
+        font-size: 20px;   
+    }
+}
+@media screen and (max-width:768px){
+    .product {
+        margin: 50px 0 50px 0 ;
+    }
+    
+    .product h2 {
+        font-size: 30px;
+        margin: 0 0 30px 0;
+    }
+    
+    .product .list ul li a {
+        padding: 0 0 30px 0;
+    }
+        
+    .product .list ul li a .photo {
+        height: 200px;
+    }
+    .product .list ul li a .photo img {
+        width: 150px;
+    }
+    
+    .product .list ul li a .tit {
+        font-size: 15px;
+    }
+    .product .list ul li.swiper-slide-active a .photo img {
+        width: 200px
+    }
+    .product .list ul li.swiper-slide-active a .tit {
+        font-size: 18px;   
+    }
+}
+
+.brand {
+    position: relative ; /*photo 정렬의 중심*/
+}
+
+.brand .photo {
+    position: absolute;
+    left: calc(50% - 104px);
+    top: 0;
+    width: calc(50% + 104px);
+    height: 696px;
+    overflow: hidden;
+    border-radius: 348px 0 0 348px;
+}
+   
+.brand .photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.brand .inner {
+    width: calc(50% - 174px);
+    padding: 125px 0 0 0;
+}
+
+.brand h2 {
+    font-size: 4.706rem;
+    line-height: 1;
+    font-family: 'Bright', serif;
+    margin: 0 0 25px 0;
+}
+
+.brand .list ul {
+    margin: 60px 0 0 0;
+    display: flex;
+}
+
+.brand .list ul li {
+    width: 25%;
+    text-align: center;
+}
+
+.brand .list ul li strong {
+    display: block;
+    color: #876f53;
+}
+ .social {
+    height: 1000px;
+ }
