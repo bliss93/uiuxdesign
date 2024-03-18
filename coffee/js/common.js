@@ -83,7 +83,6 @@ $(document).ready(function(){
             $('header').removeClass('menu_over')
         }
     })
-
     
 
     /****************************************
@@ -91,21 +90,34 @@ $(document).ready(function(){
         1차 메뉴 a를 클릭하면 a링크를 작동이 안되어야 하고 
         하위메뉴를 열어줘야함.
     ******************************************/
-        $("header .gnb ul.depth1 > li > a").on("click", function(e){
-            if(device_status == 'mobile'){
-                e.preventDefault();		/* a 태그의 href를 작동 시키지 않음 */
-                $(this).parent().toggleClass('on')
-            }
-        });
-    
-        $('header .gnb .gnb_open').on('click', function(){
-            $('header').addClass('menu_open')
-            $("html, body").css({overflow : "hidden", height : $(window).height()}).bind("scroll touchmove mousewheel", function(e){e.preventDefault();e.stopPropagation();return false;},function(){passive:false});
-        })
-        $('header .gnb .gnb_close').on('click', function(){
-            $('header').removeClass('menu_open')
-            $("html, body").css({overflow : "visible", height : "auto"}).unbind('scroll touchmove mousewheel');
-        })
+    $("header .gnb ul.depth1 > li > a").on("click", function(e){
+        if(device_status == 'mobile'){
+            e.preventDefault();		/* a 태그의 href를 작동 시키지 않음 */
+            $(this).parent().toggleClass('on')
+        }
+    });
+
+    $('header .gnb .gnb_open').on('click', function(){
+        $('header').addClass('menu_open')
+        $("html, body").css({overflow : "hidden", height : $(window).height()}).bind("scroll touchmove mousewheel", function(e){e.preventDefault();e.stopPropagation();return false;},function(){passive:false});
+    })
+    $('header .gnb .gnb_close').on('click', function(){
+        $('header').removeClass('menu_open')
+        $("html, body").css({overflow : "visible", height : "auto"}).unbind('scroll touchmove mousewheel');
+    })
+
+    $('aside button').on('click', function(){
+        $('html, body').animate({
+            scrollTop : 0
+        }, 500)
+    })
+
+    $('footer .f_nav button.f_nav_open').on('click', function(){
+        $('footer .f_nav').addClass('open')
+    })
+    $('footer .f_nav button.f_nav_close').on('click', function(){
+        $('footer .f_nav').removeClass('open')
+    })
     
  
  })//$(document).ready
