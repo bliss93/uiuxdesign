@@ -294,3 +294,14 @@
  .social {
     height: 1000px;
  }
+
+ @media screen and (max-width:1640px) {
+    .brand .photo {
+        left: auto;
+        right: 0;
+        width: calc(100% - );
+    }
+    .brand .inner {
+
+    }
+ }
