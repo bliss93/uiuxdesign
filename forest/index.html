@@ -11,10 +11,15 @@
     <!-- swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <!--영문웹폰트-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif+Caption:ital@0;1&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/main.css">
     <script src="js/common.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/counting.js"></script>
     <title>생명의숲</title>
 </head>
 <body>
@@ -73,9 +78,9 @@
                         </li>
                         <li class="swiper-slide">
                             <div class="tit">
-                                <h2>참여프로그램<br>
-                                    철없는 산불됴심 _ 단비들의 왁자지껄</h2>
-                                <p>생명의숲은 산불 예방, 대응 캠페인과 산불피해지 숲의 회복을 돕는 활동을 해왔습니다. <br>이에 대한 활동을 돌아보고, 함께 이야기하는 시간을 갖고자 합니다. 철없는 산불조심에 앞장서고, 다시 숲에 싹을 틔울 단비들의 관심과 참여를 기다립니다.</p>
+                                <h2>Forest of Life</h2>
+                                <p>나무를 심고 숲을 가꾸고 보전하여 숲의 가치로 건강한 사회를 만듭니다.</p>
+                                <span>We create a healthy society with the value of forests by planting trees, cultivating and conserving forests.</span>
                                 <a href="#n">참여 신청하기</a>
                             </div>
                             <div class="photo"><img src="images/main/visual04.png" alt=""></div>
@@ -85,10 +90,46 @@
                 </div><!--//swiper-->
             </section><!--//visual-->
             <section class="section tree">
-                
+                <div class="tit">
+                    <div class="wrapper">
+                        <h2>2023년에 심은 나무</h2>
+                        <div class="num">
+                            <strong class="counter" data-start="0" data-end="89272">89,272</strong>
+                            <span class="count">그루</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="photo">
+                    <ul>
+                        <li><img src="images/main/tree01.png"></li>
+                        <li><img src="images/main/tree02.png"></li>
+                        <li><img src="images/main/tree03.png"></li>
+                        <li><img src="images/main/tree04.png"></li>
+                        <li><img src="images/main/tree05.png"></li>
+                        <li><img src="images/main/tree06.png"></li>
+                        
+                    </ul>
+                </div>
             </section><!--//tree-->
             <section class="section biz">
-              
+                <div class="wrapper">
+                    <div class="inner">
+                        <div class="tit">
+                            <h2>녹색도시공동체를 위한 도시숲운동</h2>
+                            <p>숲을 통해 건강한 도시생태계를 만들고자 합니다. 도시의 생활환경을 개선하기 위해 시민과 함께 숲을 가꿉니다. 지속가능한 도시숲의 관리를 위해 숲을 가꾸는 지역의 자원활동가를 양성화고 활동을 지원합니다. 더 많은 도시민이 숲의 소중함을 느낄 수 있도록 다양한 숲문화교육프로그램을 기획, 운영하고 있습니다.</p>
+                        </div>
+                        <div class="list">
+                            <ul>
+                                <li class="biz01"><a href="#n"><span>도시숲</span></a></li>
+                                <li class="biz02"><a href="#n"><span>숲환경교육</span></a></li>
+                                <li class="biz03"><a href="#n"><span>학교숲</span></a></li>
+                                <li class="biz04"><a href="#n"><span>공존숲</span></a></li>
+                                <li class="biz05"><a href="#n"><span>사회복지숲</span></a></li>
+                                <li class="biz06"><a href="#n"><span>나무심기</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </section><!--//biz-->
             <section class="section news">
                
@@ -97,7 +138,14 @@
                 footer <br>
                 footer 
             </footer>
-        </div>
+        </div><!--fullpage-->
+        <aside class="quick">
+            <ul>
+                <li class="youtube"><a href="#n"><span>유튜브</span></a></li>
+                <li class="donation"><a href="#n"><span>후원하기</span></a></li>
+                <li class="my"><a href="#n"><span>마이트리</span></a></li>
+            </ul>
+        </aside>
     </div>
 </body>
 </html>
