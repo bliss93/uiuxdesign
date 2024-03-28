@@ -24,14 +24,14 @@ $(document).ready(function(){
          scroll_curr = $(window).scrollTop()
          scroll_dir = scroll_prev - scroll_curr
          console.log(scroll_dir)
-         if(scroll_curr > 250){
+         if(scroll_curr > 50){
              $('header').addClass('fixed')
              if(scroll_dir > 0){ //위로스크롤 - 나타나야함
                  $('header').attr('style','transform: translate(0, 0)')
                  /*transform: translate(0, -100px); */
              }else{ //아래로스크롤 - 사라져야함.
                  $('header').attr('style','transform: translate(0, -100px)')
-                 $('header .gnb .depth1 > li').removeClass('on')
+                 $('header .gnb > li').removeClass('on')
                  $('header').removeClass('menu_over')
              }
          }else{

@@ -7,15 +7,16 @@
     작성일 : 2024.03.14
     설  명 : 메인페이지에만 들어가는 스타일을 저장 (header, footer 빼고 전부 다)
 */
-
 @media screen and (max-width:1600px){
-    section .wrapper {
+    section .wrapper,
+    footer .wrapper {
         width: auto;
         margin: 0 150px;
     }
 }
 @media screen and (max-width:1024px){
-    section .wrapper {
+    section .wrapper,
+    footer .wrapper {
         margin: 0 20px 0 20px;
     }
 }
@@ -31,33 +32,16 @@
     top: 50%;
     z-index: 10;
     transform: translate(-50%, -50%);
-    width: 1280px;
+    width: 1000px;
     color: #fff;
     font-size: 20px;
-    text-align: left;
+    text-align: center;
 }
 .visual ul li .tit h2 {
-    font-family: "PT Serif Caption", serif;
-    font-weight: 700;
     font-size: 50px;
-    margin-bottom: 40px;
-    font-style: normal;
+    font-weight: 700;
+    margin-bottom: 23px;
 }
-
-.visual ul li .tit h2.en {
-    font-size: 60px;
-    font-weight: 400;
-}
-
-.visual ul li .tit span {
-    display: block;
-    font-family: "PT Serif Caption", serif;
-    font-weight: 400;
-    font-size: 22px;
-    margin: 30px 0 30px 0;
-    font-style:normal
-}
-
 .visual ul li .tit a {
     display: inline-block;
     margin-top: 23px;
@@ -65,48 +49,42 @@
     border: 2px solid #fff;
     border-radius: 25px;
 }
-
 .visual ul li .photo img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
+/* visual 이미지가 보일때 애니메이션 작동 */
 .visual ul li.swiper-slide-active .photo img {
     animation-name: visual_img;
-    animation-duration:3s;
+    animation-duration: 3s;
     animation-iteration-count: 1;
-    animation-fill-mode:forwards;
+    animation-fill-mode: forwards;
 }
-
-@keyframes visual_img { /* 애니메이션을 효과를 미리 설정함 */
+@keyframes visual_img { 
 	0% { transform:scale3d(1.2, 1.2, 1) }  /* 애니메이션을 시작할때의 속성 */
 	100% { transform:scale3d(1, 1, 1) } /* 애니메이션이 종료될때의 속성 */
 }
-
 .visual ul li.swiper-slide-active .tit h2,
 .visual ul li.swiper-slide-active .tit p,
-.visual ul li.swiper-slide-active .tit span,
-.visual ul li.swiper-slide-active .tit a{
+.visual ul li.swiper-slide-active .tit a {
     animation-name: visual_tit;
-    animation-duration:1s;
+    animation-duration: 1s;
     animation-iteration-count: 1;
-    animation-fill-mode:forwards;
+    animation-fill-mode: forwards;
     opacity: 0;
 }
-.visual ul li.swiper-slide-active .tit span,
-.visual ul li.swiper-slide-active .tit p,
-.visual ul li.swiper-slide-active .tit a{
-    animation-delay:0.3s;
+.visual ul li.swiper-slide-active .tit p {
+    animation-delay: 0.3s;
 }
-
-
-@keyframes visual_tit { /* 애니메이션을 효과를 미리 설정함 */
-	0% { transform:translate(0,50px); opacity: 0; }  /* 애니메이션을 시작할때의 속성 */
-	100% { transform:translate(0,0); opacity: 1; } /* 애니메이션이 종료될때의 속성 */
+.visual ul li.swiper-slide-active .tit a {
+    animation-delay: 0.6s;
 }
-
+@keyframes visual_tit { 
+	0% { transform:translate(0, 50px); opacity: 0; }  /* 애니메이션을 시작할때의 속성 */
+	100% { transform:translate(0, 0); opacity: 1; } /* 애니메이션이 종료될때의 속성 */
+}
 .visual .paging {
     position: absolute;
     left: calc(50% - 640px);
@@ -150,7 +128,6 @@
 .visual .paging .page4 span::before {
     content: "참여프로그램 ";
 }
-
 @media screen and (max-width:1320px){
     .visual ul li .tit {
         font-size: 15px;
@@ -167,11 +144,6 @@
     .visual .paging > span {
         height: 5px;
     }
-
-    .visual ul li .tit h2.en {
-        font-size: 40px;
-    }
-    
 }
 @media screen and (max-width:1024px){
     .visual ul li .tit {
@@ -179,10 +151,6 @@
         width: calc(100% - 40px);
     }
     .visual ul li .tit h2 {
-        font-size: 35px;
-    }
-
-    .visual ul li .tit h2.en {
         font-size: 35px;
     }
 }
@@ -194,18 +162,10 @@
         font-size: 30px;
         margin-bottom: 15px;
     }
-
-    .visual ul li .tit h2.en {
-        font-size: 30px;
-    }
     .visual ul li .tit a {
         margin-top: 15px;
         padding: 8px 30px;
     }
-    .visual ul li .tit span {
-        font-size: 13px;
-    }
-
     .visual ul li .tit br {
         display: none;
     }
@@ -225,53 +185,56 @@
     }
 }
 
-
 aside.quick {
     position: fixed;
     right: 50px;
     bottom: 85px;
     z-index: 100;
 }
-
-aside.quick ul li  {
-    margin-top: 10px;
+aside.quick ul li {
+    margin-top: 5px;
 }
-
 aside.quick ul li a {
     display: block;
-    width: 103px;
-    height: 103px;
-    border-radius: 100%;
-    background-color: rgba(37, 95, 46, 0.4);
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: #2AC49E;
     color: #fff;
     font-size: 13px;
-    padding-top: 60px;
+    padding-top: 33px;
     text-align: center;
-    position: relative; /*before정렬의 기준*/
-    margin-bottom: 20px;
+    position: relative; /* before */
+    box-shadow: 0 0 5px rgba(0,0,0,0.1)
 }
-
+aside.quick ul li.top a {
+    background-color: #097CBF;
+}
 aside.quick ul li a::before {
     position: absolute;
     left: 0;
-    top: 20px;
+    top: 5px;
     width: 100%;
-    height: 33px;
+    height: 30px;
     background-position: center center;
     background-repeat: no-repeat;
     content: "";
 }
-
-aside.quick ul li.youtube a::before {
-    background-image: url("data:image/svg+xml,%3Csvg width='37' height='27' viewBox='0 0 37 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_13_391)'%3E%3Cpath d='M36.4432 8.9281C36.4432 4.5381 32.8832 0.988098 28.5032 0.988098H8.18316C3.80316 0.988098 0.243164 4.5481 0.243164 8.9281V18.3781C0.243164 22.7681 3.80316 26.3181 8.18316 26.3181H28.4932C32.8832 26.3181 36.4332 22.7581 36.4332 18.3781V8.9281H36.4432ZM24.4932 14.3681L15.3832 18.8781C15.0232 19.0681 13.8132 18.8081 13.8132 18.4081V9.1581C13.8132 8.7481 15.0332 8.4881 15.3932 8.6881L24.1132 13.4281C24.4832 13.6381 24.8632 14.1681 24.4932 14.3681Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_13_391'%3E%3Crect width='36.2' height='25.34' fill='white' transform='translate(0.243164 0.988098)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
-}
 aside.quick ul li.donation a::before {
-    background-image: url("data:image/svg+xml,%3Csvg width='34' height='32' viewBox='0 0 34 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_13_574)'%3E%3Cpath d='M33.1083 16.1544C32.3916 15.1346 31.2878 14.4925 30.0762 14.394C28.8718 14.2869 27.6815 14.7412 26.868 15.5777L24.1882 18.0972C24.5791 21.3633 21.9186 24.2763 18.7343 24.2552H13.2295C11.4296 24.2479 11.4309 21.4407 13.2295 21.4334H18.7343C22.3528 21.366 22.3496 15.8568 18.7343 15.7906H13.3501C9.30646 15.7906 5.50539 17.4062 2.61911 20.3615L1.21919 21.8725C0.977273 22.1351 0.841797 22.4836 0.841797 22.8433V29.8973C0.841797 30.6776 1.45724 31.3078 2.21785 31.3078H16.4209C20.2 31.3078 23.8211 29.8702 26.6164 27.2621L32.5593 21.7105C34.0321 20.1968 34.2669 17.8082 33.1057 16.1537L33.107 16.155L33.1083 16.1544Z' fill='white'/%3E%3Cpath d='M26.6266 4.18698C26.6266 7.23818 22.7455 11.0307 20.8121 12.6204C20.1889 13.1329 19.3018 13.1329 18.6786 12.6204C16.7452 11.0294 12.8641 7.23818 12.8641 4.18698C12.7738 2.1436 14.3118 0.40969 16.3046 0.30719C18.298 0.409029 19.8353 2.14293 19.745 4.18698C19.6547 2.1436 21.1927 0.40969 23.1855 0.30719C25.1789 0.409029 26.7162 2.14293 26.6259 4.18698H26.6266Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_13_574'%3E%3Crect width='33' height='31' fill='white' transform='translate(0.842773 0.30719)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.0041 18.3356C5.40174 18.3356 1.67078 14.6047 1.67078 10.0022C1.67078 5.3999 5.40174 1.66895 10.0041 1.66895C14.6065 1.66895 18.3375 5.3999 18.3375 10.0022C18.3375 14.6047 14.6065 18.3356 10.0041 18.3356ZM10.0041 16.6689C13.686 16.6689 16.6708 13.6842 16.6708 10.0022C16.6708 6.32038 13.686 3.33561 10.0041 3.33561C6.32221 3.33561 3.33744 6.32038 3.33744 10.0022C3.33744 13.6842 6.32221 16.6689 10.0041 16.6689ZM7.08744 11.6689H11.6708C11.9009 11.6689 12.0875 11.4824 12.0875 11.2522C12.0875 11.0222 11.9009 10.8356 11.6708 10.8356H8.33746C7.18685 10.8356 6.25411 9.9029 6.25411 8.75224C6.25411 7.60168 7.18685 6.66895 8.33746 6.66895H9.17079V5.00228H10.8375V6.66895H12.9208V8.33557H8.33746C8.10733 8.33557 7.92078 8.52215 7.92078 8.75224C7.92078 8.9824 8.10733 9.1689 8.33746 9.1689H11.6708C12.8214 9.1689 13.7541 10.1017 13.7541 11.2522C13.7541 12.4029 12.8214 13.3356 11.6708 13.3356H10.8375V15.0022H9.17079V13.3356H7.08744V11.6689Z' fill='white'/%3E%3C/svg%3E%0A");
 }
 aside.quick ul li.my a::before {
-    background-image: url("data:image/svg+xml,%3Csvg width='34' height='35' viewBox='0 0 34 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_13_568)'%3E%3Cpath d='M5.62229 2.05858C5.55354 1.06408 6.36891 0.223993 7.33417 0.294826C13.5065 0.742493 16.2868 3.69624 16.6182 10.2072C16.9495 3.69624 19.7298 0.742493 25.9022 0.294826C26.866 0.225409 27.6814 1.06408 27.614 2.05858C27.1795 8.41799 24.3044 11.2471 17.9863 11.5885C17.9863 11.6012 17.9932 11.6126 17.9932 11.6253V14.4587C17.9863 16.3117 15.25 16.3102 15.2432 14.4587V11.6253C15.2432 11.6126 15.25 11.6012 15.25 11.5885C8.93054 11.2471 6.05679 8.41799 5.62229 2.05858ZM32.3537 19.0727C31.6373 18.0485 30.5345 17.4039 29.3245 17.3047C28.1214 17.1971 26.932 17.6532 26.1194 18.4933L23.4423 21.0235C23.8328 24.3031 21.1749 27.2285 17.9932 27.2072H12.4932C10.6947 27.2002 10.696 24.381 12.4932 24.3739H17.9932C21.608 24.3059 21.6053 18.7738 17.9932 18.7072H12.6142C8.57442 18.7072 4.77666 20.3293 1.89329 23.2972L0.494914 24.8145C0.252914 25.078 0.118164 25.4279 0.118164 25.7892V32.8725C0.118164 33.6559 0.732789 34.2892 1.49316 34.2892H15.6832C19.4589 34.2892 23.0765 32.8456 25.8692 30.2262L31.8064 24.6516C33.2777 23.1315 33.5128 20.7331 32.3523 19.0713L32.3537 19.0727Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_13_568'%3E%3Crect width='33' height='34' fill='white' transform='translate(0.118164 0.290649)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 5.8335C5 3.07207 7.23857 0.833496 10 0.833496C12.7614 0.833496 15 3.07207 15 5.8335C15 6.05195 14.9859 6.26741 14.9587 6.47897C16.475 7.33694 17.5 8.96475 17.5 10.8335C17.5 13.5949 15.2614 15.8335 12.5 15.8335H10.8333V18.3335H9.16667V15.8335H7.08333C4.55202 15.8335 2.5 13.7815 2.5 11.2502C2.5 9.40541 3.58927 7.81655 5.15915 7.08936C5.05529 6.68809 5 6.26715 5 5.8335ZM5.84137 8.61008C4.85147 9.07666 4.16667 10.0842 4.16667 11.2502C4.16667 12.861 5.4725 14.1668 7.08333 14.1668H12.5C14.3409 14.1668 15.8333 12.6744 15.8333 10.8335C15.8333 9.4215 14.9551 8.21256 13.712 7.72711L13.0107 7.45326C13.1589 6.91964 13.3333 6.39335 13.3333 5.8335C13.3333 3.99255 11.8409 2.50016 10 2.50016C8.15905 2.50016 6.66667 3.99255 6.66667 5.8335C6.66667 6.92335 7.18883 7.89102 8.00016 8.50058L6.99903 9.83308C6.54806 9.49425 6.15597 9.08041 5.84137 8.61008Z' fill='white'/%3E%3C/svg%3E%0A");
 }
-
+aside.quick ul li.youtube a::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='22' height='16' viewBox='0 0 22 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_16_517)'%3E%3Cpath d='M21.4241 5.17979C21.4241 2.63636 19.3738 0.57959 16.8513 0.57959H5.1487C2.62619 0.57959 0.575928 2.64215 0.575928 5.17979V10.6548C0.575928 13.1983 2.62619 15.2551 5.1487 15.2551H16.8456C19.3738 15.2551 21.4183 13.1925 21.4183 10.6548V5.17979H21.4241ZM14.5419 8.33157L9.2953 10.9445C9.08797 11.0546 8.39111 10.904 8.39111 10.6722V5.31305C8.39111 5.07551 9.09373 4.92487 9.30106 5.04075L14.323 7.78696C14.5361 7.90863 14.755 8.2157 14.5419 8.33157Z' stroke='white' stroke-width='2' stroke-miterlimit='10'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_16_517'%3E%3Crect width='22' height='15.84' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+aside.quick ul li.insta a::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_16_508)'%3E%3Cpath d='M12.9969 3.03467C12.4483 3.03467 11.9998 3.48317 11.9998 4.03186C11.9998 4.58056 12.4483 5.02905 12.9969 5.02905C13.5456 5.02905 13.9941 4.58056 13.9941 4.03186C13.9941 3.48317 13.5456 3.03467 12.9969 3.03467Z' fill='white'/%3E%3Cpath d='M8.56916 4.31299C6.25987 4.31299 4.38477 6.19286 4.38477 8.49738C4.38477 10.8019 6.26464 12.6818 8.56916 12.6818C10.8737 12.6818 12.7536 10.8019 12.7536 8.49738C12.7536 6.19286 10.8737 4.31299 8.56916 4.31299ZM8.56916 11.1788C7.09007 11.1788 5.88771 9.97647 5.88771 8.49738C5.88771 7.01829 7.09007 5.81594 8.56916 5.81594C10.0483 5.81594 11.2506 7.01829 11.2506 8.49738C11.2506 9.97647 10.0483 11.1788 8.56916 11.1788Z' fill='white'/%3E%3Cpath d='M11.89 17H5.10525C2.2902 17 0 14.7098 0 11.8948V5.11002C0 2.29021 2.2902 0 5.10525 0H11.89C14.705 0 16.9952 2.2902 16.9952 5.10525V11.89C16.9952 14.705 14.705 16.9952 11.89 16.9952V17ZM5.10525 1.59837C3.17289 1.59837 1.59837 3.17289 1.59837 5.10525V11.89C1.59837 13.8223 3.17289 15.3969 5.10525 15.3969H11.89C13.8223 15.3969 15.3969 13.8223 15.3969 11.89V5.10525C15.3969 3.17289 13.8223 1.59837 11.89 1.59837H5.10525Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_16_508'%3E%3Crect width='17' height='17' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+aside.quick ul li.top a::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.99997 11.5953L13.9941 15.5894L15.1726 14.4109L9.99997 9.23833L4.82739 14.4109L6.0059 15.5894L9.99997 11.5953ZM4.99998 5.8335H15V7.50016H4.99998V5.8335Z' fill='white'/%3E%3C/svg%3E%0A");
+}
 @media screen and (max-width:1600px){
     aside.quick {
         right: 10px;
@@ -283,74 +246,44 @@ aside.quick ul li.my a::before {
     }
 }
 
-.tree {
-    background-image: url(../images/main/num_bg.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+.tree .tit {
+    width: 580px;
 }
-
 .tree .num {
+    color: #2AC49E;
     display: flex;
 }
-
-.tree .tit h2 {
-    font-size: 25px;
-    color:#1D1D1D;
-    margin: 0 50px 20px 56px;
-}
-
 .tree .num strong {
-    font-family: "PT Serif Caption", serif;
+    font-size: 150px;
     font-weight: 700;
-    font-size: 100px;
-    color: #1D1D1D;
 }
-.tree .num .count {
-    font-size: 40px;
-    color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: flex-end;
-    padding:0 0 10px 15px;
+.tree .num .plus {
+    font-size: 70px;
 }
-
+.tree h2 {
+    margin: 23px 0 10px 0;
+    font-size: 25px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.tree p {
+    margin-right: 50px;
+}
 .tree .photo {
-    width: 50%;
-    max-width: 700px;
     position: absolute;
-    right: 0;
-    top: calc(50% + 100px);
-    transform: translate(0, -50%);
+    left: calc(50% - 640);
+    width: 1280px;
+    top: 100px;
+    height: calc(100vh - 100px);
+    background: url(../images/main/tree_pc_bg.png) no-repeat right center;
 }
-.tree .photo ul {
-    padding: 0 0 0 50px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.tree .photo ul li {
-    width: calc(50% - 10px);
-    height: 300px;
-    border-radius: 29px;
-    overflow: hidden;
-    margin:10px 0;
-}
-.tree .photo ul li:nth-child(odd) {
-    transform: translate(0, 50%);
-}
-.tree .photo ul li img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 
 @media screen and (max-width:768px){
     .tree {
         height: auto !important;
         min-height: auto !important;
         padding: 95px 0 250px 0;
-        background: url(../images/main/num_bg.png) no-repeat center bottom 25px;
+        background: url(../images/main/tree_m_bg.png) no-repeat center bottom 25px;
     }
     .tree .tit {
         width: auto;
@@ -370,36 +303,6 @@ aside.quick ul li.my a::before {
     }
     .tree p {
         margin: 0;
-    }
-
-    .tree .photo {
-        width: 50%;
-        max-width: 700px;
-        position: absolute;
-        right: 25%;
-        
-        top: calc(50% + 100px);
-        transform: translate(0, -50%);
-    }
-
-    .tree .photo ul {
-        margin: 100px 50px 0 0;
-    }
-
-    .tree .photo ul li {
-        width: calc(50% - 10px);
-        height: 100px;
-        border-radius: 29px;
-        overflow: hidden;
-        margin:10px 0;
-    }
-    .tree .photo ul li:nth-child(odd) {
-        transform: translate(0, 50%);
-    }
-    .tree .photo ul li img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
     }
 }
 
@@ -539,7 +442,6 @@ aside.quick ul li.my a::before {
     background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.1715 12.0007L8.22168 7.05093L9.6359 5.63672L15.9999 12.0007L9.6359 18.3646L8.22168 16.9504L13.1715 12.0007Z' fill='white'/%3E%3C/svg%3E%0A");
     content: "";
 }
-
 @media screen and (max-width:1320px){
     .biz .list ul li a {
         font-size: 30px;
@@ -555,6 +457,7 @@ aside.quick ul li.my a::before {
 }
 @media screen and (max-width:768px){
     .biz {
+        height: auto !important;
         min-height: auto !important;
     }
     .biz .inner {
@@ -579,10 +482,6 @@ aside.quick ul li.my a::before {
     }
     .biz .list ul li a {
         font-size: 17px;
-    }
-
-    .biz .list ul li a::after {
-        display: none;
     }
 }
 .news .wrapper {
@@ -710,6 +609,7 @@ aside.quick ul li.my a::before {
 
 }
 
+
 /******************************** 
     page에서 자동생성한 pagenation 
     #fp-nav.fp-left 동일한 선택자 두개가 존재할때
@@ -788,7 +688,6 @@ body #fp-nav[data-color='black'] ul li:hover .fp-tooltip,
 body #fp-nav[data-color='black'].fp-show-active a.active + .fp-tooltip {
     color: #1D1D1D;
 }
-
 @media screen and (max-width:1600px){
     body #fp-nav.fp-left {
         left: 0;
@@ -796,6 +695,6 @@ body #fp-nav[data-color='black'].fp-show-active a.active + .fp-tooltip {
 }
 @media screen and (max-width:1024px){
     body #fp-nav.fp-left {
-        display: none;
+        display: none !important;
     }
 }

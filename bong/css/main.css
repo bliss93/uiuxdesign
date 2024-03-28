@@ -8,7 +8,7 @@
     설  명 : 메인페이지에만 들어가는 스타일을 저장 (header, footer 빼고 전부 다)
 */
 .container {
-    margin-top: 150px; /*header의 높이만큼*/
+    margin-top: 100px; /*header의 높이만큼*/
 }
 @media screen and (max-width:1024px){
     .container {
@@ -140,193 +140,86 @@
     }
 }
 
-
 .product {
-    margin: 125px 0 160px 0 ;
+    margin: 130px 0 130px 0 ;
 }
-
 .product h2 {
     font-family: 'KoPub Batang', serif;
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
-    margin: 0 0 70px 0;
+    margin: 0 0 22px 0;
 }
-
-.product .list ul {
-    align-items: flex-end; /*li의 높이가 다를 때 아래 정렬*/
-}
-/* 
-.product .list ul li {
-    width: 23%;
-}
-.product .list ul li.swiper-slide-active {
-    width: 31%
-}  */
-
-.product .list ul li a {
-    display: block;
-    position: relative; /*before 정렬의 기준*/
+.product h3 {
     text-align: center;
-    padding: 0 0 55px 0;
-}
-
-.product .list ul li a::before {
-    position: absolute;
-    left: 5px;
-    bottom: 7px;
-    z-index: -1;
-    width: calc(100% - 12px);
-    height: 260px;
-    background-color: #fff;
-    border-radius: 40px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    content: "";
+    letter-spacing: -2.5%;
     transition: 0.5s;
 }
-
+.product .list .swiper {
+    width: 1510px;
+    margin-top: 70px;
+}
+.product .list ul li {
+    width: 235px;
+}
 .product .list ul li a .photo {
     display: block;
-    height: 280px;
+}
+.product .list ul li a {
+    display: block;
+    text-align: center;
 }
 .product .list ul li a .photo img {
-    max-width: 100%;
-    width: 250px;
+    border-radius: 20px;
     transition: 0.5s;
 }
-.product .list ul li a .tit {
-    display: block;
-    font-size: 20px;
-}
-.product .list ul li a .name {
-    display: block;
-    font-family: 'Bright, serif';
-    color: #876f53;
-    margin: 5px 0 17px 0;
-    transition: 0.5s;
-}
-.product .list ul li a .info {
-    display: flex;
-    justify-content: center;
-}
 
-.product .list ul li a .info span + span {
-    /*<span></span> 해당없음
-    <span></span> 적용됨
-    <span></span> 적용됨*/
-    margin-left: 20px;
-    position: relative;
-}
-
-.product .list ul li a .info span + span::before{
+.product button {
     position: absolute;
-    left: -10px;
-    top: 5px;
-    width: 1px;
-    height: 10px;
-    background-color: #cccccc;
-    content: "";
+    top: calc(50% - 12px);
+    width: 30px;
+    height: 30px;
+    font-size: 0;
+    line-height: 0;
+    margin: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
-
-.product .list ul li.swiper-slide-active a {
-    color: #fff;
+.product button.prev {
+    background-image: url(../images/main/화살표_왼쪽.svg);
+    left: 0;
 }
-
-.product .list ul li.swiper-slide-active a::before {
-    height: 295px;
-    background: linear-gradient(180deg, #876f53, #b29574);;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+.product button.next {
+    background-image: url(../images/main/화살표_오른쪽.svg);
+    right: 0;
 }
-.product .list ul li.swiper-slide-active a .photo img {
-    width: 280px
-}
-.product .list ul li.swiper-slide-active a .tit {
-    font-size: 25px;   
-    font-weight: 900;
-}
-.product .list ul li.swiper-slide-active a .name {
-    font-family: 'Bright', serif;
-    color: #fff;
-}
-.product .list ul li.swiper-slide-active a .info {
-
-}
-
 
 @media screen and (max-width:1024px){
-    .product {
-        margin: 100px 0 100px 0 ;
-    }
-    
-    .product h2 {
-        font-size: 38px;
-        margin: 0 0 50px 0;
-    }
-    
-    .product .list ul li a {
-        padding: 0 0 40px 0;
-    }
-        
-    .product .list ul li a .photo {
-        height: 250px;
-    }
-    .product .list ul li a .photo img {
-        width: 200px;
-    }
-    
-    .product .list ul li a .tit {
-        font-size: 18px;
-    }
-    .product .list ul li.swiper-slide-active a .photo img {
-        width: 240px
-    }
-    .product .list ul li.swiper-slide-active a .tit {
-        font-size: 20px;   
-    }
+  
 }
 @media screen and (max-width:768px){
-    .product {
-        margin: 50px 0 50px 0 ;
-    }
-    
-    .product h2 {
-        font-size: 30px;
-        margin: 0 0 30px 0;
-    }
-    
-    .product .list ul li a {
-        padding: 0 0 30px 0;
-    }
-        
-    .product .list ul li a .photo {
-        height: 200px;
-    }
-    .product .list ul li a .photo img {
-        width: 150px;
-    }
-    
-    .product .list ul li a .tit {
-        font-size: 15px;
-    }
-    .product .list ul li.swiper-slide-active a .photo img {
-        width: 200px
-    }
-    .product .list ul li.swiper-slide-active a .tit {
-        font-size: 18px;   
-    }
+   
 }
 
-.brand {
-    position: relative ; /*photo 정렬의 중심*/
+.brand .line {
+    margin: 95px 0 95px 0;
+}
+.brand .line::after {
+    display: block;
+    border-top: 1px solid rgba(61, 61, 61, 0.5);
+    width: 1760px;
+    content: "";
 }
 
 .brand .photo {
-    position: absolute;
+    width: 820px;
+    /*position: absolute;
     left: calc(50% - 104px);
     top: 0;
     width: calc(50% + 104px);
     height: 696px;
     overflow: hidden;
-    border-radius: 348px 0 0 348px;
+    border-radius: 348px 0 0 348px;*/
 }
    
 .brand .photo img {

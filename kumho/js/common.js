@@ -1,12 +1,9 @@
 /*
-
-    파일명: common.js
-    작성자: 윤서하
-    작성일: 24.02.28
-    설  명: 모든페이지에서 작동되는 jquery(header,footer)
-    
+    파일명 : common.js
+    작성자 : 문미영
+    작성일 : 2024.02.28
+    설  명 : 모든 페이지에서 작동되는 jqeury (header, footer에서 작동되는 jqeury)
 */
-
 
 $(document).ready(function(){
 
@@ -23,9 +20,7 @@ $(document).ready(function(){
             $('.header').removeClass('fixed')
         }
     }
-
     scroll_chk() //문서로드되었을때 1번 실행
-
     $(window).scroll(function(){
         scroll_chk()
     })
@@ -43,22 +38,20 @@ $(document).ready(function(){
          마우스를 오버한 li에만 클래스 추가
     *********************************************************/
     let device_status
+    let window_w
     function device_chk(){
         window_w = $(window).width()
-        if(window_w > 1024){
+        if(window_w > 1024){ //pc버전
             device_status = 'pc'
-        }else{
+        }else{ //모바일
             device_status = 'mobile'
         }
         console.log(device_status)
     }
-
-    device_chk()
-
+    device_chk() //문서가 로딩되고 1번 실행
     $(window).resize(function(){
-        device_chk()
+        device_chk() //문서가 리사이즈될때마다 1번씩 실행
     })
-
 
     $('.header .gnb ul.depth1 > li').on('mouseenter focusin', function(){
         if(device_status == 'pc'){
@@ -67,14 +60,12 @@ $(document).ready(function(){
             $(this).addClass('on')
         }
     })
-
     $('.header').on('mouseleave', function(){
         if(device_status == 'pc'){
             $('.header').removeClass('menu_over')
             $('.header .gnb ul.depth1 > li').removeClass('on')
         }
     })
-
     $('.header .tnb .lang').on('focusin', function(){
         if(device_status == 'pc'){
             $('.header').removeClass('menu_over')
@@ -82,10 +73,15 @@ $(document).ready(function(){
         }
     })
 
-    $('.header .gnb ul.depth1 > li > a').on("click", function(e){
-        if(device_status == 'pc'){
-            e.preventDefault();
-            $(this).parent().toogleClass('on')
+    /****************************************
+        모바일 메뉴
+        1차 메뉴 a를 클릭하면 a링크를 작동이 안되어야 하고 
+        하위메뉴를 열어줘야함.
+    ******************************************/
+    $(".header .gnb ul.depth1 > li > a").on("click", function(e){
+        if(device_status == 'mobile'){
+            e.preventDefault();		/* a 태그의 href를 작동 시키지 않음 */
+            $(this).parent().toggleClass('on')
         }
     });
 
@@ -98,12 +94,16 @@ $(document).ready(function(){
         $("html, body").css({overflow : "visible", height : "auto"}).unbind('scroll touchmove mousewheel');
     })
 
-
+    /*******************************************
+      footer에 그룹사 바로가기 열기/닫기
+      .footer .family_site .open를 클릭하면 family_site에 on 클래스 추가
+      .footer .family_site .close를 클릭하면 family_site에 on 클래스 삭제
+    *********************************************/
+    $('.footer .family_site .open').on('click', function(){
+        $('.footer .family_site').addClass('on')
+    })
+    $('.footer .family_site .close').on('click', function(){
+        $('.footer .family_site').removeClass('on')
+    })
 
 })//$(document).ready
-
-
-
-
-
-

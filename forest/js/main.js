@@ -28,10 +28,11 @@ $(document).ready(function(){
             }
 		},
 
-		responsiveWidth: 768 /* fullpage를 적용시키지 않을 모바일 사이즈 */
+		responsiveWidth: 768, /* fullpage를 적용시키지 않을 모바일 사이즈 */
+        
 	});
 
-    const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싸는 요소의 class명 */
+    const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
         effect: "fade", /* fade 효과 */
 
@@ -55,10 +56,10 @@ $(document).ready(function(){
             prevEl: '.swiper-button-prev',  
         },
 
-    }); //swiper
+    });//swiper
 
     const news_swiper = new Swiper('.news .swiper', { /* 팝업을 감싼는 요소의 class명 */
-        slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        slidesPerView: 'auto', /* 넓이고정 */
         spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
         breakpoints: {
             768: {    /* 768px 이상일때 적용 */
@@ -70,6 +71,7 @@ $(document).ready(function(){
                 spaceBetween: 28,
             },
         },
+        
     });
-
+    
 })//document.ready

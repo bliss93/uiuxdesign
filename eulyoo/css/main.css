@@ -55,7 +55,7 @@ html, body {
        짤리는 현상이 생김.  
        가로스크롤바가 생성되었을때도 홈페이지를 정상적으로 
        서비스 하기 위해서 최소 넓이를 입력 */
-    /*overflow: hidden;*/
+    /* overflow: hidden; */
 }
 
 /* 640px 이하일때 스타일 - 640이하는 모바일 초과는 탭  */
@@ -79,10 +79,9 @@ html, body {
     position: absolute;
     left: 0;
     top: -100px;
-    z-index: 1000000000;
+    z-index: 1000000000000;
     width: 100%;
 }
-
 .skipnav a {
     position: absolute;
     left: 0;
@@ -90,18 +89,16 @@ html, body {
     width: 100%;
     line-height: 50px;
     text-align: center;
-    background-color: #ff1414;
-    color: #FFF;
+    background-color: #FF1414;
+    color: #fff;
     font-size: 17px;
     font-weight: 700;
 }
-
-/*속성선택자
-a태그 중에서  href="#gnb"인 a 태그의 스타일*/
-.skipnav a[ href="#gnb"]{
-    background-color: #ff9314;
+/* 속성선택자
+a태그중에서 href="#gnb"인 a태그의 스타일 */
+.skipnav a[href="#gnb"] {
+    background-color: #FF9314;
 }
-
 .skipnav a:focus {
     top: 100px;
 }
@@ -808,10 +805,12 @@ css에서도 nth-child로 선택한다. */
     background-repeat: no-repeat;
     background-size: contain;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFF' viewBox='0 -960 960 960' %3E%3Cpath d='M460-460H240v-40h220v-220h40v220h220v40H500v220h-40v-220Z'/%3E%3C/svg%3E");
-    }
-
-/*li에 active 들어갔을 때 스타일이 바뀌는건 pc에서만 적용되는 스타일
-모바일에서는 기본 스타일만 존재함. 641px이상에서만 해당스타일*/
+}
+/* li에 active 들어갔을때 스타일이 바뀌는건 
+pc에서만 적용되는 스타일 
+모바일에서는 기본 스타일만 존재함.
+미디어쿼리 min-width:641px 로 스타일 선언
+브라우저 사이즈 641px 이상에서만 해당스타일 적용됨 */
 @media screen and (min-width:641px){
     /* 오버되었을때 */
     .interview .list ul li.active a .photo {
@@ -866,7 +865,7 @@ css에서도 nth-child로 선택한다. */
         background-color: rgba(255,255,255,0.2);
         content: "";
     }
-}
+}/* media */
 
 .interview .more {
     position: absolute;
@@ -907,14 +906,11 @@ css에서도 nth-child로 선택한다. */
     animation-iteration-count:infinite; 
     animation-timing-function:linear;
 }
-
 @media screen and (max-width:640px){
-        
     .interview {
         margin: 57px 0 0 0;
         padding: 0 0 62px 0;
     }
-
     .interview .tit {
         padding: 55px 0 0 0;
         text-align: left;
@@ -926,7 +922,6 @@ css에서도 nth-child로 선택한다. */
     .interview .list {
         margin: 17px 0 0 0;
     }
-
     .interview .list ul li {
         width: auto;
     }
@@ -934,22 +929,17 @@ css에서도 nth-child로 선택한다. */
     .interview .list ul li:nth-child(3) {
         display: none;
     }
-
     .interview .list ul li a .photo {
         border-radius: 30px 0 30px 0;
     }
-    /* 디자인상 두번째 li에 스타일이 다르다면 
-    css에서도 nth-child로 선택한다. */
-    .interview .list ul li:nth-child(2) a .photo {
-        border-radius: 0 70px 0 70px;
-    }
     .interview .list ul li a .photo img {
-        filter: grayscale(0); /* 흑백 */
-        width: 100%;
+        filter: grayscale(0%); /* 흑백 */
+        width: 100%; /* 감싸는 영역의 넓이에 꼭 맞게 사이즈 조정 */
     }
     .interview .list ul li a .cnt {
+        bottom: 0;
         display: block;
-        padding: 30px 40px 0 40px;
+        padding: 30px 7% 0 7%;
         background-color: #7A563C;
         border-radius: 30px 0 30px 0;
         height: 165px;
@@ -960,8 +950,9 @@ css에서도 nth-child로 선택한다. */
     .interview .list ul li a .cnt p {
         display: block;
         margin: 5px 0 15px 0;
+        /* 줄수 제한 */
         line-height: 1.2;
-        height: 2.4em;
+        height: 3.6em;
         overflow: hidden;
     }
     .interview .list ul li a .cnt span {
@@ -969,19 +960,18 @@ css에서도 nth-child로 선택한다. */
         line-height: 1.2;
         width: auto;
         height: auto;
-        background:none;
-        position: relative; /*before정렬의 기준*/
+        background: none;
+        position: relative;/* before 정렬의 기준 */
         display: block;
         text-align: right;
     }
-
     .interview .list ul li a .cnt span::before {
         position: absolute;
         left: 0;
         top: 8px;
         width: calc(100% - 6em);
         height: 1px;
-        background-color: rgba(255, 255, 255, 0.2);
+        background-color: rgba(255,255,255,0.2);
         content: "";
     }
 
@@ -1001,17 +991,19 @@ css에서도 nth-child로 선택한다. */
     .interview .more a::after {
         display: none;
     }
-}
+}/*media*/
 
 .news {
-    background: url(../images/new_bg.png) no-repeat center center / cover;
+    background: url(../images/news_bg.png) no-repeat center center / cover;
     color: #fff;
-    padding: 0 0 179px 0;
+    padding: 0 0 100px 0;
 }
 .news .tit {
     position: sticky;
-    top: 140px;
-    /* 주의사항 : 감싸는 요소가 overflow:hidden 이 있으면 안됨 */
+    top: 140px; 
+    /* 상단에 고정되었을때 맨 상단에서 부터 (header 무시)  
+       아래로 배치되고 싶은 값 - 고정되기 전에는 이 값의 영향이 없음 */
+    /* 주의사항 감싸는 요소가 overflow:hidden이 있으면 안됨 */
     float: left;
     margin: 177px 0 0 0;
 }
@@ -1021,73 +1013,65 @@ css에서도 nth-child로 선택한다. */
     margin: 0 0 10px 0;
 }
 .news .list {
-    margin: 0 0 0 327px;
-    padding-top: 371px;
+    margin: 0 0 0 327px; /* tit하고 여백 반드시 margin */
+    padding-top: 320px; /* 상단의 여백 */
 }
 .news .list ul {
-    display: flex; 
-    flex-wrap: wrap; /*여러줄 가능*/
+    display: flex;
+    flex-wrap: wrap; /* 여러줄 가능 */
     justify-content: space-between;
 }
 .news .list ul li {
     width: 299px;
     margin-bottom: 74px;
 }
-
 .news .list ul li:nth-child(1),
 .news .list ul li:nth-child(4) {
-    margin-top: -79px; /*margin만 여백가능*/
+    margin-top: -79px; /* margin만 -(마이너스) 여백 가능 */
 }
-
 .news .list ul li:nth-child(3),
-.news .list ul li:nth-child(6)  {
+.news .list ul li:nth-child(6) {
     margin-top: -147px;
 }
-
 .news .list ul li a {
     display: block;
 }
-
 .news .list ul li a span {
     overflow: hidden;
     display: block;
     font-size: 0;
     line-height: 0;
 }
-
-.news .list ul li a span img{
+.news .list ul li a span img {
     transition: 0.5s;
-} 
-
+}
 .news .list ul li a:hover span img {
     transform: scale3d(1.2, 1.2, 1);
 }
-
 .news .list ul li a h3 {
     font-size: 20px;
     font-weight: 700;
     margin: 5px 0 10px 0;
 }
-
 .news .list ul li a p {
+    /* 줄수 제한 */
     line-height: 1.2;
     height: 3.6em;
     overflow: hidden;
+    color: rgba(255,255,255,0.8);
 }
-
 .news .inner {
-    position: relative; /*more정렬의기준*/
+    position: relative; /* .more 정렬의 기준 */
 }
-
 .news .more {
-    position: absolute; /*inner기준으로 정렬*/
-    left: 0; /* 가운데정렬 50% - 넓이의 절반 */
-    top: 390px;
+    position: absolute; /* inner를 기준으로 정렬 */
+    left: 0; 
+    top: 398px;
 }
 .news .more a {
     width: 144px;
     line-height: 45px;
-    border: 1px solid #999999;
+    border: 1px solid #fff;
     display: block;
     padding: 0 0 0 17px;
     position: relative; /* after 정렬의 기준 */
@@ -1100,7 +1084,7 @@ css에서도 nth-child로 선택한다. */
     width: 20px;
     height: 9px;
     content: "";
-    background-image: url("data:image/svg+xml,%3Csvg width='23' height='11' viewBox='0 0 23 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.7553 1L21 10H1' stroke='%23fff' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg width='23' height='11' viewBox='0 0 23 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.7553 1L21 10H1' stroke='white' stroke-linecap='round'/%3E%3C/svg%3E%0A");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 20px auto;
@@ -1112,7 +1096,6 @@ css에서도 nth-child로 선택한다. */
     color: #fff;
 }
 .news .more a:hover::after {
-    background-image: url("data:image/svg+xml,%3Csvg width='23' height='11' viewBox='0 0 23 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.7553 1L21 10H1' stroke='white' stroke-linecap='round'/%3E%3C/svg%3E%0A");
     animation-name: more; 
     animation-duration: 2s; 
     animation-iteration-count:infinite; 
@@ -1120,15 +1103,13 @@ css에서도 nth-child로 선택한다. */
 }
 
 @media screen and (max-width:640px){
-        
     .news {
         padding: 0 0 72px 0;
     }
     .news .tit {
         position: relative;
-        top: auto;
-        /* 주의사항 : 감싸는 요소가 overflow:hidden 이 있으면 안됨 */
-        float: none;
+        top: auto; 
+        float: none; /* float 해제 */
         margin: 0;
         padding: 64px 0 0 0;
     }
@@ -1136,18 +1117,19 @@ css에서도 nth-child로 선택한다. */
         font-size: 25px;
         margin: 0 0 5px 0;
     }
-
     .news .tit br {
-        display: none;
+        display: none; /* 줄바꿈 삭제 */
     }
-
     .news .list {
-        margin: 0;
-        padding-top: 30px;
+        margin: 0; /* tit하고 여백 반드시 margin */
+        padding-top: 30px; /* 상단의 여백 */
         overflow-x: auto;
     }
     .news .list ul {
-        flex-wrap: nowrap; /*한줄로*/
+        flex-wrap: nowrap;  /* 한줄로 */
+        /* li의 넓이 168px * li의 갯수 6개   168*6 = 1008
+           li 사이의 여백 16px * li의 개수 -1  16*5 = 80 
+           1008 + 80 = 1088 */
         width: 1088px;
     }
     .news .list ul li {
@@ -1156,116 +1138,91 @@ css에서도 nth-child로 선택한다. */
     }
     .news .list ul li:nth-child(1),
     .news .list ul li:nth-child(4) {
-        margin-top: 0; /*margin만 여백가능*/
+        margin-top: 0; /* margin만 -(마이너스) 여백 가능 */
     }
     .news .list ul li:nth-child(3),
-    .news .list ul li:nth-child(6)  {
+    .news .list ul li:nth-child(6) {
         margin-top: 0;
     }
-    .news .list ul li a span img{
-        width: 100%;
-    } 
-
+    .news .list ul li a span img {
+        width: 100%; /* 감싸는 요소의 넓이에 딱 맞게 */
+    }
     .news .list ul li a h3 {
         font-size: 17px;
     }
-
     .news .more {
-        right: 0; /*inner기준으로 정렬*/
-        left: auto; /* 가운데정렬 50% - 넓이의 절반 */
+        left: auto; 
+        right: 0;
         top: 63px;
     }
     .news .more a {
         width: 40px;
-        line-height: 37px;
+        line-height: 38px;
         padding: 0px;
-        text-align: center;
         border-radius: 100%;
+        text-align: center;
         font-size: 11px;
-        color: rgba(255, 255, 255, 0.8);
+        color: rgba(255,255,255,0.8);
     }
     .news .more a::after {
         display: none;
     }
-    .news .more a:hover {
-        background-color: #7A563C;
-        border: 1px solid #7A563C;
-        color: #fff;
-    }
-    .news .more a:hover::after {
-        background-image: url("data:image/svg+xml,%3Csvg width='23' height='11' viewBox='0 0 23 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.7553 1L21 10H1' stroke='white' stroke-linecap='round'/%3E%3C/svg%3E%0A");
-        animation-name: more; 
-        animation-duration: 2s; 
-        animation-iteration-count:infinite; 
-        animation-timing-function:linear;
-    }
 }
 
-
-.footer { 
+.footer {
     background-color: #7A563C;
-    padding: 92px 0 100px 0;
     color: #fff;
+    padding: 92px 0 100px 0;
 }
-
 .footer .inner {
     display: flex;
     justify-content: space-between;
-    position: relative;
+    position: relative; /* copyright 정렬의 기준 */
 }
-
 .footer .footer_txt {
     font-size: 30px;
 }
-
 .footer .footer_txt strong {
     font-weight: 700;
 }
-
-.footer .footer_info {
-    float: left;
-}
-
 .footer .footer_info strong {
     display: block;
     font-size: 20px;
     font-weight: 700;
 }
-
-/*인접선택자 
+/* 인접선택자
 .footer .footer_info span 다음에 오는 strong태그
-<strong><.strong>
-<span></span>
-<strong><.strong>---해당
-<span></span>
+<div class="footer_info">
+    <strong></strong>
+    <span></span>
+    <strong></strong> ----- span태그 다음에 오는 strong
+    <span></span> 
+</div>
 */
 .footer .footer_info span + strong {
     margin-top: 57px;
 }
-
 .footer .footer_info span {
     display: block;
+    margin: 11px 0 0 0;
 }
-
+.footer .footer_info span a { /* sns여백 */
+    margin: 0 10px 0 0;
+}
 .footer .copyright {
     position: absolute;
     left: 0;
     bottom: 0;
 }
-
 .footer .copyright img {
     width: 279px;
 }
-
 .footer .copyright span {
     display: block;
     margin: 5px 0 0 0;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255,255,255,0.8);
 }
 
-.footer .footer_info span a {
-    margin: 0 10px 0 0;
-}
 @media screen and (max-width:640px){
     .footer {
         padding: 54px 0 60px 0;
@@ -1294,6 +1251,5 @@ css에서도 nth-child로 선택한다. */
     }
     .footer .copyright img {
         width: 184px;
-        margin-top: 40px;
     }
 }/* media */

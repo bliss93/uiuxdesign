@@ -8,11 +8,15 @@
         $(document).ready(function(){
             $('.tree > ul').children().addClass('red')
             $('.tree').find('a').text('안녕')
-            
+            /* find('a')는 tree안에 있는 모든 a를 찾음 
+               특정 요소만 찾는다면 해당 요소를 선택할 수 있는 class 주면됨 */
             $('.tree > ul > li > a').next().addClass('next')
+            $('.tree > ul > li > a').parent().addClass('부모')
+            $('.tree > ul > li > a').parents().addClass('부모들')
+            $('.tree > ul > li > a').parents('.tree').addClass('tree부모')
         })
     </script>
-    <title>jquery tree</title>
+    <title>juqery tree</title>
 </head>
 <body>
     <div class="tree">
@@ -24,6 +28,9 @@
                     <li><a href="#n">1-2차메뉴</a></li>
                     <li><a href="#n">1-3차메뉴</a></li>
                     <li><a href="#n">1-4차메뉴</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">추가메뉴</a></li>
                 </ul>
             </li>
             <li>

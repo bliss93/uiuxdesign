@@ -18,15 +18,16 @@ $(document).ready(function(){
         console.log(device_status)
     })
 
-	/* 메뉴에 마우스를 오버하면
-        .header .gnb
+	/* 메뉴에 마우스를 오버하면 
+       .header .gnb
     header에 menu_open이라는 클래스를 추가
-
-    메뉴에 마우스를 아웃하면(메뉴를 벗어나면) 
-    -- 오버해서 생긴 흰배경을 벗어나 아웃됨
-        .header
+    
+    메뉴에서 마우스를 아웃하면 (메뉴를 벗어나면)
+    -- 오버해서 생긴 흰배경을 벗어나 아웃됨 
+       .header 
     header에서 menu_open 클래스를 삭제 */
-    /* tab키로만 메뉴를 이동했을때 메뉴에 접근하면 하위메뉴를 열어줘야함 */
+    /* tab키로만 메뉴를 이동했을때 메뉴에 접근하면 
+    하위메뉴를 열어줘야함 */
     $('.header .gnb').on('mouseenter focusin', function(){
         if(device_status == 'pc'){
             $(".header").addClass("menu_open");
@@ -35,7 +36,8 @@ $(document).ready(function(){
     $('.header').on('mouseleave', function(){
         $(".header").removeClass("menu_open");
     })
-    /* 마지막 메뉴에서 포커스가 아웃되면 메뉴를 모두 봤다고 판단하고 열린 메뉴 닫기 */
+    /* 마지막메뉴에서 포커스가 아웃되면 메뉴를 모두 봤다고 판단하고
+    열린 메뉴 닫기 */
     $('.header .gnb>ul>li:last-child>ul>li:last-child>a').on('focusout', function(){
         $(".header").removeClass("menu_open");
     })

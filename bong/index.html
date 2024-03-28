@@ -26,80 +26,23 @@
             pc버전 메뉴를 오버했을때: menu_over
             모바일에서 메뉴를 클릭했을 때: menu_open-->
         <header>
-            <div class="wrapper">
-                <div class="head_top">
-                    <h1 class="logo"><a href="index.html">폴바셋</a></h1>
-                    <div class="tnb1">
-                        <ul>
-                            <li><a href="#n">신규입점제의</a></li>
-                            <li><a href="#n">납품문의</a></li>
-                        </ul>
-                    </div>
-                    <div class="tnb2">
-                        <ul>
-                            <li><a href="#n">로그인</a></li>
-                            <li class="ques"><a href="#n">문의하기</a></li>
-                            <li><a href="#n">고객센터</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="head_sub">
-                    <nav class="gnb">
-                        <button class="gnb_open"></button>
-                        <div class="gnb_wrap">
-                            <ul class="depth1">
-                                <li>
-                                    <a href="#n"><span>ABOUT US</span></a>
-                                    <ul class="depth2">
-                                        <li><a href="#n">Brand</a></li>
-                                        <li><a href="#n">회사소개</a></li>
-                                        <li><a href="#n">CSR</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#n"><span>MENU</span></a>
-                                    <ul class="depth2">
-                                        <li><a href="#n">NEW</a></li>
-                                        <li><a href="#n">COFFEE</a></li>
-                                        <li><a href="#n">BEVERAGE</a></li>
-                                        <li><a href="#n">ICE-CREAM</a></li>
-                                        <li><a href="#n">FOOD</a></li>
-                                        <li><a href="#n">PRODUCT</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#n"><span>STORE</span></a>
-                                    <ul class="depth2">
-                                        <li><a href="#n">매장찾기</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#n"><span>SOCIETY</span></a>
-                                    <ul class="depth2">
-                                        <li><a href="#n">Paul Bassett Society</a></li>
-                                        <li><a href="#n"> 회원 등급 혜택</a></li>
-                                        <li><a href="#n">e-Card 선물</a></li>
-                                        <li><a href="#n">모바일 App 안내</a></li>
-                                        <li><a href="#n">제휴혜택 안내</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#n"><span>WHAT'S NEW</span></a>
-                                    <ul class="depth2">
-                                        <li><a href="#n">Event / News</a></li>
-                                        <li><a href="#n">Notice</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#n"><span>E-SHOP</span></a>
-                                    <ul class="depth2">
-                                        <li><a href="#n">E-SHOP 소개</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <button class="gnb_close">메뉴닫기</button>
-                    </nav>
+            <h1 class="logo"><a href="index.html">폴바셋</a></h1>
+            <div class="inner">
+                <nav class="gnb">
+                    <button class="gnb_open">메뉴 열기</button>
+                    <ul>
+                        <li><a href="#n">봉명동내커피</a></li>
+                        <li><a href="#n">메뉴</a></li>
+                        <li><a href="#n">매장안내</a></li>
+                        <li><a href="#n">새소식</a></li>
+                    </ul>
+                    <button class="gnb_close">메뉴닫기</button>
+                </nav>
+                <div class="tnb">
+                    <ul>
+                        <li class="search"><a href="#n">검색</a></li>
+                        <li class="lang"><a href="#n">언어</a></li>
+                    </ul>
                 </div>
             </div>
         </header>
@@ -155,11 +98,11 @@
             <section class="product">
                 <div class="wrapper">
                     <h2 data-aos="fade-up">Menu</h2>
-                    <h3>마음껏 먹어도 내 지갑은 두툼히! 봉명동내커피의 메뉴와 가격을 알아보세요.</h3>
+                    <h3 data-aos="fade-up">마음껏 먹어도 내 지갑은 두툼히! 봉명동내커피의 메뉴와 가격을 알아보세요.</h3>
                     <div class="list" data-aos="fade-left">
                         <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
                             <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
-                                <li div class="swiper-slide">
+                                <li div class="swiper-slide custom-slide">
                                     <a href="#n">
                                         <span class="photo"><img src="images/main/product01.png" alt="음료사진"></span>
                                         <strong class="tit">1리터보틀</strong>
@@ -209,10 +152,13 @@
                                 </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
                             </ul>
                         </div>
+                        <button class="prev">이전 팝업 보기</button><!--이전팝업보기-->
+                        <button class="next">다음 팝업 보기</button><!--다음팝업보기-->
                     </div>
                 </div>
             </section>
             <section class="brand">
+                <div class="line"></div>
                 <div class="wrapper">
                     <div class="photo" data-aos="fade-left"><img src="images/main/brand.png" alt="커피사진"></div>
                     <div class="inner">

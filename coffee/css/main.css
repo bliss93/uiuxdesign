@@ -3,12 +3,12 @@
 @import url(layout.css);
 /*
     파일명 : main.css
-    작성자 : 윤서하
-    작성일 : 20.03.13
+    작성자 : 문미영
+    작성일 : 2024.03.14
     설  명 : 메인페이지에만 들어가는 스타일을 저장 (header, footer 빼고 전부 다)
 */
 .container {
-    margin-top: 150px; /*header의 높이만큼*/
+    margin-top: 150px; /* header의 높이만큼 */
 }
 @media screen and (max-width:1024px){
     .container {
@@ -20,14 +20,13 @@
         margin-top: 50px; /* header의 높이만큼 */
     }
 }
-
 .visual .swiper { 
     
 } /* 팝업의 높이가 됨 */
 .visual .swiper-slide img {
     width:100%;
 }
-.visual .swiper-slide img.popup_mo {
+.visual .swiper-slide img.popup_m {
     display: none;
 }
 @media screen and (max-width:1640px){
@@ -64,71 +63,59 @@
     .visual .swiper-slide img.popup_pc {
         display: none;
     }
-    .visual .swiper-slide img.popup_mo {
+    .visual .swiper-slide img.popup_m {
         display: block;
     }
 }
 
-
 .product {
-    margin: 125px 0 160px 0 ;
+    margin: 125px 0 160px 0;
 }
-
 .product h2 {
     font-family: 'Bright', serif;
-    font-size: 50px;
+    font-size: 2.941rem;
     text-align: center;
     margin: 0 0 70px 0;
 }
-
 .product .list ul {
-    align-items: flex-end; /*li의 높이가 다를 때 아래 정렬*/
+    align-items: flex-end; /* li의 높이가 다를때 아래 정렬 */
 }
-/* 
-.product .list ul li {
-    width: 23%;
-}
-.product .list ul li.swiper-slide-active {
-    width: 31%
-}  */
 
 .product .list ul li a {
     display: block;
-    position: relative; /*before 정렬의 기준*/
+    position: relative; /* before 정렬의 기준 */
     text-align: center;
     padding: 0 0 55px 0;
 }
-
 .product .list ul li a::before {
     position: absolute;
-    left: 5px;
+    
     bottom: 7px;
     z-index: -1;
+    left: 5px;
     width: calc(100% - 12px);
-    height: 260px;
-    background-color: #fff;
-    border-radius: 40px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    height: 260px; 
+    border-radius: 40px; 
+
+    background: #fff;
+    /*box-shadow: 2px 2px 5px rgba(0,0,0,0.05);*/
     content: "";
     transition: 0.5s;
 }
-
 .product .list ul li a .photo {
     display: block;
-    height: 280px;
 }
 .product .list ul li a .photo img {
-    max-width: 100%;
     width: 250px;
-    transition: 0.5s;
+    max-width: 90%;
 }
 .product .list ul li a .tit {
     display: block;
-    font-size: 20px;
+    font-size: 1.176rem;
 }
 .product .list ul li a .name {
     display: block;
-    font-family: 'Bright, serif';
+    font-family: 'Bright', serif;
     color: #876f53;
     margin: 5px 0 17px 0;
     transition: 0.5s;
@@ -137,16 +124,16 @@
     display: flex;
     justify-content: center;
 }
-
 .product .list ul li a .info span + span {
-    /*<span></span> 해당없음
-    <span></span> 적용됨
-    <span></span> 적용됨*/
+    /*  <span class="info">        
+            <span></span> ----- 해당사항없음
+            <span></span> ----- 적용됨
+            <span></span> ----- 적용됨
+        </span>*/
     margin-left: 20px;
-    position: relative;
+    position: relative; /* before 정렬의 기준 */
 }
-
-.product .list ul li a .info span + span::before{
+.product .list ul li a .info span + span::before {
     position: absolute;
     left: -10px;
     top: 5px;
@@ -155,99 +142,55 @@
     background-color: #cccccc;
     content: "";
 }
-
-.product .list ul li.swiper-slide-active a {
-    color: #fff;
-}
-
-.product .list ul li.swiper-slide-active a::before {
-    height: 295px;
-    background: linear-gradient(180deg, #876f53, #b29574);;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
-}
-.product .list ul li.swiper-slide-active a .photo img {
-    width: 280px
-}
-.product .list ul li.swiper-slide-active a .tit {
-    font-size: 25px;   
-    font-weight: 900;
-}
-.product .list ul li.swiper-slide-active a .name {
-    font-family: 'Bright', serif;
-    color: #fff;
-}
-.product .list ul li.swiper-slide-active a .info {
-
-}
-
-
-@media screen and (max-width:1024px){
-    .product {
-        margin: 100px 0 100px 0 ;
+@media screen and (min-width:769px){
+    /* 왼쪽요소 -active */
+    .product .list ul li.swiper-slide-active a {
+        color: #fff;
     }
-    
-    .product h2 {
-        font-size: 38px;
-        margin: 0 0 50px 0;
-    }
-    
-    .product .list ul li a {
-        padding: 0 0 40px 0;
-    }
-        
-    .product .list ul li a .photo {
-        height: 250px;
-    }
-    .product .list ul li a .photo img {
-        width: 200px;
-    }
-    
-    .product .list ul li a .tit {
-        font-size: 18px;
+    .product .list ul li.swiper-slide-active a::before {
+        height: 295px;
+        background: linear-gradient(-45deg, #876f53, #b29574);
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
     }
     .product .list ul li.swiper-slide-active a .photo img {
-        width: 240px
+        width: 280px;
     }
     .product .list ul li.swiper-slide-active a .tit {
-        font-size: 20px;   
+        font-size: 1.471rem;
+        font-weight: 900;
+    }
+    .product .list ul li.swiper-slide-active a .name {
+        color: #fff;
     }
 }
 @media screen and (max-width:768px){
     .product {
-        margin: 50px 0 50px 0 ;
+        margin: 50px 0 60px 0;
     }
-    
     .product h2 {
-        font-size: 30px;
-        margin: 0 0 30px 0;
+        margin-bottom: 30px;
+        font-size: 2.3rem;
     }
-    
+    .product .list ul li {
+        width: 200px;
+    }
     .product .list ul li a {
-        padding: 0 0 30px 0;
+        padding-bottom: 10px;
     }
-        
-    .product .list ul li a .photo {
-        height: 200px;
+    .product .list ul li a::before {
+        height: 150px; 
+        border-radius: 20px; 
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
     }
-    .product .list ul li a .photo img {
-        width: 150px;
-    }
-    
-    .product .list ul li a .tit {
-        font-size: 15px;
-    }
-    .product .list ul li.swiper-slide-active a .photo img {
-        width: 200px
-    }
-    .product .list ul li.swiper-slide-active a .tit {
-        font-size: 18px;   
+    .product .list ul li a .info {
+        display: none;
     }
 }
 
 .brand {
-    position: relative ; /*photo 정렬의 중심*/
+    position: relative; /* photo 정렬의 중심 */
+    height: 696px;
 }
-
 .brand .photo {
     position: absolute;
     left: calc(50% - 104px);
@@ -257,41 +200,35 @@
     overflow: hidden;
     border-radius: 348px 0 0 348px;
 }
-   
 .brand .photo img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
 .brand .inner {
-    width: calc(50% - 174px);
+    width: 600px;
     padding: 125px 0 0 0;
 }
-
 .brand h2 {
     font-size: 4.706rem;
     line-height: 1;
     font-family: 'Bright', serif;
     margin: 0 0 25px 0;
 }
-
 .brand .list ul {
     margin: 60px 0 0 0;
     display: flex;
 }
-
 .brand .list ul li {
     width: 25%;
     text-align: center;
 }
-
 .brand .list ul li strong {
     display: block;
     color: #876f53;
 }
- 
+
 @media screen and (max-width:1640px){
     .brand .photo {
         left: auto;
@@ -462,8 +399,6 @@
         display: none;
     }
 }
-
-
 aside {
     position: relative;
 }
@@ -491,18 +426,14 @@ aside button::before {
     transform: rotate(180deg);
     content: "";
 }
-
 footer {
-    border-top: 1px solid #d9d1cc;
-    color: rgba(9, 6, 6, 0.8);
+    border-top: 1px solid #d6d1cc;
+    color: rgba(9,6,6,0.8);
     text-align: center;
 }
-
-
 footer .f_logo {
     margin: 27px 0 15px 0;
 }
-
 footer .f_logo img {
     width: 126px;
 }
@@ -518,9 +449,8 @@ footer .f_link ul li a {
     display: block;
     line-height: 50px;
     border-radius: 25px;
-    border: 1px solid #876f53;
-    background-color: #fff;
-    color: #876f53;
+    background-color: #876f53;
+    color: #fff;
 }
 footer .f_link ul li a span {
     position: relative; /* before 정렬의 기준 */
@@ -539,13 +469,13 @@ footer .f_link ul li a span::before {
     content: "";
 }
 footer .f_link ul li.link01 a span::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24' fill='%23876f53'%3E%3Cpath d='M304.615-80Q277-80 258.5-98.5 240-117 240-144.615v-670.77Q240-843 258.5-861.5 277-880 304.615-880h350.77Q683-880 701.5-861.5 720-843 720-815.385v670.77Q720-117 701.5-98.5 683-80 655.385-80h-350.77ZM280-258.46v113.846q0 9.23 7.692 16.923Q295.385-120 304.615-120h350.77q9.23 0 16.923-7.692Q680-135.385 680-144.615v-113.846H280Zm200 100q12.385 0 21.577-9.193 9.192-9.192 9.192-21.577 0-12.384-9.192-21.577Q492.385-220 480-220q-12.385 0-21.577 9.192-9.192 9.193-9.192 21.577 0 12.385 9.192 21.577 9.192 9.193 21.577 9.193ZM280-298.462h400V-740H280v441.538ZM280-780h400v-35.385q0-9.23-7.692-16.923Q664.615-840 655.385-840h-350.77q-9.23 0-16.923 7.692Q280-824.615 280-815.385V-780Zm0 521.539V-120v-138.461ZM280-780V-840v60Z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24' fill='%23fff'%3E%3Cpath d='M304.615-80Q277-80 258.5-98.5 240-117 240-144.615v-670.77Q240-843 258.5-861.5 277-880 304.615-880h350.77Q683-880 701.5-861.5 720-843 720-815.385v670.77Q720-117 701.5-98.5 683-80 655.385-80h-350.77ZM280-258.46v113.846q0 9.23 7.692 16.923Q295.385-120 304.615-120h350.77q9.23 0 16.923-7.692Q680-135.385 680-144.615v-113.846H280Zm200 100q12.385 0 21.577-9.193 9.192-9.192 9.192-21.577 0-12.384-9.192-21.577Q492.385-220 480-220q-12.385 0-21.577 9.192-9.192 9.193-9.192 21.577 0 12.385 9.192 21.577 9.192 9.193 21.577 9.193ZM280-298.462h400V-740H280v441.538ZM280-780h400v-35.385q0-9.23-7.692-16.923Q664.615-840 655.385-840h-350.77q-9.23 0-16.923 7.692Q280-824.615 280-815.385V-780Zm0 521.539V-120v-138.461ZM280-780V-840v60Z'/%3E%3C/svg%3E");
 }
 footer .f_link ul li.link02 a span::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24' fill='%23876f53'%3E%3Cpath d='M200-160v-40h560v40H200Zm125.385-150.769q-52.154 0-88.77-35.462Q200-381.692 200-432.308V-800h572.308q27.923 0 47.808 18.884Q840-762.231 840-734.616v89.231q0 27.616-19.884 46.5Q800.231-580 772.308-580h-80v147.692q0 50.616-36.616 86.077-36.615 35.462-88.769 35.462H325.385Zm0-40h241.538q35.221 0 60.303-24.043 25.082-24.042 25.082-57.803V-760H240v327.67q0 33.791 25.082 57.676 25.081 23.885 60.303 23.885ZM692.308-620h80q11.538 0 19.615-7.308Q800-634.615 800-645.385v-89.231q0-10.769-8.077-18.076Q783.846-760 772.308-760h-80v140ZM325.385-350.769H240h412.308-326.923Z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24' fill='%23fff'%3E%3Cpath d='M200-160v-40h560v40H200Zm125.385-150.769q-52.154 0-88.77-35.462Q200-381.692 200-432.308V-800h572.308q27.923 0 47.808 18.884Q840-762.231 840-734.616v89.231q0 27.616-19.884 46.5Q800.231-580 772.308-580h-80v147.692q0 50.616-36.616 86.077-36.615 35.462-88.769 35.462H325.385Zm0-40h241.538q35.221 0 60.303-24.043 25.082-24.042 25.082-57.803V-760H240v327.67q0 33.791 25.082 57.676 25.081 23.885 60.303 23.885ZM692.308-620h80q11.538 0 19.615-7.308Q800-634.615 800-645.385v-89.231q0-10.769-8.077-18.076Q783.846-760 772.308-760h-80v140ZM325.385-350.769H240h412.308-326.923Z'/%3E%3C/svg%3E");
 }
 footer .f_link ul li.link03 a span::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24' fill='%23876f53'%3E%3Cpath d='M292.308-115.384q-25.308 0-42.654-17.347-17.347-17.346-17.347-42.654 0-25.307 17.347-42.653 17.346-17.347 42.654-17.347 25.307 0 42.654 17.347 17.346 17.346 17.346 42.653 0 25.308-17.346 42.654-17.347 17.347-42.654 17.347Zm375.384 0q-25.307 0-42.654-17.347-17.346-17.346-17.346-42.654 0-25.307 17.346-42.653 17.347-17.347 42.654-17.347 25.308 0 42.654 17.347 17.347 17.346 17.347 42.653 0 25.308-17.347 42.654-17.346 17.347-42.654 17.347ZM235.231-740 342-515.385h265.385q6.923 0 12.307-3.461 5.385-3.462 9.231-9.615l104.615-190.001q4.616-8.461.77-14.999Q730.462-740 721.231-740h-486Zm-19.539-40h520.77q26.077 0 39.231 21.269 13.153 21.269 1.384 43.808L662.769-506.615q-8.692 14.615-22.577 22.923-13.884 8.308-30.5 8.308H324l-48.615 89.23q-6.154 9.231-.385 20t17.308 10.769h435.385v40.001H292.308q-35 0-52.231-29.5-17.231-29.501-.846-59.27l60.153-107.231L152.307-820H80v-40h97.692l38 80ZM342-515.385h280-280Z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24' fill='%23fff'%3E%3Cpath d='M292.308-115.384q-25.308 0-42.654-17.347-17.347-17.346-17.347-42.654 0-25.307 17.347-42.653 17.346-17.347 42.654-17.347 25.307 0 42.654 17.347 17.346 17.346 17.346 42.653 0 25.308-17.346 42.654-17.347 17.347-42.654 17.347Zm375.384 0q-25.307 0-42.654-17.347-17.346-17.346-17.346-42.654 0-25.307 17.346-42.653 17.347-17.347 42.654-17.347 25.308 0 42.654 17.347 17.347 17.346 17.347 42.653 0 25.308-17.347 42.654-17.346 17.347-42.654 17.347ZM235.231-740 342-515.385h265.385q6.923 0 12.307-3.461 5.385-3.462 9.231-9.615l104.615-190.001q4.616-8.461.77-14.999Q730.462-740 721.231-740h-486Zm-19.539-40h520.77q26.077 0 39.231 21.269 13.153 21.269 1.384 43.808L662.769-506.615q-8.692 14.615-22.577 22.923-13.884 8.308-30.5 8.308H324l-48.615 89.23q-6.154 9.231-.385 20t17.308 10.769h435.385v40.001H292.308q-35 0-52.231-29.5-17.231-29.501-.846-59.27l60.153-107.231L152.307-820H80v-40h97.692l38 80ZM342-515.385h280-280Z'/%3E%3C/svg%3E");
 }
 footer .f_nav {
     margin: 40px 0;
@@ -577,7 +507,6 @@ footer .f_nav ul li:last-child {
 footer .f_nav ul li:last-child::after {
     display: none;
 }
-
 footer .f_nav.open ul {
     display: block;
 }
@@ -640,6 +569,16 @@ footer .copyright {
         left: 0;
         bottom: 38px;
         width: 100%;
+        background-color: #876f53;
+        color: #fff;
+        border-radius: 10px;
+        padding: 10px 20px;
+    }
+    footer .f_nav ul li {
+        margin: 10px 0;
+    }
+    footer .f_nav ul li:after {
+        display: none;
     }
     footer .f_nav button {
         width: 100%;

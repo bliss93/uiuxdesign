@@ -1,30 +1,31 @@
 @charset "utf-8"; /* 이css문서는 UTF-8방식으로 인코딩 되어 있습니다. */
-/* 영문웹폰트 */
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif+Caption:ital@1&display=swap');
-/* 한글웹폰트 */
 
+/* 한글웹폰트 */
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 300;
+    font-display: swap;
+    src: local('Pretendard Light'), url(../fonts/Pretendard-Light.woff2) format('woff2'), url(../fonts/Pretendard-Light.woff) format('woff');
+}
 @font-face {
     font-family: 'Pretendard';
     font-weight: 900;
     font-display: swap;
-    src: local('Pretendard Bold'), url(../fonts/Pretendard-Black.woff) format('woff'), url(../fonts/Pretendard-Black.woff2) format('woff2');
+    src: local('Pretendard Black'), url(../fonts/Pretendard-Black.woff2) format('woff2'), url(../fonts/Pretendard-Black.woff) format('woff');
 }
-
 @font-face {
     font-family: 'Bright';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.4/Bright.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
-
-
 *::selection {
-    background-color: #003348;
-    color: #fff;
+    background-color: #090606;
+    color: #876f53;
 }
 *::-moz-selection { /* 호환성을 위한 코드 */
-    background-color: #003348;
-    color: #fff;
+    background-color: #090606;
+    color: #876f53;
 }
 html, body {
     font-family: 'Pretendard', sans-serif; /* 서체 serif 명조 sans-serif 고딕 */
@@ -36,7 +37,6 @@ html, body {
     word-break: keep-all; /* 단어를 묶어서 줄바꿈 */
     word-wrap: break-word; /* 만약 단어가 엄청 길면 분리해서 줄바꿈 */
 }
-
 .f_bright {
     font-family: 'Bright', serif;
 }
@@ -54,19 +54,17 @@ html, body {
         width: auto; 
         margin: 0 20px;  
     }
-}
+}/*media*/
 @media screen and (max-width:1320px){
     html, body {
         font-size: 15px;
     }
-}
-
+}/*media*/
 @media screen and (max-width:1024px){
     html, body {
         font-size: 14px;
     }
-}
-/*media*/
+}/*media*/
 @media screen and (max-width:768px){
     html, body {
         font-size: 13px;
@@ -101,8 +99,8 @@ html, body {
 
 /*
     파일명 : common.css
-    작성자 : 윤서하
-    작성일 : 24.03.13
+    작성자 : 문미영
+    작성일 : 2024.02.28
     설  명 : 홈페이지 전체에 공통으로 적용되는 스타일을 저장
              문자스타일 등의 기본스타일만 저장
 

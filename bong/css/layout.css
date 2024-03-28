@@ -4,126 +4,81 @@ header {
     top: 0;
     z-index: 100;
     width: 100%;
-    background-color:#ede8e3 ;
+    height: 100px;
     border-bottom: 1px solid #bfbbb7;
     transition: transform 0.5s;
 }
-
-header .head_top {
-    height: 77px;
-    
-}
-
-header .head_sub {
-    height: 73px;
-}
-
 header .logo {
     position: absolute; /*header기준정렬*/
-    left: 50%;
-    top: 15px;
-    transform: translate(-50%, 0 ); /*넓이가 변경되더라도 계속 가운데로 하는 방법
-    left:50% (나의 정렬기준에서 가운데), translate(-50%, 0 )(나 자신 사이즈의 절반을 왼쪽으로 이동)*/
+    left: 24px;
+    top: 24px;
 }
-
 header .logo a {
     display: block;
-    width: 95px;
-    height: 63px;
+    width: 116px;
+    height: 53px;
     background: url(../images/common/logo2.png) no-repeat center center / contain;
     font-size: 0;
     line-height: 0;
 }
-
-header .tnb1 {
-    float: left;
-    margin: 20px 0 0 82px;
-}
-
-header .tnb2 {
-    float: right;
-    margin: 20px 82px 0 0;
-}
-
-header .tnb1 ul,
-header .tnb2 ul {
-    display: flex;
-}
-
-header .tnb1 ul li,
-header .tnb2 ul li{
-    margin-right: 35px;
-    position: relative; /*after정렬기준*/
-    font-size: 0.882rem;
-}
-
-
-header .tnb1 ul li:last-child,
-header .tnb2 ul li:last-child{
-    margin-right: 0;
-}
-
-header .tnb1 ul li::after,
-header .tnb2 ul li::after{ /*li기준으로 정렬*/
-    position: absolute;
-    top: 7px;
-    right: -20px;
-    width: 3px;
-    height: 3px;
-    border-radius: 100%;
-    background-color: #bfbbb7;
-    content: "";
-}
-
-header .tnb1 ul li:last-child:after,
-header .tnb2 ul li:last-child:after {
-    display: none;
-}
-
 header .gnb .gnb_open {
     display: none;
 }
-
 header .gnb .gnb_close {
     display: none;
 }
-
-header .gnb .depth1 {
+header .gnb {
+    float: left;
+    margin-left: 663px;
+}
+header .gnb ul {
     display: flex;
+    justify-content: space-between;
+    width: 388px;
     text-align: center;
+    line-height: 100px;
 }
-
-header .gnb .depth1 > li {
-    width: 16.66%;
-}
-
-header .gnb .depth1 > li > a {
+header .gnb ul > li > a {
     display: block;
-    line-height: 73px;
-    font-size: 1.294rem;
-    font-weight: 900;
+    font-weight: 400;
+    letter-spacing: -2.5%;
     white-space: nowrap; /* 무조건 한줄 */
 } 
-
-header .gnb .depth2 {
-    padding: 15px 0 0 0;
-    /*오버해서 나타나는 메뉴는 여백을 padding으로 줘야 out되지 않음*/
-    display: none;
+header .gnb ul > li > a:hover {
+    font-weight: 700;
+    color: #97644D;
 }
-header .gnb .depth2 > li > a {
+header .tnb {
+    float: right;
+}
+header .tnb ul {
+    display: flex;
+    margin: 39px 55px 0 0;
+}
+header .tnb ul li{
+    margin-right: 25px;
+}
+header .tnb ul li:last-child {
+    margin-right: 0;
+}
+header .tnb ul li a {
+    font-size: 0;
+    line-height: 0;
     display: block;
-    line-height: 40px;
-    font-size: 1.176rem;
-    white-space: nowrap; /* 무조건 한줄 */
+    width: 20px;
+    height: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
-
+header .tnb ul li.search a {
+    background-image: url(../images/common/search.svg)
+}
+header .tnb ul li.lang a {
+    background-image: url(../images/common/lang.svg)
+}
 @media screen and (max-width:1640px) {
-    header .tnb1 {
-        margin-left: 0;
-    }
-    header .tnb2 {
-        margin-right: 0;
-    }
+
 }
 
 @media screen and (max-width:1320px) {

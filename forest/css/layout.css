@@ -91,6 +91,7 @@ header.black .tnb ul li.lang a {
 @media screen and (max-width:768px){
     header {
         height: 50px;
+        backdrop-filter: blur(10px);
     }
     header .logo {
         margin-top: 16px;
@@ -123,7 +124,6 @@ header.black .tnb ul li.lang a {
         display: none;
     }
 }
-
 
 footer .footer_top {
     background-color: #1F3D83;
@@ -255,43 +255,32 @@ footer .footer_top .donation a span::before {
 }
 
 footer .footer_sub {
-    height: 355px;
-    background-color: #1d1d1d;
+    background-color: #1D1D1D;
     color: #fff;
+    padding: 45px 0 70px 0;
 }
-
 footer .footer_sub .footer_logo {
     float: left;
 }
-footer .footer_sub .footer_cnt {
-    margin: 0 255px 0 277px;
-}
-footer .footer_sub .sns {
+footer .footer_sub  .sns {
     float: right;
 }
-footer .footer_sub .footer_logo {
-    width: 155px;
+footer .footer_sub .footer_cnt {
+    margin: 0 296px 0 227px; 
+    /* 왼쪽에 로고들어가고 오른쪽에 sns가 들어갈 여백 */
 }
-
-footer .footer_sub .footer_nav ul li{
-
-}
-
-@media screen and (max-width:768px) {
-        
+@media screen and (max-width:768px){
     footer {
         height: auto !important;
         min-height: auto !important;
     }
-
     footer .footer_sub .footer_logo {
         float: none;
     }
-
-    footer .footer_sub .sns {
+    footer .footer_sub  .sns {
         float: none;
     }
     footer .footer_sub .footer_cnt {
-        margin: 0;
+        margin: 0; 
     }
 }

@@ -5,25 +5,22 @@
 /* 한글웹폰트 */
 @font-face {
     font-family:'S-CoreDream';
-    src:url('../fonts/SCoreDreamRegular.woff') format('woff'); 
+    src:url('../fonts/SCoreDreamRegular.woff') format('woff'); /* window용 */
     font-weight:400; 
     font-style:normal; 
 }
-
 @font-face {
     font-family:'S-CoreDream';
-    src:url('../fonts/SCoreDreamRegular.woff2') format('woff2'); 
+    src:url('../fonts/SCoreDreamRegular.woff2') format('woff2'); /* 맥용 */
     font-weight:400; 
     font-style:normal; 
 }
-
 @font-face {
     font-family:'S-CoreDream';
     src:url('../fonts/SCoreDreamExtraBold.woff') format('woff'); 
     font-weight:700;
     font-style:normal; 
 }
-
 @font-face {
     font-family:'S-CoreDream';
     src:url('../fonts/SCoreDreamExtraBold.woff2') format('woff2'); 
@@ -32,16 +29,24 @@
 }
 
 
-
 *::selection {
-    background-color: #1D1D1D;
+    background-color: #1d1d1d;
     color: #fff;
 }
 *::-moz-selection { /* 호환성을 위한 코드 */
-    background-color: #1D1D1D;
+    background-color: #1d1d1d;
     color: #fff;
 }
-
+/*
+    영문, 숫자는 영문 폰트를 사용하고 한글만 한국어 폰트를 사용하고 싶을때
+    (단 영문 폰트로 선택한 폰트는 한국어가 지원되는 폰트면 안됨)
+    둘다 폰트파일을 불러오고 (import, font-face)
+    body에서 폰트를 정의할때 맨먼저 무조건 영문폰트를 먼저 선언
+    영어,숫자만 영문폰트가 적용되고 한글을 지원되지 않기때문에 
+    다음에 선언된 한글폰트가 적용됨
+    font-family에 여러폰트를 쓰는 것은 
+    앞에 폰트가 지원안되면 다음폰트, 그게 또 안되면 다음폰트 ....무한반복
+*/
 
 html, body {
     font-family: 'Montserrat', 'S-CoreDream', sans-serif; /* 서체 serif 명조 sans-serif 고딕 */
@@ -71,7 +76,7 @@ html, body {
         margin: 0 20px;  
     }
 }/*media*/
-@media screen and (max-width:640px){
+@media screen and (max-width:768px){
     html, body {
         font-size: 13px;
     }
@@ -109,73 +114,94 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
     position: absolute;
     left: 0;
     top: 0;
-    height: 100px;
-    width: 100%;
     z-index: 100;
+    width: 100%;
+    height: 100px;
     color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    /* 왼쪽에 로고, 오른쪽에 검색/바로가기, 가운데 메뉴 배치
+       왼쪽과 오른쪽의 사이즈가 비슷해야 메뉴가 가운데로 감 */
 }
-
 .header .logo {
     margin: 23px 0 0 40px;
     font-size: 0;
     line-height: 0;
 }
-
 .header .logo a {
-    width: 109px;
-    height: 53px;
+    width: 180px;
+    height: 55px;
     display: block;
     background: url(../images/logo.svg) no-repeat center center / contain;
 }
-
-.header .gnb .gnb_open,
+.header .gnb .gnb_open, 
 .header .gnb .gnb_close {
     display: none;
 }
-
 .header .gnb ul.depth1 {
     display: flex;
 }
-
 .header .gnb ul.depth1 > li {
-    position: relative;
+    position: relative; /* .depth2 정렬의 기준 */
 }
-
 .header .gnb ul.depth1 > li > a {
-    padding: 0 25px;
-    line-height: 100px;
+    padding: 0 25px; /* 메뉴사이 여백 */
+    line-height: 100px; /* 메뉴 위아래 가운데 */
     display: block;
     font-size: 22px;
-    position: relative;
+    position: relative; /* after 정렬의 기준 */
 }
+/* has 선택자
+    <li>
+        <a></a>
+        <ul class="depth2"></ul>
+    </li>
+    <li>
+        <a></a>
+    </li>
+    1차 메뉴중에서 2차 메뉴를 가지고 있는 li가 있고
+    2차 메뉴가 없는 li가 있음
 
-/*has 가상선택자!*/
+    이때 2차 메뉴를 가지고 있는 li만 선택해서 
+    a태그에 스타일을 줄 예정 
+    li:has(.depth2) 라고 선언하면 
+    li의 하위 요소중에서 depth2라는 클래스명을 갖은 
+    li에만 스타일이 적용됨.
+    ----- 단 주의사항 2023년 새로 생김..
+          즉 브라우저가 업데이트가 안된 곳에서는 적용이 안됨
+*/
 .header .gnb ul.depth1 > li:has(.depth2) > a::after {
     position: absolute;
-    right: 10px;
-    top: calc(50% - 10px);
+    right: 12px;
+    top: calc(50% - 8px);
     width: 8px;
     height: 15px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10.404' height='5.864' viewBox='0 0 10.404 5.864'%3E%3Cpath id='chevron_right_FILL0_wght300_GRAD0_opsz24' d='M350.409-688.564l-3.966-3.967a.706.706,0,0,1-.207-.508.688.688,0,0,1,.207-.518.7.7,0,0,1,.513-.212.7.7,0,0,1,.513.212l4.377,4.377a.808.808,0,0,1,.193.288.935.935,0,0,1,.056.328.937.937,0,0,1-.056.328.807.807,0,0,1-.193.288l-4.377,4.377a.706.706,0,0,1-.508.207.688.688,0,0,1-.518-.207.7.7,0,0,1-.212-.513.7.7,0,0,1,.212-.513Z' transform='translate(-683.365 -346.231) rotate(90)' fill='%23fff'/%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10.404 5.864'%3E%3Cpath id='chevron_right_FILL0_wght300_GRAD0_opsz24' d='M350.409-688.564l-3.966-3.967a.706.706,0,0,1-.207-.508.688.688,0,0,1,.207-.518.7.7,0,0,1,.513-.212.7.7,0,0,1,.513.212l4.377,4.377a.808.808,0,0,1,.193.288.935.935,0,0,1,.056.328.937.937,0,0,1-.056.328.807.807,0,0,1-.193.288l-4.377,4.377a.706.706,0,0,1-.508.207.688.688,0,0,1-.518-.207.7.7,0,0,1-.212-.513.7.7,0,0,1,.212-.513Z' transform='translate(-683.365 -346.231) rotate(90)' fill='%23fff'/%3E%3C/svg%3E%0A");
     background-repeat: no-repeat;
-    background-position: center center;
     background-size: contain;
+    background-position: center center;
     content: "";
 }
-
 .header .gnb ul.depth2 {
     display: none;
     position: absolute;
     left: 50%;
-    top: 100px;
+    top: 100px; /* a태그의 높이와 동일 */
     transform: translate(-50%, 0);
-    /*나의 넓이의 절반을 왼쪽으로 이동*/
+    /* 나의 넓이의 절반을 왼쪽으로 이동 */
     padding: 33px 20px 10px 20px;
+    /*
+        2차메뉴가 absolute라면 하위메뉴로 이동할때
+        메뉴가 아웃 되는 경우가 있음
+        이문제를 해결하려면 반드시 2차메뉴가 1차메뉴 a와 
+        딱 붙여있어야함. (그 사이에 틈이 있으면 안됨)
+        <a></a>   -- line-height: 100px
+        <ul class="depth2"></ul> top:100px (딱 a만큼)
+        필요한 여백 padding으로 처리 (절대 margin 안됨)
+        만약 backgroud가 필요하면 before로 처리
+    */
 }
-
 .header .gnb ul.depth2::before {
     position: absolute;
     left: 0;
@@ -184,60 +210,29 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
     width: 100%;
     height: calc(100% - 13px);
     content: "";
-    border-radius: 10px;
-    backdrop-filter: blur(10px) brightness(50%);
+    border-radius: 20px;
+    backdrop-filter: blur(10px) brightness(90%);
+    /* birghtness 100% - 기본, 밝게 100%이상 어둡게 할꺼면 100%이하 */
 }
-
 .header .gnb ul.depth2 > li > a {
     display: block;
-    white-space: nowrap; /*줄바꿈 금지*/
+    white-space: nowrap; /* 줄바꿈 금지 */
     line-height: 40px;
-    text-align: center;
 }
-
 .header .gnb ul.depth2 > li > a:hover {
     color: #73E59D;
     font-weight: 700;
 }
-
-
-.header.menu_over::before {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    content: "";
-    backdrop-filter: blur(10px) brightness(50%);
-}
-
-.header .gnb ul.depth1 >li.sub_over > a {
-    color: #73E59D;
-    font-weight: 700;
-}
-
-.header .gnb ul.depth1 >li.sub_over > a::after {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10.404' height='5.864' viewBox='0 0 10.404 5.864'%3E%3Cpath id='chevron_right_FILL0_wght300_GRAD0_opsz24' d='M350.409-688.564l-3.966-3.967a.706.706,0,0,1-.207-.508.688.688,0,0,1,.207-.518.7.7,0,0,1,.513-.212.7.7,0,0,1,.513.212l4.377,4.377a.808.808,0,0,1,.193.288.935.935,0,0,1,.056.328.937.937,0,0,1-.056.328.807.807,0,0,1-.193.288l-4.377,4.377a.706.706,0,0,1-.508.207.688.688,0,0,1-.518-.207.7.7,0,0,1-.212-.513.7.7,0,0,1,.212-.513Z' transform='translate(693.769 352.095) rotate(-90)' fill='%2373e59d'/%3E%3C/svg%3E ");
-}
-
-/*li에 마우스를 올리면 jquery에서 해당 li에 sub_over 클래스 추가 예정*/
-.header .gnb ul.depth1 >li.sub_over > .depth2 {
-    display: block;
-}
-
 .header .tnb {
     display: flex;
-    align-items:center;
+    align-items: center;
     margin: 40px 40px 0 0;
-} 
-
+}
 .header .tnb .search {
-    position: relative;
+    position: relative; /* before정렬의 기준 */
     padding-left: 26px;
     margin-right: 33px;
 }
-
 .header .tnb .search::before {
     position: absolute;
     left: 0;
@@ -268,8 +263,6 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
     background-repeat: no-repeat;
     background-size: contain;
 }
-
-
 @media screen and (min-width:1025px){
     /* li에 마우스를 올리면 jquery에서 해당 li에 sub_over 클래스 추가 예정 
     메뉴 오버스타일은 모바일 타입으로 변경될때는 적용 필요없음 
@@ -318,10 +311,9 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
     }
 }
 @media screen and (max-width:1024px){
-    /* 모바일변환 */
     .header .gnb .gnb_wrap {
         display: none;
-        background-color: #1d1d1d;
+        background-color: #1D1D1D;
         position: absolute;
         left: 0;
         top: 0;
@@ -329,11 +321,9 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
         width: 100%;
         height: 100vh;
     }
-
-    .header.menu_open .gnb .gnb_wrap{
+    .header.menu_open .gnb .gnb_wrap {
         display: block;
     }
-
     .header .gnb .gnb_open {
         display: block;
     }
@@ -351,49 +341,41 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
         background-size: 28px auto;
         background-position: center center;
     }
-
     .header .gnb .gnb_close {
         z-index: 111;
-        background-color: #00a3bb;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='21.92' height='21.92' viewBox='0 0 21.92 21.92'%3E%3Cg id='그룹_128' data-name='그룹 128' transform='translate(-319.439 -14.439)'%3E%3Cline id='선_14' data-name='선 14' x2='28' transform='translate(320.5 35.299) rotate(-45)' fill='none' stroke='%23fff' stroke-width='3'/%3E%3Cline id='선_15' data-name='선 15' x2='28' transform='translate(320.5 15.5) rotate(45)' fill='none' stroke='%23fff' stroke-width='3'/%3E%3C/g%3E%3C/svg%3E ");
+        background-color: #00A3BB;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 21.92 21.92'%3E%3Cg id='그룹_142' data-name='그룹 142' transform='translate(-319.439 -14.439)'%3E%3Cline id='선_14' data-name='선 14' x2='28' transform='translate(320.5 35.299) rotate(-45)' fill='none' stroke='%23fff' stroke-width='3'/%3E%3Cline id='선_15' data-name='선 15' x2='28' transform='translate(320.5 15.5) rotate(45)' fill='none' stroke='%23fff' stroke-width='3'/%3E%3C/g%3E%3C/svg%3E%0A");
     }
 
     .header.menu_open .gnb .gnb_open {
         display: none;
     }
-
     .header.menu_open .gnb .gnb_close {
         display: block;
     }
-
-
     .header .gnb ul.depth1 {
         background-color: #fff;
-        color: #1d1d1d;
+        color: #1D1D1D;
         margin: 100px 0 0 0;
-        height: calc(100vh - 100px); 
-        overflow-y: auto; /*메뉴가 길어지면 스크롤*/
-        display: block; /*flex 해제*/
+        height: calc(100vh - 100px);
+        overflow-y: auto; /* 메뉴가 길어지면 스크롤 */
+        display: block;/* flex해제 */
         padding: 10px 0;
     }
-
     .header .gnb ul.depth1 > li > a {
         font-size: 20px;
         line-height: 50px;
-        padding: 0 20px;
+        padding: 0 30px;
     }
-
     .header .gnb ul.depth1 > li.sub_open > a {
         font-weight: 700;
     }
-
     .header .gnb ul.depth1 > li:has(.depth2) > a::after {
         display: none;
     }
     .header .gnb ul.depth1 > li:has(.depth2) > a span {
         position: relative;
     }
-
     .header .gnb ul.depth1 > li:has(.depth2) > a span::after {
         position: absolute;
         right: -18px;
@@ -407,59 +389,50 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
         content: "";
         transition: 0.5s;
     }
-
-    .header .gnb ul.depth1 > li.sub_open:has(.depth2) > a span::after{
+    .header .gnb ul.depth1 > li.sub_open:has(.depth2) > a span::after {
         transform: rotate(180deg);
     }
-
     .header .gnb ul.depth2 {
         display: none;
         position: relative;
         left: auto;
         top: auto;
         transform: translate(0, 0);
-        padding: 33px 20px 10px 20px;
+        padding: 10px 20px 10px 40px;
         background-color: #f4f4f4;
     }
-
     .header .gnb ul.depth2::before {
         display: none;
     }
-
-    .header .gnb .sub_open ul.depth2 {
-        display: none;
-    }
-
     .header .tnb .paper {
         display: none;
     }
-
     .header.menu_open .tnb .paper {
         display: block;
         position: absolute;
-        left: 20px;
-        top: 20px;
+        left: 35px;
+        top: 40px;
         z-index: 111;
         border: 0;
         padding: 0 20px 0 0;
     }
-
     .header.menu_open .tnb .paper::after {
         width: 13px;
         height: 13px;
-        top: 0;
-        left: 42px;
+        right: 0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12.877 12.877'%3E%3Cpath id='open_in_new_FILL0_wght300_GRAD0_opsz24' d='M141.248-808.122a1.2,1.2,0,0,1-.885-.362,1.2,1.2,0,0,1-.362-.885V-818.6a1.2,1.2,0,0,1,.362-.885,1.2,1.2,0,0,1,.885-.362h3.835a.5.5,0,0,1,.369.149.5.5,0,0,1,.149.369.5.5,0,0,1-.149.369.5.5,0,0,1-.369.149h-3.835a.2.2,0,0,0-.146.066.2.2,0,0,0-.066.146v9.235a.2.2,0,0,0,.066.146.2.2,0,0,0,.146.066h9.235a.2.2,0,0,0,.146-.066.2.2,0,0,0,.066-.146V-813.2a.5.5,0,0,1,.149-.369.5.5,0,0,1,.369-.149.5.5,0,0,1,.369.149.5.5,0,0,1,.149.369v3.835a1.2,1.2,0,0,1-.362.885,1.2,1.2,0,0,1-.885.362Zm10.595-11.115-6.04,6.04a.5.5,0,0,1-.36.147.487.487,0,0,1-.367-.147.5.5,0,0,1-.15-.363.5.5,0,0,1,.15-.364l6.04-6.04h-2.205a.5.5,0,0,1-.369-.148.5.5,0,0,1-.149-.369.5.5,0,0,1,.149-.369.5.5,0,0,1,.369-.149h3.967v3.967a.5.5,0,0,1-.149.369.5.5,0,0,1-.369.148.5.5,0,0,1-.369-.148.5.5,0,0,1-.149-.369Z' transform='translate(-140.001 820.999)' fill='%23fff' opacity='0.8'/%3E%3C/svg%3E%0A");
     }
-
     .header .tnb {
         margin: 42px 60px 0 0;
     }
     .header .tnb .search {
         padding-left: 17px;
         margin-right: 0;
+        /* 글자 삭제 */
         font-size: 0;
-        line-height: 0
+        line-height: 0;
     }
+
 }
 @media screen and (max-width:768px){
     /* 모바일변환 */
@@ -467,26 +440,23 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
         height: 50px;
     }
     .header .logo {
-        margin: 12px 0 0 10px;
+        margin: 11px 0 0 10px;
     }
     .header .logo a {
-        width: 85px;
-        height: 27px;
+        width: 90px;
+        height: 29px;
     }
     .header .gnb .gnb_open,
     .header .gnb .gnb_close {
         height: 50px;
     }
-
     .header .gnb ul.depth1 {
         height: calc(100vh - 50px);
         margin: 50px 0 0 0;
     }
-
     .header .tnb {
-        margin: 22px 60px 0 0;
+        margin: 17px 60px 0 0;
     }
-
     .header.menu_open .tnb .paper {
         top: 18px;
     }
@@ -495,48 +465,57 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
 .visual h2 {
     display: none;
 }
-
-.visual .swiper { height:700px } /* 팝업의 높이가 됨 */
-.visual .swiper .swiper-slide img { display:block; width:100%; height:100%; object-fit:cover; } /* 팝업 안에 이미지를 넣었다면 이미지를 꽉차게 나타나게 하기 위해서 해당 스타일을 넣어줌 */
+.visual .swiper { height:600px } /* 팝업의 높이가 됨 */
+.visual .swiper .swiper-slide img { display:block; width:100%; height:100%; object-fit:cover; } 
 .visual .visual_txt {
     position: absolute;
-    width: 1280px;
     left: calc(50% - 640px);
-    top: 200px;
+    top: 230px;
+    width: 1280px;
     color: #fff;
-    font-size: 40px;
+    font-size: 50px;
     font-weight: 700;
+    /* wrapper 처럼 visual_txt를 배치함
+        넓이가 1280px이고 좌우에 가운데 정렬
+        left: calc(50% - 1280px의 절반) */
 }
-
+.visual .visual_txt p strong {
+    position: relative;
+}
+.visual .visual_txt p strong::after {
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    content: "";
+}
 .visual .txt01 p {
-    margin: 100px 0 0 0;
+    margin: 60px 0 0 680px;
 }
-
 .visual .txt02 p {
-    margin: 800px 0 0 258px;
+    margin: 0 0 0 680px;
 }
-
 .visual .txt03 p {
-    margin: 200px 0 0 0;
+    margin: 0 0 0 160px;
 }
-
 .visual .txt04 p {
-    margin: 250px 0 0 800px;
+    margin: 40px 0 0 -140px;
 }
-
 .visual .ctrl_btn {
     position: absolute;
-    left: calc(50% + 500px);
+    left: 50%; /* 정렬의 기준의 절반 */
     bottom: 20px;
     z-index: 10;
     transform: translate(-50%, 0);
+    /* 나 자신 넓이의 절반 */
     display: flex;
 }
-
 .visual .ctrl_btn button {
     border-width: 1px 1px 1px 0;
     border-style: solid;
-    border-color: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255,255,255,0.5);
     width: 28px;
     height: 28px;
     font-size: 0;
@@ -544,12 +523,9 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
     background-position: center center;
     background-repeat: no-repeat;
 }
-
 .visual .ctrl_btn button:first-child {
     border-left-width: 1px;
 }
-
-
 .visual .ctrl_btn .prev {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8.892 15.778'%3E%3Cpath id='chevron_right_FILL0_wght300_GRAD0_opsz24' d='M352.567-685.877l-6.015-6.015a1.07,1.07,0,0,1-.314-.771,1.044,1.044,0,0,1,.314-.785,1.059,1.059,0,0,1,.778-.321,1.06,1.06,0,0,1,.778.321l6.637,6.637a1.224,1.224,0,0,1,.292.437,1.419,1.419,0,0,1,.085.5,1.42,1.42,0,0,1-.085.5,1.224,1.224,0,0,1-.292.437l-6.637,6.637a1.071,1.071,0,0,1-.771.314,1.044,1.044,0,0,1-.785-.314,1.059,1.059,0,0,1-.321-.778,1.059,1.059,0,0,1,.321-.778Z' transform='translate(355.123 -677.991) rotate(180)' fill='%23fff'/%3E%3C/svg%3E%0A");
     background-size: 9px auto;
@@ -567,7 +543,6 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11.689 11.689'%3E%3Cpath id='pause_FILL0_wght300_GRAD0_opsz24' d='M228.318-728.31a1.3,1.3,0,0,1-.95-.4,1.3,1.3,0,0,1-.4-.95v-8.991a1.3,1.3,0,0,1,.4-.95,1.3,1.3,0,0,1,.95-.4h2.023a1.3,1.3,0,0,1,.95.4,1.3,1.3,0,0,1,.4.95v8.991a1.3,1.3,0,0,1-.4.95,1.3,1.3,0,0,1-.95.4Zm-6.968,0a1.3,1.3,0,0,1-.95-.4,1.3,1.3,0,0,1-.4-.95v-8.991a1.3,1.3,0,0,1,.4-.95,1.3,1.3,0,0,1,.95-.4h2.023a1.3,1.3,0,0,1,.95.4,1.3,1.3,0,0,1,.4.95v8.991a1.3,1.3,0,0,1-.4.95,1.3,1.3,0,0,1-.95.4Zm6.968-1.349h2.023v-8.991h-2.023Zm-6.968,0h2.023v-8.991H221.35Zm0-8.991v0Zm6.968,0v0Z' transform='translate(-220.001 739.999)' fill='%23fff'/%3E%3C/svg%3E%0A");
     background-size: 11px auto;
 }
-
 @media screen and (max-width:1620px){
     .visual .txt04 p {
         margin: 40px 0 0 0;
@@ -610,7 +585,6 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
     .visual .txt04 p {
         margin: 0;
     }
-
     .visual .ctrl_btn {
         left: auto;
         right: 20px;
@@ -645,14 +619,12 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
         font-size: 20px;
     }
 }
-
-
 .lost .slogan {
     position: absolute;
     left: 20px;
     top: -60px;
     z-index: 10;
-    /* mix-blend-mode: difference;  흰색에서는 검은색 */
+    mix-blend-mode: difference;
     animation:slogan_rotate; 
     animation-duration:10s; 
     animation-timing-function:linear; 
@@ -810,7 +782,6 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
     .lost .slogan {
         display: none;
     }
-
     .lost {
         padding-bottom: 80px;
     }
@@ -905,13 +876,14 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
     line-height: 2;
     font-weight: 700;
 }
-
+.msg p span {
+    white-space: nowrap; /* 줄바꿈 금지 */
+}
 .msg p i {
     display: inline-block;
     height: 1em;
-    position: relative;
+    position: relative; /* before 정렬의 기준 */
 }
-
 .msg p i::before {
     position: absolute;
     left: 5%;
@@ -957,7 +929,6 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
     height: 2.5em;
     background-image: url(../images/msg4.png);
 }
-
 .msg strong {
     display: block;
     margin: 10px 0 0 0;
@@ -970,21 +941,27 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
     }
 }
 @media screen and (max-width:1024px){
+    .msg {
+        margin: 80px 0;
+    }
     .msg p {
         font-size: 34px;
     }
 }
 @media screen and (max-width:768px){
+    .msg {
+        margin: 70px 0;
+    }
     .msg p {
         font-size: 25px;
     }
 }
 
 .adopt {
-    background-color: #7F9870;
+    background-color: #0084A4;
     color: #fff;
     padding: 94px 0 278px 0;
-    position: relative;
+    position: relative; /* move정렬의 기준 */
 }
 .adopt h2 {
     text-align: center;
@@ -1173,7 +1150,6 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
     }
 }
 
-
 .footer {
     background-color: #2D2D2D;
     color: rgba(255,255,255,0.8);
@@ -1263,16 +1239,24 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
     display: none; /* 모바일에서만 보임 */
 }
 @media screen and (min-width:1025px){
+    /* pc버전에서만 리스트가 나타나고 버튼이 사라지도록 */
     .footer .family_site .site_open,
-    .footer .family_site .site_close { 
+    .footer .family_site .site_close {
         display: none !important;
     }
-    .footer .family_site .site_list{
+    .footer .family_site .site_list {
         display: block !important;
-    }        
+        /*
+            <div class="site_list" style="display:none;">
+            jquery에서 hide/slideUp를 줬더니 태그에 직접 style="display:none" 씀
+            이 태그에 직접 style이라고 선언한 스타일은 인라인 방식으로 
+            css에서 준 어떠한 스타일보다 우선 적용됨...
+
+            이때 무조건 우선순위를 1순위로 적용하는 방법이 css에서 
+            display: block !important;를 준다.
+        */
+    }
 }
-
-
 .footer .family_site ul li a {
     display: block;
     padding: 0 22px 0 0;
@@ -1407,7 +1391,6 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
         border-radius: 6px;
         padding: 20px;
         display: none; /* open을 클릭하면 보임 */
-        
     }
     .footer .family_site ul li a {
         padding: 0;
