@@ -17,6 +17,13 @@
     src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff) format('woff'), url(../fonts/Pretendard-Regular.woff2) format('woff2');
 }
 
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff) format('woff'), url(../fonts/Pretendard-Regular.woff2) format('woff2');
+}
+
 
 *::selection {
     background-color: #003348;
@@ -37,8 +44,14 @@ html, body {
     word-wrap: break-word; /* 만약 단어가 엄청 길면 분리해서 줄바꿈 */
 }
 
+p, a, h1, h2, h3, h4, h5, h6 {
+    transform: skew(-0.1deg);
+}
+
 .f_kopub {
     font-family: 'kopubbatang', serif;
+    font-style: normal;
+    font-weight: 700;
 }
 .wrapper { /* 홈페이지의 넓이를 제한하고 가운데 정렬 */
     width: 1600px; /* 홈페이지 넓이 */

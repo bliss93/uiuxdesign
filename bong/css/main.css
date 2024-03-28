@@ -4,7 +4,7 @@
 /*
     파일명 : main.css
     작성자 : 윤서하
-    작성일 : 20.03.13
+    작성일 : 24.03.28
     설  명 : 메인페이지에만 들어가는 스타일을 저장 (header, footer 빼고 전부 다)
 */
 .container {
@@ -21,8 +21,12 @@
     }
 }
 
+.visual {
+    position: relative;
+}
+
 .visual .swiper { 
-    
+    position: relative;
 } /* 팝업의 높이가 됨 */
 .visual .swiper-slide img {
     width:100%;
@@ -30,6 +34,73 @@
 .visual .swiper-slide img.popup_mo {
     display: none;
 }
+.visual h2 {
+    position: absolute;
+    left: 98px;
+    top: 100px;
+    z-index: 10000000;
+    font-family: 'KoPub Batang', serif;
+    letter-spacing: -2.5%;
+    font-size: 40px;
+    font-weight: 400;
+    color: #1d1d1d;
+}
+.visual strong {
+    position: absolute;
+    left: 98px;
+    top: 180px;
+    z-index: 10000000;
+    font-family: 'KoPub Batang', serif;
+    letter-spacing: -2.5%;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 40px;
+    color: #3d3d3d;
+    transform: skew(-0.1deg);
+}
+.visual .paging {
+    position: absolute;
+    left: calc(50% - 800px);
+    bottom: 132px;
+    z-index: 11;
+    width: 1600px;
+    display: flex;
+}
+.visual .paging > span {
+    display: block;
+    width: 33.3%;
+    height: 9px;
+    background-color: rgba(255,255,255,0.2);
+    position: relative;
+    opacity: 1;
+    border-radius: 0;
+    margin: 0 !important;
+}
+.visual .paging > span > span {
+    position: absolute;
+    left: 0;
+    top: 25px;
+    color: #3D3D3D;
+    font-size: 20px;
+}
+/* 현재 팝업이 활성화 되었을때 */
+.visual .paging > span.swiper-pagination-bullet-active {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.visual .paging > span.swiper-pagination-bullet-active > span {
+    font-weight: 700;
+}
+.visual .paging .page1 span::before {
+    content: "BEVERAGE";
+}
+.visual .paging .page2 span::before {
+    content: "COFFEE";
+}
+.visual .paging .page3 span::before {
+    content: "DESSERT";
+}
+
+
 @media screen and (max-width:1640px){
     .visual .swiper-slide {
         overflow: hidden;
