@@ -200,263 +200,244 @@
 @media screen and (max-width:768px){
    
 }
-
-.brand .line {
-    margin: 95px 0 95px 0;
+.brand .wrapper {
+    display: flex;
 }
-.brand .line::after {
+.brand .line {
+    margin: 0;
+}
+.brand .line_up::before {
     display: block;
     border-top: 1px solid rgba(61, 61, 61, 0.5);
     width: 1760px;
     content: "";
-}
+    margin: 0 160px 0 0;
 
+}
+.brand .line_down::before {
+    display: block;
+    border-bottom: 1px solid rgba(61, 61, 61, 0.5);
+    width: 1760px;
+    content: "";
+    margin: 0 0 0 160px;
+}
 .brand .photo {
     width: 820px;
-    /*position: absolute;
-    left: calc(50% - 104px);
-    top: 0;
-    width: calc(50% + 104px);
-    height: 696px;
-    overflow: hidden;
-    border-radius: 348px 0 0 348px;*/
+    padding: 95px 0 95px 0;
 }
-   
 .brand .photo img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
-.brand .inner {
-    width: calc(50% - 174px);
-    padding: 125px 0 0 0;
+.brand .cnt {
+    display: block;
 }
-
-.brand h2 {
-    font-size: 4.706rem;
-    line-height: 1;
-    font-family: 'Bright', serif;
-    margin: 0 0 25px 0;
+.brand .cnt > strong{
+    display: block;
+    font-size: 1.4rem;
+    font-family: 'kopubbatang', serif;
+    font-weight: 700;
+    margin: 243px 0 50px 60px;
+    transform: skew(-0.1deg);
 }
-
-.brand .list ul {
-    margin: 60px 0 0 0;
+.brand .cnt > h2 {
+    display: block;
+    font-size: 2.5rem;
+    font-family: 'kopubbatang', serif;
+    font-weight: 400;
+    margin: 0 0 100px 60px;
+}
+.brand .cnt > p {
+    display: block;
+    line-height: 40px;
+    margin: 0 0 0 105px;
+}
+.brand .cnt .more {
+    margin: 84px 0 0 105px;
+}
+.brand .cnt .more ul {
     display: flex;
 }
-
-.brand .list ul li {
-    width: 25%;
-    text-align: center;
-}
-
-.brand .list ul li strong {
+.brand .cnt .more ul li span {
     display: block;
-    color: #876f53;
+    font-size: 15px;
+}
+.brand .cnt .more ul li strong {
+    display: block;
+    line-height: 40px;
+}
+.brand .cnt .more ul li a {
+    width: 118px;
+    height: 85px;
+    margin-left: 10px;
+}
+.brand .cnt .more ul li a img {
+    width: 100%;
+    height: 100%;
 }
  
 @media screen and (max-width:1640px){
-    .brand .photo {
-        left: auto;
-        right: 0;
-        width: calc(100% - 700px);
-    }
+
 }
 @media screen and (max-width:1024px){
-    .brand {
-        height: auto;
-    }
-    .brand h2, .brand p {
-        color: #fff;
-    }
-    .brand .inner {
-        width: auto;
-        padding: 125px 0 0 0;
-        position: relative; /* 이미지위에 글자가 올라오게하도록 */
-        z-index: 10;
-    }
-    .brand .photo { /* 이미지를 바닥에 깔기 */
-        width: 100%;
-        height: calc(100% - 50px);
-        border-radius: 0;
-    }
-    .brand .photo::before {  /* 이미지에 색추가 */
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #876f53;
-        opacity: 0.8;
-        content: "";
-    }
-    .brand .list ul {
-        background-color: #ede8e3;
-        border-left: 1px solid #876f53;
-    }
-    .brand .list ul li {
-        border-width: 1px 1px 1px 0;
-        border-color: #876f53;
-        border-style: solid;
-        padding: 20px 0;
-    }
+   
 }
 @media screen and (max-width:768px){
-    .brand .inner {
-        padding: 70px 0 0 0;
-    }
-    .brand .list ul {
-        margin: 30px 0 0 0;
-    }
-    .brand h2 {
-        font-size: 3rem;
-    }
+    
 }
 @media screen and (max-width:500px){
-    .brand .list ul {
-        flex-wrap: wrap;
-        border: 1px solid #876f53;
-        border-radius: 20px;
-    }
-    .brand .list ul li {
-        width: 50%;
-        border-bottom-width: 0;
-    }
-    .brand .list ul li:nth-child(even) {
-        border-right-width: 0;
-    }
+   
 }
 
 .social {
-    margin: 190px 0 110px 0;
+    margin: 130px 0 130px 0;
+}
+.social .wrapper2 {
+    position: relative;
 }
 .social h2 {
-    font-size: 2.941rem;
-    line-height: 1;
-    font-family: 'Bright', serif;
-    margin: 0 0 25px 0;
+    font-size: 2rem;
+    font-family: 'kopubbatang', serif;
+    font-weight: 700;
+    margin: 0 0 30px 0;
+    text-align: center;
+}
+.social h3 {
+    color: #3D3D3D;
     text-align: center;
 }
 .social .sns ul {
     display: flex;
-    justify-content: center;
 }
-.social .sns ul li {
-    margin: 0 10px;
-}
-.social .sns ul li a {
-    display: block;
-    color: #876f53;
-    position: relative;
-}
-.social .sns ul li a::before {
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 100%;
-    height: 1px;
-    background-color: #876f53;
-    opacity: 0.5;
-    content: "";
-}
-.social .list {
-    margin: 50px 0 0 0;
+
+.social .list .swiper {
+    width: 1413px;
+    margin-top: 80px;
 }
 .social .list ul li {
-    width: 376px;
-}
-@media screen and (max-width:1320px){
-    .social .list ul li {
-        width: 300px;
-    }
-}
-@media screen and (max-width:1024px){
-    .social .list ul li {
-        width: 250px;
-    }
-}
-@media screen and (max-width:768px){
-    .social .list ul li {
-        width: 200px;
-    }
-}
-@media screen and (max-width:500px){
-    .social .list ul li {
-        width: 170px;
-    }
+    width: 445px;
 }
 .social .list ul li a {
     display: block;
 }
-.social .list ul li a .photo {
-    position: relative; /* cate 정렬의 기준 */
+.social .list ul li a .tag {
+    margin: 29px 0 0 0;
+    text-align: left;
+    transition: 0.5s;
 }
-.social .list ul li a .photo img {
-    width: 100%;
+.social .list ul li a .tag span {
+    padding-right: 25px;
 }
-.social .list ul li a .cate {
+.social button {
     position: absolute;
-    left: 10px;
-    bottom: -20px;
+    top: calc(50% - 37.5px);
+    width: 75px;
+    height: 75px;
+    font-size: 0;
+    line-height: 0;
+    margin: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
-.social .list ul li a strong {
-    display: block;
-    margin: 10px 0 0 0;
-    text-align: right;
+.social button.prev {
+    background-image: url(../images/main/화살표_왼쪽2.svg);
+    left: 0;
+}
+.social button.next {
+    background-image: url(../images/main/화살표_오른쪽2.svg);
+    right: 0;
+}
+
+@media screen and (max-width:1320px){
+
+}
+@media screen and (max-width:1024px){
+
 }
 @media screen and (max-width:768px){
-    .social {
-        margin: 70px 0 60px 0
-    }
-    .social h2 {
-        margin-bottom: 15px;
-        font-size: 2.3rem;
-    }
-    .social .list {
-        margin: 20px 0 0 0;
-    }
-    .social .list ul li a .cate {
-        bottom: 5px;
-    }
-    .social .list ul li a .cate img {
-        width: 60%;
-    }
-    .m_skip {
+
+}
+@media screen and (max-width:500px){
+
+}
+
+@media screen and (max-width:768px){
+
+    /* .m_skip {
         display: none;
-    }
+    } */
 }
 
 
-aside {
-    position: relative;
+
+aside.quick {
+    position: fixed;
+    right: 25px;
+    top: 124px;
+    z-index: 100;
 }
-aside button {
-    position: absolute;
-    right: 20px;
-    top: 39px;
-    width: 57px;
-    height: 57px;
+aside.quick ul li {
+    margin-top: 32px;
+}
+aside.quick ul li a {
+    display: block;
+    width: 90px;
+    height: 90px;
     border-radius: 100%;
-    background-color: #e80e50;
+    background-color: #97644D;
     color: #fff;
+    font-size: 13px;
+    padding-top: 50px;
     text-align: center;
-    padding-top: 25px;
+    position: relative; /* before */
+    box-shadow: 0 0 5px rgba(0,0,0,0.1)
 }
-aside button::before {
+aside.quick ul li a::before {
     position: absolute;
     left: 0;
-    top: 10px;
+    top: 16px;
     width: 100%;
-    height: 13px;
-    background-repeat: no-repeat;
+    height: 25px;
     background-position: center center;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24' fill='%23fff'%3E%3Cpath d='M434.5-808.131v481.979L215.761-544.891 151.869-480 480-151.869 808.131-480l-63.892-64.891L525.5-326.152v-481.979h-91Z'/%3E%3C/svg%3E");
-    transform: rotate(180deg);
+    background-repeat: no-repeat;
     content: "";
 }
+aside.quick ul li.youtube a::before {
+    background-image: url(../images/common/aside_youtube.png)
+}
+aside.quick ul li.foundation a::before {
+    background-image: url(../images/common/aside_found.svg)
+}
+aside.quick ul li.call a::before {
+    background-image: url(../images/common/aside_call.svg)
+}
+
+aside.top {
+    position: relative;
+    cursor: pointer;
+}
+aside.top button {
+    display: block;
+    position: absolute;
+    right: 40px;
+    top: -120px;
+    display: block;
+    color: #3d3d3d;
+    text-align: center;
+}
+aside.top button span {
+    line-height: 35px;
+}
+
+
+
+
 
 footer {
+    
     border-top: 1px solid #d9d1cc;
     color: rgba(9, 6, 6, 0.8);
     text-align: center;

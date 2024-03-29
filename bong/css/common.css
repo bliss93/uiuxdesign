@@ -37,7 +37,7 @@ html, body {
     font-family: 'Pretendard', sans-serif; /* 서체 serif 명조 sans-serif 고딕 */
     font-size: 20px; /* 크기 */
     background-color: #ede8e3;
-    color: #090606; /* 글자색상 */
+    color: #1d1d1d; /* 글자색상 */
     font-weight: 400; /* 글자의 두께 */
     line-height: 1.2; /* auto */
     word-break: keep-all; /* 단어를 묶어서 줄바꿈 */
