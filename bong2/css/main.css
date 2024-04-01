@@ -40,7 +40,7 @@
     letter-spacing: -2.5%;
     font-size: 20px;
     font-weight: 400;
-    line-height: 40px;
+    line-height: 1.8;
     color: #3d3d3d;
     transform: skew(-0.1deg);
 }
@@ -91,28 +91,74 @@
     .visual .swiper-slide {
         overflow: hidden;
     }
-    .visual .swiper-slide img {
-        width: 110%;
-        transform: translate(-5%, 0);
+        
+    .visual h2 {
+        left: 80px;
+        top: 150px;
+        font-size: 2rem;
+    }
+    .visual strong {
+        left: 80px;
+        top: 220px;
+        font-size: 1rem;
+    }
+    .visual .paging {
+        left: calc(50% - 600px);
+        bottom: 100px;
+        width: 1200px;
+    }
+    .visual .paging > span {
+        height: 7px;
+    }
+    .visual .paging > span > span {
+        top: 20px;
+        font-size: 18px;
     }
 }
-@media screen and (min-width:769px) and (max-width:1024px){
-    /* 769~1024까지만 적용 */
-    /* .visual .swiper-slide {
-        position: relative;
-        height: 420px;
-        overflow: hidden;
+@media screen and (max-width:1320px){
+    .visual h2 {
+        left: 30px;
+        top: 120px;
     }
-    .visual .swiper-slide img {
-        position: absolute;
-        left: 50%;
-        top: 0;
-        width: auto;
-        height: 420px;
-        transform: translate(-50%, 0);
-    } */
+    .visual strong {
+        left: 30px;
+        top: 170px;
+        font-size: 1rem;
+    }
+    .visual .paging {
+        left: calc(50% - 450px);
+        bottom: 80px;
+        width: 900px;
+    }
+    .visual .paging > span {
+        height: 6px;
+    }
+    .visual .paging > span > span {
+        top: 18px;
+        font-size: 17px;
+    }
 }
 
+@media screen and (max-width:1024px){
+    .visual h2 {
+        top: 90px;
+    }
+    .visual strong {
+        display: none;
+    }
+    .visual .paging {
+        left: calc(50% - 310px);
+        bottom: 60px;
+        width: 600px;
+    }
+    .visual .paging > span {
+        height: 5px;
+    }
+    .visual .paging > span > span {
+        top: 16px;
+        font-size: 16px;
+    }
+}
 @media screen and (max-width:768px){
     .visual .swiper-slide img {
         width: 100%;
@@ -123,6 +169,31 @@
     }
     .visual .swiper-slide img.popup_mo {
         display: block;
+    }
+    .visual h2 {
+        top: 80px;
+    }
+    .visual strong {
+        display: none;
+    }
+    .visual .paging {
+        left: calc(50% - 220px);
+        bottom: 60px;
+        width: 440px;
+    }
+}
+@media screen and (max-width:500px){
+    .visual .paging {
+        left: calc(50% - 160px);
+        bottom: 40px;
+        width: 320px;
+    }
+    .visual .paging > span {
+        height: 4px;
+    }
+    .visual .paging > span > span {
+        top: 8px;
+        font-size: 15px;
     }
 }
 
@@ -135,7 +206,7 @@
     text-align: center;
     margin: 0 0 22px 0;
 }
-.product h3 {
+.product p {
     text-align: center;
     letter-spacing: -2.5%;
     transition: 0.5s;
@@ -144,8 +215,14 @@
     width: 1510px;
     margin-top: 70px;
 }
+.product .list ul {
+    position: relative;
+}
 .product .list ul li {
     width: 235px;
+}
+.product .list ul li a {
+    display: block;
 }
 .product .list ul li a .photo {
     display: block;
@@ -153,12 +230,15 @@
 .product .list ul li a {
     display: block;
     text-align: center;
+    overflow: hidden;
 }
 .product .list ul li a .photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
     border-radius: 20px;
     transition: 0.5s;
 }
-
 .product button {
     position: absolute;
     top: calc(50% - 12px);
@@ -173,29 +253,107 @@
 }
 .product button.prev {
     background-image: url(../images/main/화살표_왼쪽.svg);
-    left: 0;
+    left:0;
 }
 .product button.next {
     background-image: url(../images/main/화살표_오른쪽.svg);
-    right: 0;
+    right:0;
+}
+@media screen and (max-width:1640px){
+    .product {
+        margin: 120px 0 120px 0 ;
+    }
+    .product h2 {
+        font-size: 38px;
+        margin: 0 0 20px 0;
+    }
+    .product .list .swiper {
+        width: 1200px;
+        margin-top: 60px;
+        position: relative;
+    }
+    .product .list ul li a .photo {
+        width: 224px;
+        height: 224px;
+    }
+}
+@media screen and (max-width:1320px){
+    .product {
+        margin: 110px 0 110px 0 ;
+    }
+    .product h2 {
+        font-size: 36px;
+        margin: 0 0 18px 0;
+    }
+    .product .list .swiper {
+        width: 950px;
+        margin-top: 50px;
+    }
+    .product .list ul li a .photo {
+        width: 222.5px;
+        height: 222.5px;
+    }
 }
 
 @media screen and (max-width:1024px){
-  
+    .product {
+        margin: 100px 0 100px 0 ;
+    }
+    .product h2 {
+        font-size: 34px;
+        margin: 0 0 16px 0;
+    }
+    .product .list .swiper {
+        margin-top: 40px;
+    }
+    .product .list ul {
+        width: 680px;
+        height: 155px;
+    }
+    .product .list ul li {
+        width: 155px;
+        height: 100%;
+    }
+    .product .list ul li a .photo  {
+        width: 100%;
+        height: 100%;
+    }
+    .product button {
+        display: none;
+    } 
+
 }
 @media screen and (max-width:768px){
-   
+    .product {
+        margin: 90px 0 90px 0 ;
+    }
+    .product h2 {
+        font-size: 32px;
+        margin: 0 0 14px 0;
+    }
+    .product .list .swiper {
+        margin-top: 30px;
+    }
+    .product .list ul {
+        width: 600px;
+        height: 118px;
+    }
+    .product .list ul li {
+        width: 118px;
+        height: 100%;
+    }
+    .product .list ul li a .photo  {
+        width: 100%;
+        height: 100%;
+    }
 }
 .brand .wrapper {
     display: flex;
 }
-.brand .line {
-    margin: 0;
-}
 .brand::before {
     display: block;
     border-top: 1px solid rgba(61, 61, 61, 0.5);
-    width: 1760px;
+    width: 1500px;
     content: "";
     margin: 0 160px 0 0;
 
@@ -203,9 +361,9 @@
 .brand::after {
     display: block;
     border-bottom: 1px solid rgba(61, 61, 61, 0.5);
-    width: 1760px;
+    width: 1600px;
     content: "";
-    margin: 0 0 0 160px;
+    margin: 0 0 0 140px;
 }
 .brand .photo {
     width: 820px;
@@ -237,8 +395,9 @@
 }
 .brand .cnt > p {
     display: block;
-    line-height: 40px;
+    line-height: 2;
     margin: 0 0 0 105px;
+    font-size: 1rem;
 }
 .brand .cnt .more {
     margin: 84px 0 0 105px;
@@ -260,11 +419,43 @@
     margin-left: 10px;
 }
 .brand .cnt .more ul li a img {
-    width: 100%;
-    height: 100%;
+    width: 118px;
+    height: 100%
 }
  
 @media screen and (max-width:1640px){
+    .brand::before {
+        width: 1300px;
+        margin: 0 100px 0 0;
+    }
+    .brand::after {
+        width: 1580px;
+        margin: 0 0 0 100px;
+    }
+    .brand .photo {
+        width: 600px;
+        height: 100%;
+        padding: 80px 0 80px 80px;
+    }
+    .brand .cnt > strong{
+        margin: 140px 0 40px 50px;
+    }
+    .brand .cnt > h2 {
+        margin: 0 0 60px 50px;
+    }
+    .brand .cnt > p {
+        margin: 0 0 0 80px;
+    }
+    .brand .cnt .more {
+        margin: 60px 0 0 80px;
+    }
+    .brand .cnt .more ul li a img {
+        width: 98px;
+        height: 100%
+    }
+     
+}
+@media screen and (max-width:1320px) {
 
 }
 @media screen and (max-width:1024px){
@@ -290,7 +481,7 @@
     margin: 0 0 30px 0;
     text-align: center;
 }
-.social h3 {
+.social p {
     color: #3D3D3D;
     text-align: center;
 }
@@ -416,6 +607,19 @@ aside.top button {
 aside.top button span {
     line-height: 35px;
 }
+@media screen and (max-width:1640px){
+
+}
+@media screen and (max-width:1024px){
+   
+}
+@media screen and (max-width:768px){
+    
+}
+@media screen and (max-width:500px){
+   
+}
+
 footer {
     background-color: #302F2D;
     color: #fff;
@@ -512,6 +716,18 @@ footer .f_tel span.tell {
 }
 footer .f_tel span:last-child {
     margin-bottom:0;
+}
+@media screen and (max-width:1640px){
+
+}
+@media screen and (max-width:1024px){
+   
+}
+@media screen and (max-width:768px){
+    
+}
+@media screen and (max-width:500px){
+   
 }
 
 @media screen and (max-width:768px){

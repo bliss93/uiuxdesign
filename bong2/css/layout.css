@@ -1,3 +1,10 @@
+/*
+    파일명 : layout.css
+    작성자 : 윤서하 
+    작성일 : 2024.04.01
+    설  명 : header, footer 
+*/
+
 header {
     position: fixed;
     display: flex;
@@ -93,21 +100,60 @@ header .tnb ul li.lang a {
 }
 
 @media screen and (max-width:1024px){
-
-}
-/*media*/
-@media screen and (max-width:768px){
-    header .gnb {
+    header {
+        height: 50px;
+    }
+    header .logo {
+        margin-left: 10px;
+    }
+    header .logo a {
+        width: 110px;
+        height: 40px;
+    }
+    header .gnb ul {
+        display: none;
+    }
+    header .gnb .gnb_open,
+    header .gnb .gnb_close {
+        display: block;
+        position: absolute;
+        right: 28px;
+        top: calc(50% - 12.5px);
+        width: 25px;
+        height: 25px;
+        line-height: 0;
+        font-size: 0;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        content: "";
+    }
+    header .gnb .gnb_open {
+        background-image: url(../images/common/gnb_open.svg);
+    }
+    header .gnb .gnb_close {
+        background-image: url(../images/common/gnb_close.svg);
         display: none;
     }
     header .tnb {
         display: none;
     }
-    header .gnb .gnb_open {
-        display: block;
+}
+/*media*/
+@media screen and (max-width:768px){
+    header .logo {
+        margin-left: 5px;
     }
+    header .logo a {
+        width: 100px;
+        height: 35px;
+    }
+    header .gnb .gnb_open,
     header .gnb .gnb_close {
-        display: block;
+        right: 20px;
+        top: calc(50% - 10px);
+        width: 20px;
+        height: 20px;
     }
 }
 
@@ -115,15 +161,5 @@ header .tnb ul li.lang a {
    
 
     /* 메뉴고정 */
-
-}
-
-@media screen and (max-width:1024px) {
-
-
-    /*메뉴가 열렸을 때*/
-
-}
-@media screen and (max-width:768px){
 
 }
