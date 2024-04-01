@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 15px;
+    font-family: "맑은고딕";
+    color: #3d3d3d;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+.wrapper {
+ width: 1000px;
+ margin: 0 auto;
+}
+.header {
+    width: 250px;
+    display: block;
+    text-align: center;
+    position: relative;
+}
+.container {
+    margin-top: 30px;
+    display: flex;
+}
+.container .board {
+    width: 250px;
+    height: 200px;
+    position: relative;
+}
+.container .board .list {
+    display: block;
+}
+.container .board .list button {
+    border: 0;
+    background-color: #ededed;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.container .board .list.on button {
+    background-color: #0066ad;
+    color: #fff;
+}
+
+
+
+.layer_popup {
+    position: absolute;
+    left: 50%;
+    top:  50%;
+    transform: translate(-50%,-50%);
+    background-color:#ffeded;
+    color: #3d3d3d;
+    padding: 40px;
+    display: none;
+}
+
+.layer_popup h2 {
+    font-size: 25px;
+}
+.layer_popup p {
+    margin: 20px 0 40px 0;
+}
+.layer_popup .close {
+    text-align: right;
+}
+.layer_popup .close button {
+    border: 0;
+    cursor: pointer;
+    background-color: #fff;
+    color: #333;
+    padding: 10px 20px;
+}
