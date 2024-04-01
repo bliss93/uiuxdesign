@@ -1,7 +1,7 @@
 /*
     파일명 : common.js
-    작성자 : 문미영
-    작성일 : 2024.02.28
+    작성자 : 윤서하
+    작성일 : 2024.04.01
     설  명 : 모든 페이지에서 작동되는 jqeury (header, footer에서 작동되는 jqeury)
 */
 
@@ -27,10 +27,10 @@ $(document).ready(function(){
          if(scroll_curr > 50){
              $('header').addClass('fixed')
              if(scroll_dir > 0){ //위로스크롤 - 나타나야함
-                //  $('header').attr('style','transform: translate(0, 0)')
+                $('header').attr('style','transform: translate(0, 0)')
                  /*transform: translate(0, -100px); */
              }else{ //아래로스크롤 - 사라져야함.
-                //  $('header').attr('style','transform: translate(0, -100px)')
+                 $('header').attr('style','transform: translate(0, -100px)')
                  $('header .gnb > li').removeClass('on')
                  $('header').removeClass('menu_over')
              }

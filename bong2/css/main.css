@@ -7,24 +7,10 @@
     작성일 : 24.03.28
     설  명 : 메인페이지에만 들어가는 스타일을 저장 (header, footer 빼고 전부 다)
 */
-.container {
-    margin-top: 100px; /*header의 높이만큼*/
-}
-@media screen and (max-width:1024px){
-    .container {
-        margin-top: 100px; /* header의 높이만큼 */
-    }
-}
-@media screen and (max-width:768px){
-    .container {
-        margin-top: 50px; /* header의 높이만큼 */
-    }
-}
 
 .visual {
     position: relative;
 }
-
 .visual .swiper { 
     position: relative;
 } /* 팝업의 높이가 됨 */
@@ -37,7 +23,7 @@
 .visual h2 {
     position: absolute;
     left: 98px;
-    top: 100px;
+    top: 150px;
     z-index: 10000000;
     font-family: 'KoPub Batang', serif;
     letter-spacing: -2.5%;
@@ -48,7 +34,7 @@
 .visual strong {
     position: absolute;
     left: 98px;
-    top: 180px;
+    top: 230px;
     z-index: 10000000;
     font-family: 'KoPub Batang', serif;
     letter-spacing: -2.5%;
@@ -206,7 +192,7 @@
 .brand .line {
     margin: 0;
 }
-.brand .line_up::before {
+.brand::before {
     display: block;
     border-top: 1px solid rgba(61, 61, 61, 0.5);
     width: 1760px;
@@ -214,7 +200,7 @@
     margin: 0 160px 0 0;
 
 }
-.brand .line_down::before {
+.brand::after {
     display: block;
     border-bottom: 1px solid rgba(61, 61, 61, 0.5);
     width: 1760px;
@@ -294,7 +280,7 @@
 .social {
     margin: 130px 0 130px 0;
 }
-.social .wrapper2 {
+.social > .wrapper {
     position: relative;
 }
 .social h2 {
@@ -311,7 +297,6 @@
 .social .sns ul {
     display: flex;
 }
-
 .social .list .swiper {
     width: 1413px;
     margin-top: 80px;
@@ -330,9 +315,9 @@
 .social .list ul li a .tag span {
     padding-right: 25px;
 }
-.social button {
+.social .ctrl_btn button {
     position: absolute;
-    top: calc(50% - 37.5px);
+    top: calc(50% + 37.5px);
     width: 75px;
     height: 75px;
     font-size: 0;
@@ -342,11 +327,11 @@
     background-repeat: no-repeat;
     background-size: contain;
 }
-.social button.prev {
+.social .ctrl_btn button.prev {
     background-image: url(../images/main/화살표_왼쪽2.svg);
     left: 0;
 }
-.social button.next {
+.social .ctrl_btn button.next {
     background-image: url(../images/main/화살표_오른쪽2.svg);
     right: 0;
 }
