@@ -522,12 +522,16 @@
     }
     .brand .cnt > strong{
         margin: 20px 0 20px 30px;
+        flex-wrap: wrap;
     }
     .brand .cnt > h2 {
         margin: 0 0 20px 30px;
+        flex-wrap: wrap;
+        white-space: unset;
     }
     .brand .cnt > p {
         margin: 0 0 0 40px;
+        flex-wrap: wrap;
     }
     .brand .cnt .more {
         margin: 20px 0 40px 40px;
@@ -536,9 +540,6 @@
         width: 75px;
         height: 100%
     }
-}
-@media screen and (max-width:500px){
-   
 }
 
 .social {
