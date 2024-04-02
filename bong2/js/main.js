@@ -58,10 +58,19 @@ $(document).ready(function(){
 
     
     const social_swiper = new Swiper('.social .swiper', { /* 팝업을 감싼는 요소의 class명 */
-        slidesPerView: 3, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
         spaceBetween: 40, /* 팝업과 팝업 사이 여백 */
         centeredSlides: true,
         loop: true,
+
+        breakpoints: {
+            
+            1640: {
+                slidesPerView: 3, /* 사이즈제한 */
+                spaceBetween: 40,
+            },
+            
+        },
 
         navigation: {  /* 이전, 다음 버튼 */
         nextEl: '.social .next',  /* 다음 버튼의 클래스명 */
