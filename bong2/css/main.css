@@ -31,6 +31,9 @@
     font-weight: 400;
     color: #1d1d1d;
 }
+.visual h2 br {
+    display: none;
+}
 .visual strong {
     position: absolute;
     left: 98px;
@@ -144,7 +147,8 @@
         top: 90px;
     }
     .visual strong {
-        display: none;
+        left: 30px;
+        top: 140px;
     }
     .visual .paging {
         left: calc(50% - 310px);
@@ -171,21 +175,47 @@
         display: block;
     }
     .visual h2 {
-        top: 80px;
+        top: 100px;
+    }
+    .visual strong {
+        left: 30px;
+        top: 140px;
+    }
+    .visual .paging {
+        left: calc(50% - 240px);
+        bottom: 80px;
+        width: 480px;
+    }
+    .visual .paging > span > span {
+        top: 8px;
+        font-size: 13px;
+        left: calc(50% - 30px);
+    }
+}
+@media screen and (max-width:500px){
+    .visual h2 {
+        font-size: 20px;
+    }
+    .visual h2.mo01 {
+        top: 70px;
+        font-size: 20px;
+    }
+    .visual h2.mo01 br {
+        display: block;
+    }
+    .visual h2.mo02 {
+        top: 90px;
+    }
+    .visual h2.mo03 {
+        top: 70px;
+        left: calc(50% - 100px);
     }
     .visual strong {
         display: none;
     }
     .visual .paging {
-        left: calc(50% - 220px);
-        bottom: 60px;
-        width: 440px;
-    }
-}
-@media screen and (max-width:500px){
-    .visual .paging {
         left: calc(50% - 160px);
-        bottom: 40px;
+        bottom: 50px;
         width: 320px;
     }
     .visual .paging > span {
@@ -193,7 +223,8 @@
     }
     .visual .paging > span > span {
         top: 8px;
-        font-size: 15px;
+        font-size: 13px;
+        left: calc(50% - 30px);
     }
 }
 
@@ -550,7 +581,7 @@
 }
 .social h2 {
     font-size: 2rem;
-    font-family: 'kopubbatang', serif;
+    font-family: 'KoPub Batang', serif;
     font-weight: 700;
     margin: 0 0 30px 0;
     text-align: center;
@@ -698,7 +729,7 @@
 }
 @media screen and (max-width:768px){
     .social {
-        margin: 60px 0 60px 0;
+        margin: 60px 0 75px 0;
     }
     .social h2 {
         margin: 0 0 22px 0;
@@ -806,8 +837,8 @@ aside.top button span {
         
     aside.top button {
         right: 15px;
-        top: -100px;
-        width: 65px;
+        top: -80px;
+        width: 50px;
     }
     aside.top button span {
         line-height: 30px;
@@ -822,8 +853,8 @@ aside.top button span {
     }  
     aside.top button {
         right: 15px;
-        top: -100px;
-        width: 55px;
+        top: -65px;
+        width: 40px;
     }
     aside.top button span {
         line-height: 28px;
@@ -832,37 +863,25 @@ aside.top button span {
 
 @media screen and (max-width:768px){
     aside.quick {
-        top: 50px;
-    }
-    aside.quick ul li {
-        margin-top: 20px;
-    }  
-    aside.quick ul li a {
-        width: 70px;
-        height: 70px;
-    }
-    aside.quick ul li a::before {
-        top: 22px;
-        width: 100%;
-    }
-    aside.quick ul li a span {
         display: none;
     }
     aside.top button {
         right: 15px;
-        top: -50px;
+        top: -60px;
         width: 30px;
     }
     aside.top button span {
         line-height: 20px;
     }
 }
-
 footer {
     background-color: #302F2D;
     color: #fff;
     display: flex;
     position: relative;
+}
+footer .f_cnt{
+    display: block;
 }
 footer .f_logo {
     padding: 53px 0 0 53px;
@@ -915,7 +934,7 @@ footer .f_nav ul li::after {
     right: -20px;
     top: 5px;
     width: 1px;
-    height: 10px;
+    height: 13px;
     background-color: #d6d1cc;
     content: "";
 }
@@ -956,6 +975,14 @@ footer .f_tel span:last-child {
     margin-bottom:0;
 }
 @media screen and (max-width:1640px){
+    footer {
+        display: block;
+    }
+    footer .f_cnt{
+        display: block;
+    }
+}
+@media screen and (max-width:1320px) {
 
 }
 @media screen and (max-width:1024px){
@@ -966,29 +993,4 @@ footer .f_tel span:last-child {
 }
 @media screen and (max-width:500px){
    
-}
-
-@media screen and (max-width:768px){
-    footer .f_link ul {
-        display: flex;
-        justify-content: center;
-        width: 160px;
-        border: 1px solid rgba(255, 255, 255, 0.6);
-        border-radius: 20px;
-        margin: 33px 0 33px 0;
-        padding: 12px;
-    }
-    footer .f_link ul li {
-        margin: 0 12px;
-        display: flex;
-        align-items: center;
-    }
-    footer .f_link ul li a {
-        width: 17px;
-        height: 17px;
-    }
-    footer .f_link ul li a img {
-        width: 100%;
-        height: 100%;
-    }
 }
