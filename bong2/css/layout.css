@@ -47,7 +47,6 @@ header .gnb ul > li.on a {
 header .gnb ul > li > a {
     display: block;
     font-weight: 400;
-    letter-spacing: -2.5%;
     white-space: nowrap; /* 무조건 한줄 */
 } 
 header .gnb ul > li > a:hover {

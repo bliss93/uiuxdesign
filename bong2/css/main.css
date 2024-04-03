@@ -26,7 +26,6 @@
     top: 150px;
     z-index: 10000000;
     font-family: 'KoPub Batang', serif;
-    letter-spacing: -2.5%;
     font-size: 40px;
     font-weight: 400;
     color: #1d1d1d;
@@ -40,7 +39,6 @@
     top: 230px;
     z-index: 10000000;
     font-family: 'KoPub Batang', serif;
-    letter-spacing: -2.5%;
     font-size: 20px;
     font-weight: 400;
     line-height: 1.8;
@@ -239,7 +237,6 @@
 }
 .product p {
     text-align: center;
-    letter-spacing: -2.5%;
     transition: 0.5s;
 }
 .product p br {
@@ -644,7 +641,7 @@
  
 @media screen and (max-width:1640px){
     .social {
-        margin: 100x 0 100px 0;
+        margin: 100px 0 100px 0;
     }
     .social h2 {
         margin: 0 0 28px 0;
