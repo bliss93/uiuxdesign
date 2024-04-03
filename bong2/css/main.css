@@ -242,6 +242,9 @@
     letter-spacing: -2.5%;
     transition: 0.5s;
 }
+.product p br {
+    display: none;
+}
 .product .list .swiper {
     width: 1510px;
     margin-top: 70px;
@@ -361,6 +364,9 @@
     .product h2 {
         font-size: 32px;
         margin: 0 0 14px 0;
+    }
+    .product p br {
+        display: block;
     }
     .product .list .swiper {
         margin-top: 30px;
@@ -590,6 +596,9 @@
     color: #3D3D3D;
     text-align: center;
 }
+.social p br {
+    display: none;
+}
 .social .sns ul {
     display: flex;
 }
@@ -732,17 +741,21 @@
         margin: 60px 0 75px 0;
     }
     .social h2 {
-        margin: 0 0 22px 0;
+        margin: 0 0 14px 0;
+    }
+    .social p br {
+        display: block;
     }
     .social .list .swiper {
-        width: 490px;
+        width: 479px;
         margin-top: 40px;
+        padding-right: 200px;
     }
     .social .list ul li {
-        width: 150px;
+        width: 200px;
     }
     .social .list ul li a img {
-        width: 150px;
+        width: 200px;
         height: 100%;
     }
     .social .list ul li a .tag {
@@ -878,16 +891,17 @@ footer {
     background-color: #302F2D;
     color: #fff;
     display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     position: relative;
+    padding-top: 51px;
+    font-size: 1rem;
 }
 footer .f_cnt{
     display: block;
 }
 footer .f_logo {
-    padding: 53px 0 0 53px;
-}
-footer .f_cnt {
-    margin-left: 64px;
+    padding: 0 61px 0 31px;
 }
 footer .f_logo img {
     width: 115px;
@@ -967,7 +981,7 @@ footer .f_tel span {
     margin-bottom: 26px;
 }
 footer .f_tel span.tell {
-    font-size: 45px;
+    font-size: 2.25rem;
     color: #FFCC00;
     margin-top: 16px ;
 }
@@ -977,20 +991,57 @@ footer .f_tel span:last-child {
 @media screen and (max-width:1640px){
     footer {
         display: block;
+        position: relative;
+        text-align: center;
+        padding: 51px 0 200px 0;
     }
     footer .f_cnt{
         display: block;
     }
+    footer .f_logo img {
+        width: 115px;
+    }
+    footer .f_link {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        display: block;
+        left: calc(50% - 90px);
+        top: 22px;
+    }
+    footer .f_nav {
+        display: block;
+        padding: 60px 0 36px 0;
+        margin: auto;
+        margin-left:17%;
+    }
+    footer .f_info{
+        display: block;
+        text-align: left;
+        margin: 0 0 0 17%;;
+    }
+    footer .copyright {
+        margin: 38px 0 38px 17%;
+        padding: 0;
+        text-align: left;
+    }
+    footer .f_tel {
+        left: 17%;
+        bottom: 80px;
+        top: auto;
+        right: auto;
+        margin: 0;
+        text-align: left;
+    }
+    footer .f_tel span {
+        text-align: left;
+        margin-bottom: 10px;
+    }
+    footer .f_tel span.tell {
+        margin-top: 0;
+    }
+    footer .f_tel span:last-child {
+        margin-bottom:0;
+    }
 }
-@media screen and (max-width:1320px) {
 
-}
-@media screen and (max-width:1024px){
-   
-}
-@media screen and (max-width:768px){
-    
-}
-@media screen and (max-width:500px){
-   
-}
