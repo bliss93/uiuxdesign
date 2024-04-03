@@ -299,14 +299,23 @@
         margin: 0 0 20px 0;
     }
     .product .list .swiper {
-        width: 1200px;
         margin-top: 60px;
-        position: relative;
     }
-    .product .list ul li a .photo {
-        width: 224px;
-        height: 224px;
+    .product .list ul {
+        width: 1205px;
+        height: 225px;
     }
+    .product .list ul li {
+        width: 225px;
+        height: 100%;
+    }
+    .product .list ul li a .photo  {
+        width: 100%;
+        height: 100%;
+    }
+    .product button {
+        display: none;
+    } 
 }
 @media screen and (max-width:1320px){
     .product {
@@ -317,12 +326,19 @@
         margin: 0 0 18px 0;
     }
     .product .list .swiper {
-        width: 950px;
         margin-top: 50px;
     }
-    .product .list ul li a .photo {
-        width: 222.5px;
-        height: 222.5px;
+    .product .list ul {
+        width: 940px;
+        height: 220px;
+    }
+    .product .list ul li {
+        width: 220px;
+        height: 100%;
+    }
+    .product .list ul li a .photo  {
+        width: 100%;
+        height: 100%;
     }
 }
 
@@ -349,9 +365,6 @@
         width: 100%;
         height: 100%;
     }
-    .product button {
-        display: none;
-    } 
 
 }
 @media screen and (max-width:768px){
@@ -387,21 +400,20 @@
 .brand::before {
     display: block;
     border-top: 1px solid rgba(61, 61, 61, 0.5);
-    width: 1900px;
+    width: 1750px;
     content: "";
-    margin: 0 140px 0 0;
 }
 .brand::after {
     display: block;
     border-bottom: 1px solid rgba(61, 61, 61, 0.5);
     width: 1900px;
     content: "";
-    margin: 0 0 0 140px;
+    margin: 0 0 0 150px;
 }
 .brand .photo {
     width: 41rem;
     height: 100%;
-    padding: 95px 0 95px 60px;
+    padding: 95px 0 95px 0;
 }
 .brand .photo img {
     display: block;
@@ -463,69 +475,68 @@
         align-items: center;
     }
     .brand::before {
-        width: 1300px;
+        width: 1550px;
         margin: 0 80px 0 0;
     }
     .brand::after {
-        margin: 0 0 0 80px;
+        margin: 0 0 0 40px;
     }
     .brand .photo {
-        padding: 80px 0 80px 50px;
+        padding: 80px 0 80px 20px;
     }
     .brand .cnt > strong{
-        margin: 80px 0 50px 50px;
+        margin: 80px 0 50px 30px;
     }
     .brand .cnt > h2 {
-        margin: 0 0 60px 50px;
+        margin: 0 0 60px 30px;
     }
     .brand .cnt > p {
-        margin: 0 0 0 80px;
+        margin: 0 0 0 50px;
         font-size: 1rem;
     }
     .brand .cnt .more {
-        margin: 50px 0 0 80px;
+        margin: 50px 0 0 50px;
     }
 }
 @media screen and (max-width:1320px) {
     .brand::before {
-        width: 950px;
-        margin: 0 70px 0 0;
+        width: 1200px;
     }
     .brand::after {
-        margin: 0 0 0 70px;
+        margin: 0 0 0 40px;
     }
     .brand .photo {
-        padding: 70px 0 70px 40px;
+        padding: 70px 0 70px 20px;
     }
     .brand .cnt > strong{
-        margin: 80px 0 50px 40px;
+        margin: 80px 0 50px 20px;
     }
     .brand .cnt > h2 {
-        margin: 0 0 50px 40px;
+        margin: 0 0 50px 20px;
     }
     .brand .cnt > p {
-        margin: 0 0 0 60px;
+        margin: 0 0 0 40px;
     }
     .brand .cnt .more {
-        margin: 40px 0 0 60px;
+        margin: 40px 0 0 40px;
     }
 }
 @media screen and (max-width:1024px){
     .brand::before {
-        width: 700px;
-        margin: 0 60px 0 0;
+        width: 1000px;
+        margin: 0 20px 0 0;
     }
     .brand::after {
-        margin: 0 0 0 60px;
+        margin: 0 0 0 40px;
     }
     .brand .photo {
-        padding: 50px 0 50px 30px;
+        padding: 50px 0 50px 20px;
     }
     .brand .cnt > strong{
-        margin: 30px 0 20px 30px;
+        margin: 30px 0 20px 20px;
     }
     .brand .cnt > h2 {
-        margin: 0 0 20px 30px;
+        margin: 0 0 20px 20px;
     }
     .brand .cnt > p {
         margin: 0 0 0 40px;
@@ -541,9 +552,10 @@
 @media screen and (max-width:768px){
     .brand .wrapper {
         display: block;
+        position: relative;
     }
     .brand::before {
-        width: 700px;
+        width: 728px;
         margin: 0 40px 0 0;
     }
     .brand::after {
@@ -552,27 +564,55 @@
     .brand .photo {
         width: 100%;
         height: 100%;
-        padding: 40px 30px 20px 30px;
+        padding: 40px 20px 20px 20px;
     }
     .brand .cnt > strong{
-        margin: 20px 0 20px 30px;
+        margin: 20px 0 20px 20px;
         flex-wrap: wrap;
     }
     .brand .cnt > h2 {
-        margin: 0 0 20px 30px;
+        margin: 0 0 20px 20px;
         flex-wrap: wrap;
         white-space: unset;
     }
     .brand .cnt > p {
-        margin: 0 0 0 40px;
+        margin: 0 0 0 20px;
         flex-wrap: wrap;
     }
     .brand .cnt .more {
-        margin: 20px 0 40px 40px;
+        margin: 20px 0 40px 20px;
     }
     .brand .cnt .more ul li a img {
         width: 75px;
         height: 100%
+    }
+}
+@media screen and (max-width:500px) {
+    .brand::before {
+        width: 470px;
+        margin: 0 40px 0 0;
+    }
+    .brand::after {
+        margin: 0 0 0 25px;
+    }
+    .brand .photo {
+        padding: 40px 10px 20px 10px;
+    }
+    .brand .cnt > strong{
+        margin: 20px 0 20px 10px;
+        flex-wrap: wrap;
+    }
+    .brand .cnt > h2 {
+        margin: 0 0 20px 10px;
+        flex-wrap: wrap;
+        white-space: unset;
+    }
+    .brand .cnt > p {
+        margin: 0 0 0 10px;
+        flex-wrap: wrap;
+    }
+    .brand .cnt .more {
+        margin: 20px 0 40px 10px;
     }
 }
 
@@ -647,17 +687,17 @@
         margin: 0 0 28px 0;
     }
     .social .list .swiper {
-        width: 1130px;
         margin-top: 80px;
     }
-    .social .list ul li {
-        width: 350px;
+    .social .list ul {
+        width: 1600px;
     }
-    .social .list ul li a {
-        display: block;
+    .social .list ul li {
+        width: 400px;
+        height: 100%;
     }
     .social .list ul li a img {
-        width: 350px;
+        width: 100%;
         height: 100%;
     }
     .social .list ul li a .tag {
@@ -668,99 +708,85 @@
     .social .list ul li a .tag span {
         padding-right: 22px;
     }
+    .social .ctrl_btn button {
+        display: none;
+    }
 }
 @media screen and (max-width:1320px){
     .social {
-        margin: 80px 0 80px 0;
+        margin: 90px 0 90px 0;
     }
     .social h2 {
-        margin: 0 0 26px 0;
+        margin: 0 0 25px 0;
     }
     .social .list .swiper {
-        width: 920px;
-        margin-top: 60px;
+        margin-top: 70px;
+    }
+    .social .list ul {
+        width: 1160px;
     }
     .social .list ul li {
-        width: 280px;
-    }
-    .social .list ul li a img {
-        width: 280px;
+        width: 360px;
         height: 100%;
     }
     .social .list ul li a .tag {
-        margin: 18px 0 0 0;
-        font-size: 16px;
-        white-space: nowrap; 
-        overflow: hidden;
-        text-overflow: ellipsis;
+        margin: 20px 0 0 0;
+        font-size: 17px;
     }
     .social .list ul li a .tag span {
         padding-right: 20px;
     }
-    .social .ctrl_btn button.prev {
-        left: -30px;
-    }
-    .social .ctrl_btn button.next {
-        right: -30px;
-    }
 }
 @media screen and (max-width:1024px){
     .social {
-        margin: 70px 0 70px 0;
+        margin: 80px 0 80px 0;
     }
     .social h2 {
         margin: 0 0 24px 0;
     }
     .social .list .swiper {
-        width: 680px;
-        margin-top: 50px;
+        margin-top: 60px;
+    }
+    .social .list ul {
+        width: 980px;
     }
     .social .list ul li {
-        width: 200px;
-    }
-    .social .list ul li a img {
-        width: 200px;
+        width: 300px;
         height: 100%;
     }
     .social .list ul li a .tag {
-        margin: 16px 0 0 0;
-        font-size: 15px;
+        margin: 18px 0 0 0;
+        font-size: 16px;
     }
     .social .list ul li a .tag span {
-        padding-right: 14px;
-    }
-    .social .ctrl_btn button {
-        display: none;
+        padding-right: 18px;
     }
 }
 @media screen and (max-width:768px){
     .social {
-        margin: 60px 0 75px 0;
+        margin: 70px 0 80px 0;
     }
     .social h2 {
-        margin: 0 0 14px 0;
-    }
-    .social p br {
-        display: block;
+        margin: 0 0 22px 0;
     }
     .social .list .swiper {
-        width: 479px;
-        margin-top: 40px;
-        padding-right: 200px;
+        margin-top: 50px;
+    }
+    .social .list ul {
+        width: 830px;
     }
     .social .list ul li {
-        width: 200px;
-    }
-    .social .list ul li a img {
-        width: 200px;
+        width: 250px;
         height: 100%;
     }
     .social .list ul li a .tag {
-        margin: 15px 0 0 0;
-        font-size: 13px;
+        margin: 16px 0 0 0;
+        font-size: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     .social .list ul li a .tag span {
-        padding-right: 12px;
+        padding-right: 16px;
     }
 }
 
@@ -962,6 +988,9 @@ footer .f_info span {
     display: inline-block;
     margin: 0 30px 10px 0;
 }
+footer .f_info br.info {
+    display: none;
+}
 footer .copyright {
     margin: 40px 0 80px 0;
     padding: 20px 0;
@@ -990,7 +1019,7 @@ footer .f_tel span:last-child {
         display: block;
         position: relative;
         text-align: center;
-        padding: 51px 0 200px 0;
+        padding: 51px 0 220px 0;
     }
     footer .f_cnt{
         display: block;
@@ -1008,23 +1037,23 @@ footer .f_tel span:last-child {
     }
     footer .f_nav {
         display: block;
-        padding: 60px 0 36px 0;
+        padding: 80px 0 36px 0;
         margin: auto;
-        margin-left:17%;
+        margin-left:10%;
     }
     footer .f_info{
         display: block;
         text-align: left;
-        margin: 0 0 0 17%;;
+        margin: 0 0 0 10%;;
     }
     footer .copyright {
-        margin: 38px 0 38px 17%;
+        margin: 38px 0 38px 10%;
         padding: 0;
         text-align: left;
     }
     footer .f_tel {
-        left: 17%;
-        bottom: 80px;
+        left: 10%;
+        bottom: 50px;
         top: auto;
         right: auto;
         margin: 0;
@@ -1042,3 +1071,62 @@ footer .f_tel span:last-child {
     }
 }
 
+@media screen and (max-width:1320px){
+    footer {
+        padding: 51px 0 170px 0;
+    }
+    footer .f_nav {
+        padding: 75px 0 36px 0;
+    }
+    footer .f_nav ul li {
+        margin: 0 40px 10px 0;
+    }
+    footer .f_nav ul li::after {
+        right: -21px;
+        top: 4px;
+        height: 11px;
+    }
+    footer .f_tel {
+        bottom: 80px;
+    }
+}
+@media screen and (max-width:1024px){
+    footer {
+        padding: 51px 0 170px 0;
+    }
+    footer .f_nav {
+        padding: 65px 0 36px 0;
+    }
+    footer .f_nav ul li {
+        margin: 0 35px 10px 0;
+    }
+    footer .f_nav ul li::after {
+        right: -18px;
+        top: 3px;
+        height: 11px;
+    }
+    footer .f_tel {
+        bottom: 50px;
+    }
+}
+@media screen and (max-width:768px) {
+    footer .f_nav ul li {
+        margin: 0 30px 10px 0;
+    }
+    footer .f_nav ul li::after {
+        right: -16px;
+        top: 3px;
+        height: 9px;
+    }
+}
+@media screen and (max-width:500px) {
+    footer .f_nav ul li {
+        margin: 0 25px 10px 0;
+    }
+    footer .f_nav ul li::after {
+        right: -16px;
+        top: 3px;
+        height: 9px;
+    }
+}
+  
