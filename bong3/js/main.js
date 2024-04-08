@@ -22,27 +22,24 @@ $(document).ready(function(){
         },
     });
 
+
+
     const product_swiper = new Swiper('.product .swiper', { /* 팝업을 감싼는 요소의 class명 */
         slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
         spaceBetween: 20, /* 팝업과 팝업 사이 여백 */
         breakpoints: {
-            768: {   /* 768x 이상일때 적용 */
-                slidesPerView: 4,
-                spaceBetween: 20,
-            }
             1640: {
                 slidesPerView: 6, /* 사이즈제한 */
                 spaceBetween: 20,
             },
         },
-        centeredSlides: true, //센터모드
         loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
         autoplay: { 
         delay: 3000,
-        disableOnInteraction: false,
+        disableOnInteraction: true,
         },
-        loop : false,// 슬라이드 반복 여부
-        loopAdditionalSlides : 1,
+        observer: true,
+        observeParents: true,
 
         navigation: {  /* 이전, 다음 버튼 */
         nextEl: '.product .next',  /* 다음 버튼의 클래스명 */
@@ -51,13 +48,11 @@ $(document).ready(function(){
     
     })
 
-
     
     const social_swiper = new Swiper('.social .swiper', { /* 팝업을 감싼는 요소의 class명 */
         slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
         spaceBetween: 20, /* 팝업과 팝업 사이 여백 */
         loop: true,
-        loopedSlides: 1,
 
         breakpoints: {
             

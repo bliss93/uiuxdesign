@@ -1,0 +1,164 @@
+/*
+    파일명 : layout.css
+    작성자 : 윤서하 
+    작성일 : 2024.04.01
+    설  명 : header, footer 
+*/
+
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    width: 100%;
+    height: 100px;
+    transition: transform 0.5s;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+header .logo {
+    margin-left: 24px;
+}
+header .logo a {
+    display: block;
+    width: 116px;
+    height: 53px;
+    background: url(../images/common/logo2.png) no-repeat center center / contain;
+    font-size: 0;
+    line-height: 0;
+}
+header .gnb .gnb_open {
+    display: none;
+}
+header .gnb .gnb_close {
+    display: none;
+}
+header .gnb ul {
+    display: flex;
+    justify-content: space-between;
+    width: 388px;
+    text-align: center;
+    line-height: 100px;
+}
+header .gnb ul > li.on a {
+    color: #97644D;
+    font-weight: 700;
+}
+header .gnb ul > li > a {
+    display: block;
+    font-weight: 400;
+    white-space: nowrap; /* 무조건 한줄 */
+} 
+header .gnb ul > li > a:hover {
+    font-weight: 700;
+    color: #97644D;
+}
+header .tnb ul {
+    display: flex;
+    margin-right: 55px;
+}
+header .tnb ul li{
+    margin-right: 25px;
+}
+header .tnb ul li:last-child {
+    margin-right: 0;
+}
+header .tnb ul li a {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+header .tnb ul li.search a {
+    background-image: url(../images/common/search.svg)
+}
+header .tnb ul li.lang a {
+    background-image: url(../images/common/lang.svg)
+}
+
+
+@media screen and (max-width:1640px){
+    header .gnb {
+        font-size: 18px;
+    }
+    header .gnb ul {
+        width: 360px;
+    }
+}
+@media screen and (max-width:1320px){
+    header .gnb {
+        font-size: 16px;
+    }
+    header .gnb ul {
+        width: 340px;
+    }
+}
+
+@media screen and (max-width:1024px){
+    header {
+        height: 50px;
+    }
+    header .logo {
+        margin-left: 10px;
+    }
+    header .logo a {
+        width: 110px;
+        height: 40px;
+    }
+    header .gnb ul {
+        display: none;
+    }
+    header .gnb .gnb_open,
+    header .gnb .gnb_close {
+        display: block;
+        position: absolute;
+        right: 28px;
+        top: calc(50% - 12.5px);
+        width: 25px;
+        height: 25px;
+        line-height: 0;
+        font-size: 0;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        content: "";
+    }
+    header .gnb .gnb_open {
+        background-image: url(../images/common/gnb_open.svg);
+    }
+    header .gnb .gnb_close {
+        background-image: url(../images/common/gnb_close.svg);
+        display: none;
+    }
+    header .tnb {
+        display: none;
+    }
+}
+/*media*/
+@media screen and (max-width:768px){
+    header .logo {
+        margin-left: 5px;
+    }
+    header .logo a {
+        width: 100px;
+        height: 35px;
+    }
+    header .gnb .gnb_open,
+    header .gnb .gnb_close {
+        right: 20px;
+        top: calc(50% - 10px);
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media screen and (min-width:1025px){ /* 1025px이상 */
+   
+
+    /* 메뉴고정 */
+
+}

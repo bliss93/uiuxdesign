@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <!--swiper 라이브러리-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+
+    <!-- AOS를 작동시키기 위한 css와 js파일 -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/main.js"></script>
+    <title>봉명동내커피</title>
+</head>
+<body>
+    <div id="wrap">
+        <!--스크롤 아래로 내리면 숨겨짐, 스크롤 위로 올리면 보임
+            스크롤을 아래로 내렸을 때 header의 높이가 변함.
+            스크롤을 내린 상태에서 보일 때: fixed 클래스 추가
+            pc버전 메뉴를 오버했을때: menu_over
+            모바일에서 메뉴를 클릭했을 때: menu_open-->
+        <header>
+            <h1 class="logo"><a href="index.html">봉명동내커피</a></h1>
+            <nav class="gnb">
+                <button class="gnb_open">메뉴 열기</button>
+                <ul>
+                    <li class="on"><a href="#n">봉명동내커피</a></li>
+                    <li><a href="#n">메뉴</a></li>
+                    <li><a href="#n">매장안내</a></li>
+                    <li><a href="#n">새소식</a></li>
+                </ul>
+                <button class="gnb_close">메뉴닫기</button>
+            </nav>
+            <div class="tnb">
+                <ul>
+                    <li class="search"><a href="#n">검색</a></li>
+                    <li class="lang"><a href="#n">언어</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class="container">
+            <section class="visual">
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="visual_pc">
+                                    <img src="images/main/visual01_pc.png" alt="Your Crazy Hang out Enjoy with us" class="popup_pc">
+                                    <h2 class="mo01">BONGMYUNG <br>MENU</h2>
+                                    <strong>봉명동내커피만의 정겨운 그맛부터 나만을 위한 특별한 블렌딩 티까지 <br>
+                                            다양하게 즐겨보세요!</strong>
+                                </div>
+                                <div class="visual_mo">
+                                    <img src="images/main/visual01_mo.png" alt="Your Crazy Hang out Enjoy with us" class="popup_mo">
+                                </div>
+                            </a>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="visual_pc">
+                                    <img src="images/main/visual02_pc.png" alt="Your Crazy Hang out Enjoy with us" class="popup_pc">
+                                    <div class="divide01">
+                                        <h2 class="mo02">Pick Me Up!</h2>
+                                        <strong>봉명동내커피만의 정겨운 그맛부터 나만을 위한 특별한 블렌딩 티까지 <br>
+                                                다양하게 즐겨보세요!</strong>
+                                    </div>
+                                </div>
+                                <div class="visual_mo">
+                                    <img src="images/main/visual02_mo.png" alt="Your Crazy Hang out Enjoy with us" class="popup_mo">
+                                </div>
+                            </a>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="visual_pc">
+                                    <img src="images/main/visual03_pc.png" alt="Your Crazy Hang out Enjoy with us" class="popup_pc">
+                                    <h2 class="mo03">What’s your Choice?</h2>
+                                    <strong>봄시즌 신상메뉴 딸기시리즈와 스테디셀러 초코시리즈 중 당신의 선택은 무엇인가요? <br>
+                                            고르지 못하겠다면 베스트셀러 초코딸기 카스테라를 즐겨보세요.</strong>
+                                </div>
+                                <div class="visual_mo">
+                                    <img src="images/main/visual03_mo.png" alt="Your Crazy Hang out Enjoy with us" class="popup_mo">
+                                </div>
+                            </a>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                    </ul>
+                    <div class="paging"></div>
+                </div>
+            </section>
+            <section class="product">
+                <div class="wrapper">
+                    <h2 data-aos="fade-up">Menu</h2>
+                    <p data-aos="fade-up">마음껏 먹어도 내 지갑은 두툼히! <br> 봉명동내커피의 메뉴와 가격을 알아보세요.</p>
+                    <div class="list" data-aos="fade-left">
+                        <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                            <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                                <li class="swiper-slide custom-slide">
+                                    <a href="#n">
+                                        <span class="photo"><img src="images/main/product01.png" alt="음료사진"></span>
+                                        <strong class="tit">1리터보틀</strong>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <span class="photo"><img src="images/main/product02.png" alt="음료사진"></span>
+                                        <strong class="tit">커피</strong>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <span class="photo"><img src="images/main/product03.png" alt="음료사진"></span>
+                                        <strong class="tit">디저트</strong>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <span class="photo"><img src="images/main/product04.png" alt="음료사진"></span>
+                                        <strong class="tit">음료</strong>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <span class="photo"><img src="images/main/product05.png" alt="음료사진"></span>
+                                        <strong class="tit">쥬스</strong>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <span class="photo"><img src="images/main/product06.png" alt="음료사진"></span>
+                                        <strong class="tit">차</strong>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <span class="photo"><img src="images/main/product07.png" alt="음료사진"></span>
+                                        <strong class="tit">에이드</strong>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <span class="photo"><img src="images/main/product08.png" alt="음료사진"></span>
+                                        <strong class="tit">쉐이크</strong>
+                                    </a>
+                                </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                            </ul>
+                        </div>
+                        <button class="prev">이전 팝업 보기</button><!--이전팝업보기-->
+                        <button class="next">다음 팝업 보기</button><!--다음팝업보기-->
+                    </div>
+                </div>
+            </section>
+            <section class="brand">
+                <div class="wrapper">
+                    <div class="photo" data-aos="fade-left"><img src="images/main/brand.png" alt="커피사진"></div>
+                    <div class="cnt">
+                        <strong>For You, With You</strong>
+                        <h2>최고의 가치를 선사합니다.</h2>
+                        <p>최고의 가치는 최고의 것을 받았을때 생겨납니다. <br>
+                            봉명동내커피와 함께한다면 고객에게 최고의 맛과 가치를 선사하겠습니다.<br>
+                            우리동네 최고의 맛과 부담 없는 가격, 봉명동내커피는 늘 연구합니다. </p>
+                        <div class="more">
+                            <ul>
+                                <li>
+                                    <span>History</span>
+                                    <strong>View More</strong>
+                                </li>
+                                <li><a href="#n"><img src="images/main/brand_icon.png" alt="브랜드홍보사진"></a></li>
+                            </ul>
+                        </div>
+                    </div><!--cnt-->
+                </div>
+            </section>
+            <section class="social">
+                <div class="wrapper">
+                    <h2>What’s new</h2>
+                    <p>신메뉴출시부터 이벤트소식까지, <br> 오늘도 봉명동내커피와 행복하세요!</p>
+                    <div class="list">
+                        <div class="swiper">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <span><img src="images/main/social01.png" alt=""></span>
+                                        <div class="tag">
+                                            <span>#셀럽슈페너</span>
+                                            <span>#흑당라떼</span>
+                                            <span>#가득한 풍미</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <span><img src="images/main/social02.png" alt=""></span>
+                                        <div class="tag">
+                                            <span>#캠핑필수템</span>
+                                            <span>#봉명동내커피 x Paula Scher</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <span><img src="images/main/social03.png" alt=""></span>
+                                        <div class="tag">
+                                            <span>#봄향기</span>
+                                            <span>#과일타르트</span>
+                                            <span>#눈물의여왕출연</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <span><img src="images/main/social04.png" alt=""></span>
+                                        <div class="tag">
+                                            <span>#초코가득</span>
+                                            <span>#초코칩쿠키</span>
+                                            <span>#꾸덕꾸덕</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <span><img src="images/main/social05.png" alt=""></span>
+                                        <div class="tag">
+                                            <span>#원두의비밀</span>
+                                            <span>#원두가공과정</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <span><img src="images/main/social06.png" alt=""></span>
+                                        <div class="tag">
+                                            <span>#녹차</span>
+                                            <span>#greentea </span>
+                                            <span>#fromjeju</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <span><img src="images/main/social07.png" alt=""></span>
+                                        <div class="tag">
+                                            <span>#CEO인터뷰</span>
+                                            <span>#홍대책방</span>
+                                            <span>#도서출판기념</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <span><img src="images/main/social08.png" alt=""></span>
+                                        <div class="tag">
+                                            <span>#쌍화차</span>
+                                            <span>#효도</span>
+                                            <span>#감기예방템</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <span><img src="images/main/social09.png" alt=""></span>
+                                        <div class="tag">
+                                            <span>#같이의가치</span>
+                                            <span>#점주인터뷰</span>
+                                            <span>#성공신화</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!--list-->
+                    <div class="ctrl_btn">
+                        <button class="prev">이전 팝업 보기</button><!--이전팝업보기-->
+                        <button class="next">다음 팝업 보기</button><!--다음팝업보기-->
+                    </div>
+                </div>
+            </section>
+        </div>
+        <aside class="quick">
+            <ul>
+                <li class="youtube"><a href="#n"><span>YOUTUBE</span></a></li>
+                <li class="foundation"><a href="#n"><span>창업안내</span></a></li>
+                <li class="call"><a href="#n"><span>고객센터</span></a></li>
+            </ul>
+        </aside>
+        <aside class="top">
+            <button>
+                <img src="images/common/top.svg" alt="top"> <br>
+                <span>TOP</span>
+            </button>
+        </aside>
+        <footer>
+            <div class="f_logo"><img src="images/common/logo2_w.png" alt="봉명동내커피"></div>
+            <div class="f_cnt">
+                <div class="f_link">
+                    <ul>
+                        <li class="link01"><a href="#n"><img src="images/common/blog.svg" alt="블로그아이콘"></a></li>
+                        <li class="link01"><a href="#n"><img src="images/common/insta.svg" alt="인스타그램아이콘"></a></li>
+                        <li class="link01"><a href="#n"><img src="images/common/youtube.svg" alt="유튜브아이콘"></a></li>
+                    </ul>
+                </div>
+                <div class="f_nav">
+                    <ul>
+                        <li class="person"><a href="#n">개인정보처리방침</a></li>
+                        <li><a href="#n">신규입점안내</a></li>
+                        <li><a href="#n">위치정보 이용약관</a></li>
+                        <li><a href="#n">홈페이지 이용약관</a></li>
+                        <li><a href="#n">영상정보처리기기 운영관리방침</a></li>
+                    </ul>
+                </div>
+                <div class="f_info">
+                    <span>주식회사 비엠디</span> <br>
+                    <span>주소 : 충청북도 청주시 흥덕구 직지대로 436번길 76 1034호 (직지 스마트타워)</span> <br class="info">
+                    <span>사업자등록번호 : 234-86-02129</span>
+                    <span>대표자: 김지우</span> <br>
+                    <span>E-mail : bmd7521@bmdcoffee.com</span>
+                    <span>개인정보책임자 : 간수연</span>
+                </div>
+                <div class="copyright">Copyright ⓒ 봉명동내커피 All. rights reserved.</div>
+                <div class="f_tel">
+                    <span>봉명동내커피 고객센터</span> 
+                    <span class="tell">1899-2968</span>
+                    <span>평일(월~금) AM 09:00 - PM 06:00</span>
+                    <span>토, 일, 법정공휴일 휴무</span>
+                </div>
+            </div><!--f_cnt-->
+        </footer>
+    </div>
+</body>
+</html>
